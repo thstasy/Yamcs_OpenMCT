@@ -1,66 +1,51 @@
-#!/usr/bin/env python3
-
 import binascii
 import io
 import socket
-import sys
-from struct import unpack_from
-from threading import Thread
-from time import sleep
+import struct
+import time
+import logging
+import os
 
+# Setup logging configuration
+logging.basicConfig(
+    filename='simulator.log',
+    level=logging.DEBUG,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+)
 
 def send_tm(simulator):
-    tm_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    # Ensure the testdata.ccsds file exists before attempting to open it
+    if not os.path.exists('testdata.ccsds'):
+        logging.error("Telemetry data file 'testdata.ccsds' not found.")
+        return
+    
+    # Set up the UDP socket
+    udp_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    yamcs_address = ('localhost', 10000)  # Adjust to your Yamcs UDP port
 
     with io.open('testdata.ccsds', 'rb') as f:
+        logging.info("Opened telemetry data file successfully.")
         simulator.tm_counter = 1
         header = bytearray(6)
         while f.readinto(header) == 6:
-            (len,) = unpack_from('>H', header, 4)
-
-            packet = bytearray(len + 7)
+            logging.info(f"Reading telemetry header for packet {simulator.tm_counter}")
+            (length,) = struct.unpack('>H', header[4:6])
+            packet = bytearray(length + 7)
             f.seek(-6, io.SEEK_CUR)
             f.readinto(packet)
 
-            tm_socket.sendto(packet, ('127.0.0.1', 10015))
+            # Send packet over UDP
+            udp_socket.sendto(packet, yamcs_address)
+            logging.info(f"Sent telemetry packet {simulator.tm_counter} with length: {len(packet)} bytes")
             simulator.tm_counter += 1
+            time.sleep(1)
 
-            sleep(1)
-
-
-def receive_tc(simulator):
-    tc_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    tc_socket.bind(('127.0.0.1', 10025))
-    while True:
-        data, _ = tc_socket.recvfrom(4096)
-        simulator.last_tc = data
-        simulator.tc_counter += 1
-
-
-class Simulator():
-
+class Simulator:
     def __init__(self):
         self.tm_counter = 0
-        self.tc_counter = 0
-        self.tm_thread = None
-        self.tc_thread = None
-        self.last_tc = None
 
     def start(self):
-        self.tm_thread = Thread(target=send_tm, args=(self,))
-        self.tm_thread.daemon = True
-        self.tm_thread.start()
-        self.tc_thread = Thread(target=receive_tc, args=(self,))
-        self.tc_thread.daemon = True
-        self.tc_thread.start()
-
-    def print_status(self):
-        cmdhex = None
-        if self.last_tc:
-            cmdhex = binascii.hexlify(self.last_tc).decode('ascii')
-        return 'Sent: {} packets. Received: {} commands. Last command: {}'.format(
-                         self.tm_counter, self.tc_counter, cmdhex)
-
+        send_tm(self)
 
 if __name__ == '__main__':
     simulator = Simulator()
@@ -69,13 +54,11 @@ if __name__ == '__main__':
     try:
         prev_status = None
         while True:
-            status = simulator.print_status()
+            status = f'Sent: {simulator.tm_counter} packets.'
             if status != prev_status:
-                sys.stdout.write('\r')
-                sys.stdout.write(status)
-                sys.stdout.flush()
+                logging.info(status)
                 prev_status = status
-            sleep(0.5)
+            time.sleep(0.5)
     except KeyboardInterrupt:
-        sys.stdout.write('\n')
-        sys.stdout.flush()
+        logging.info("Simulator stopped by user.")
+        print('\n')

@@ -1,0 +1,1383 @@
+Sep 23 14:41:26.291 _global [1] org.yamcs.YamcsServer [INFO] Logging enabled using /home/stasy/arrc_work/quickstart/target/yamcs/etc/logging.properties
+Sep 23 14:41:26.566 _global [1] org.yamcs.YamcsServer [FINE] Using serverId stasy
+Sep 23 14:41:26.629 _global [1] org.yamcs.YamcsServer [INFO] Loading service HttpServer
+Sep 23 14:41:26.766 _global [1] org.yamcs.YamcsServer [FINE] Raw args for HttpServer: {port=8090, address=0.0.0.0, cors={allowOrigin=*, allowCredentials=false}}
+Sep 23 14:41:26.767 _global [1] org.yamcs.YamcsServer [FINE] Initializing HttpServer with resolved args: {port=8090, address=0.0.0.0, cors={allowOrigin=*, allowCredentials=false}, contextPath=, zeroCopyEnabled=true, maxInitialLineLength=8192, maxHeaderSize=8192, maxContentLength=65536, webSocket={writeBufferWaterMark={low=32768, high=131072}, maxDrops=5, maxFrameLength=65536, pingWhenIdleFor=40}, nThreads=0, reverseLookup=false}
+Sep 23 14:41:26.781 _global [1] org.yamcs.yarch.rocksdb.RdbStorageEngine [INFO] Creating or loading tablespace _global
+Sep 23 14:41:26.783 _global [1] org.yamcs.yarch.rocksdb.Tablespace[_global] [FINE] Opening existing database /home/stasy/arrc_work/quickstart/yamcs_data/_global.rdb
+Sep 23 14:41:26.784 _global [1] org.yamcs.yarch.rocksdb.RDBFactory [FINE] Opening RDB /home/stasy/arrc_work/quickstart/yamcs_data/_global.rdb (top dir has 0 open already)
+Sep 23 14:41:26.836 _global [1] org.yamcs.yarch.rocksdb.RDBFactory [FINE] Opened /home/stasy/arrc_work/quickstart/yamcs_data/_global.rdb with ~3 records
+Sep 23 14:41:26.837 _global [1] org.yamcs.yarch.rocksdb.Tablespace[_global] [INFO] Opened tablespace database /home/stasy/arrc_work/quickstart/yamcs_data/_global.rdb
+Sep 23 14:41:26.837 _global [1] org.yamcs.yarch.rocksdb.Tablespace[_global] [INFO] Records: ~3, metadata records: ~12, maxTbsIndex: 8
+Sep 23 14:41:26.855 _global [1] org.yamcs.yarch.rocksdb.Tablespace[_global] [FINE] Loaded table audit_log([rectime TIMESTAMP , seqNum INT ], [user STRING , service STRING , method STRING , summary STRING , request PROTOBUF(com.google.protobuf.Struct) ], primaryKey([rectime TIMESTAMP , seqNum INT ]))
+Sep 23 14:41:26.859 _global [1] org.yamcs.yarch.rocksdb.Tablespace[_global] [FINE] Loaded table account([id LONG auto_increment], [name STRING , display_name STRING , active BOOLEAN , created_by LONG , creation_time TIMESTAMP , confirmation_time TIMESTAMP , last_login_time TIMESTAMP , user_detail PROTOBUF(org.yamcs.security.protobuf.UserAccountRecordDetail) , service_detail PROTOBUF(org.yamcs.security.protobuf.ServiceAccountRecordDetail) ], primaryKey([id LONG auto_increment]))
+Sep 23 14:41:26.861 _global [1] org.yamcs.yarch.rocksdb.Tablespace[_global] [FINE] Loaded table group([id LONG auto_increment], [name STRING , description STRING , members ARRAY(LONG) ], primaryKey([id LONG auto_increment]))
+Sep 23 14:41:26.861 _global [1] org.yamcs.yarch.rocksdb.Tablespace[_global] [INFO] Loaded 3 tables for instance _global
+Sep 23 14:41:27.063 _global [17] org.yamcs.yarch.TableReaderStream[account_0] [FINE] starting a table stream from table account 
+Sep 23 14:41:27.063 _global [17] org.yamcs.yarch.rocksdb.RdbTableWalker [FINE] Starting to walk ascending: true, rangeIndexFilter: DbRange [rangeStart=null, rangeEnd=null]
+Sep 23 14:41:27.066 _global [17] org.yamcs.yarch.TableReaderStream[account_0] [FINE] Closed stream account_0 num emitted tuples: 1
+Sep 23 14:41:27.068 _global [18] org.yamcs.yarch.TableReaderStream[account_1] [FINE] starting a table stream from table account 
+Sep 23 14:41:27.068 _global [18] org.yamcs.yarch.rocksdb.RdbTableWalker [FINE] Starting to walk ascending: true, rangeIndexFilter: DbRange [rangeStart=null, rangeEnd=null]
+Sep 23 14:41:27.068 _global [18] org.yamcs.yarch.TableReaderStream[account_1] [FINE] Closed stream account_1 num emitted tuples: 1
+Sep 23 14:41:27.069 _global [19] org.yamcs.yarch.TableReaderStream[group_2] [FINE] starting a table stream from table group 
+Sep 23 14:41:27.069 _global [19] org.yamcs.yarch.rocksdb.RdbTableWalker [FINE] Starting to walk ascending: true, rangeIndexFilter: DbRange [rangeStart=null, rangeEnd=null]
+Sep 23 14:41:27.069 _global [19] org.yamcs.yarch.TableReaderStream[group_2] [FINE] Closed stream group_2 num emitted tuples: 0
+Sep 23 14:41:27.071 _global [20] org.yamcs.yarch.TableReaderStream[account_3] [FINE] starting a table stream from table account 
+Sep 23 14:41:27.071 _global [20] org.yamcs.yarch.rocksdb.RdbTableWalker [FINE] Starting to walk ascending: true, rangeIndexFilter: DbRange [rangeStart=null, rangeEnd=null]
+Sep 23 14:41:27.071 _global [20] org.yamcs.yarch.TableReaderStream[account_3] [FINE] Closed stream account_3 num emitted tuples: 1
+Sep 23 14:41:27.072 _global [1] org.yamcs.YamcsServer [FINE] Security: disabled
+Sep 23 14:41:27.079 _global [1] org.yamcs.YamcsServer [INFO] Loading online instance 'myproject'
+Sep 23 14:41:27.115 _global [1] org.yamcs.xtce.xml.XtceStaxReader [INFO] Parsing XTCE file mdb/xtce.xml
+Sep 23 14:41:27.178 _global [1] org.yamcs.xtce.xml.XtceStaxReader [INFO] XTCE file parsing finished, loaded: 40 parameters, 3 tm containers, 5 commands
+Sep 23 14:41:27.248 _global [1] org.yamcs.mdb.MdbFactory [INFO] Serialized database saved locally
+Sep 23 14:41:27.249 _global [1] org.yamcs.yarch.rocksdb.RdbStorageEngine [INFO] Creating or loading tablespace myproject
+Sep 23 14:41:27.250 _global [1] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Opening existing database /home/stasy/arrc_work/quickstart/yamcs_data/myproject.rdb
+Sep 23 14:41:27.250 _global [1] org.yamcs.yarch.rocksdb.RDBFactory [FINE] Opening RDB /home/stasy/arrc_work/quickstart/yamcs_data/myproject.rdb (top dir has 0 open already)
+Sep 23 14:41:27.321 _global [1] org.yamcs.yarch.rocksdb.RDBFactory [FINE] Opened /home/stasy/arrc_work/quickstart/yamcs_data/myproject.rdb with ~10 records
+Sep 23 14:41:27.321 _global [1] org.yamcs.yarch.rocksdb.Tablespace[myproject] [INFO] Opened tablespace database /home/stasy/arrc_work/quickstart/yamcs_data/myproject.rdb
+Sep 23 14:41:27.322 _global [1] org.yamcs.yarch.rocksdb.Tablespace[myproject] [INFO] Records: ~10, metadata records: ~58, maxTbsIndex: 54
+Sep 23 14:41:27.325 _global [1] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Loaded table memento([key STRING ], [value STRING ], primaryKey([key STRING ]))
+Sep 23 14:41:27.328 _global [1] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Loaded table tm([gentime TIMESTAMP , seqNum INT ], [rectime TIMESTAMP , status INT , packet BINARY , ertime HRES_TIMESTAMP , obt LONG , link ENUM , pname ENUM ], primaryKey([gentime TIMESTAMP , seqNum INT ]))
+Sep 23 14:41:27.329 _global [1] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Loaded table pp([gentime TIMESTAMP , seqNum INT ], [group ENUM , rectime TIMESTAMP , /yamcs/stasy/processor/name PARAMETER_VALUE , /yamcs/stasy/processor/mode PARAMETER_VALUE , /myproject/CCSDS_Packet_Length PARAMETER_VALUE , /yamcs/stasy/jvm/totalMemory PARAMETER_VALUE , /yamcs/stasy/jvm/memoryUsed PARAMETER_VALUE , /yamcs/stasy/jvm/threadCount PARAMETER_VALUE , /yamcs/stasy/df/dev/sda2 PARAMETER_VALUE , /yamcs/stasy/links/zmq_tm_link/linkStatus PARAMETER_VALUE , /yamcs/stasy/links/zmq_tm_link/dataOutCount PARAMETER_VALUE , /yamcs/stasy/links/zmq_tm_link/dataInCount PARAMETER_VALUE , /yamcs/stasy/links/zmq_tm_link/dataOutRate PARAMETER_VALUE , /yamcs/stasy/links/zmq_tm_link/dataInRate PARAMETER_VALUE , /yamcs/stasy/links/zmq_tm_link/packetRate PARAMETER_VALUE , /yamcs/stasy/links/udp-in/linkStatus PARAMETER_VALUE , /yamcs/stasy/links/udp-in/dataOutCount PARAMETER_VALUE , /yamcs/stasy/links/udp-in/dataInCount PARAMETER_VALUE , /yamcs/stasy/links/udp-in/dataOutRate PARAMETER_VALUE , /yamcs/stasy/links/udp-in/dataInRate PARAMETER_VALUE , /yamcs/stasy/links/udp-in/packetRate PARAMETER_VALUE , /yamcs/stasy/links/udp-out/linkStatus PARAMETER_VALUE , /yamcs/stasy/links/udp-out/dataOutCount PARAMETER_VALUE , /yamcs/stasy/links/udp-out/dataInCount PARAMETER_VALUE , /yamcs/stasy/links/udp-out/dataOutRate PARAMETER_VALUE , /yamcs/stasy/links/udp-out/dataInRate PARAMETER_VALUE , /yamcs/stasy/cmdQueue/default/state PARAMETER_VALUE , /yamcs/stasy/cmdQueue/default/numCommands PARAMETER_VALUE , /yamcs/stasy/cmdQueue/default/numSentCommands PARAMETER_VALUE , /yamcs/stasy/cmdQueue/default/numRejectedCommands PARAMETER_VALUE ], primaryKey([gentime TIMESTAMP , seqNum INT ]))
+Sep 23 14:41:27.329 _global [1] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Loaded table alarms([triggerTime TIMESTAMP , parameter STRING , seqNum INT ], [], primaryKey([triggerTime TIMESTAMP , parameter STRING , seqNum INT ]))
+Sep 23 14:41:27.332 _global [1] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Loaded table event_alarms([triggerTime TIMESTAMP , eventSource STRING , seqNum INT ], [], primaryKey([triggerTime TIMESTAMP , eventSource STRING , seqNum INT ]))
+Sep 23 14:41:27.334 _global [1] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Loaded table events([gentime TIMESTAMP , source ENUM , seqNum INT ], [body PROTOBUF(org.yamcs.yarch.protobuf.Db$Event) ], primaryKey([gentime TIMESTAMP , source ENUM , seqNum INT ]))
+Sep 23 14:41:27.334 _global [1] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Loaded table param_persistence([savetime TIMESTAMP , processor ENUM ], [/myproject/CCSDS_Packet_Length PARAMETER_VALUE ], primaryKey([savetime TIMESTAMP , processor ENUM ]))
+Sep 23 14:41:27.334 _global [1] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Loaded table parameter_list([id UUID ], [name STRING , description STRING , patterns ARRAY(STRING) ], primaryKey([id UUID ]))
+Sep 23 14:41:27.336 _global [1] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Loaded table timeline([start TIMESTAMP , uuid UUID ], [duration LONG , name STRING , type ENUM , tags ARRAY(ENUM) , group_id UUID , reltime_id UUID , reltime_start LONG , activity_definition PROTOBUF(org.yamcs.activities.protobuf.ActivityDefinition) , runs ARRAY(UUID) ], primaryKey([start TIMESTAMP , uuid UUID ]))
+Sep 23 14:41:27.336 _global [1] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Loaded table timeline_log([logtime TIMESTAMP , uuid UUID , seq LONG auto_increment], [user STRING , type STRING , msg STRING ], primaryKey([logtime TIMESTAMP , uuid UUID , seq LONG auto_increment]))
+Sep 23 14:41:27.338 _global [1] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Loaded table timeline_band([uuid UUID ], [name STRING , description STRING , shared BOOLEAN , username STRING , type ENUM , tags ARRAY(ENUM) , source ENUM , filter PROTOBUF(org.yamcs.timeline.protobuf.BandFilter) ], primaryKey([uuid UUID ]))
+Sep 23 14:41:27.338 _global [1] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Loaded table timeline_view([uuid UUID ], [name STRING , description STRING , bands ARRAY(UUID) ], primaryKey([uuid UUID ]))
+Sep 23 14:41:27.339 _global [1] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Loaded table activity([start TIMESTAMP , seq INT ], [id UUID , type STRING , args PROTOBUF(com.google.protobuf.Struct) , status STRING , detail STRING , started_by STRING , stop TIMESTAMP , failure_reason STRING , stopped_by STRING , comment STRING ], primaryKey([start TIMESTAMP , seq INT ]))
+Sep 23 14:41:27.339 _global [1] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Loaded table activity_log([time TIMESTAMP , activity_id UUID , seq LONG auto_increment], [source ENUM , level STRING , message STRING ], primaryKey([time TIMESTAMP , activity_id UUID , seq LONG auto_increment]))
+Sep 23 14:41:27.339 _global [1] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Loaded table cmdhist([gentime TIMESTAMP , origin STRING , seqNum INT ], [cmdName ENUM ], primaryKey([gentime TIMESTAMP , origin STRING , seqNum INT ]))
+Sep 23 14:41:27.339 _global [1] org.yamcs.yarch.rocksdb.Tablespace[myproject] [INFO] Loaded 15 tables for instance myproject
+Sep 23 14:41:27.343 _global [1] org.yamcs.StreamInitializer [FINE] Created stream tm_realtime
+Sep 23 14:41:27.344 _global [1] org.yamcs.StreamInitializer [FINE] Created stream tm_dump
+Sep 23 14:41:27.345 _global [1] org.yamcs.StreamInitializer [FINE] Created stream cmdhist_realtime
+Sep 23 14:41:27.345 _global [1] org.yamcs.StreamInitializer [FINE] Created stream cmdhist_dump
+Sep 23 14:41:27.345 _global [1] org.yamcs.StreamInitializer [FINE] Created stream events_realtime
+Sep 23 14:41:27.345 _global [1] org.yamcs.StreamInitializer [FINE] Created stream events_dump
+Sep 23 14:41:27.346 _global [1] org.yamcs.StreamInitializer [FINE] Created stream pp_realtime
+Sep 23 14:41:27.346 _global [1] org.yamcs.StreamInitializer [FINE] Created stream pp_dump
+Sep 23 14:41:27.346 _global [1] org.yamcs.StreamInitializer [FINE] Created stream sys_param
+Sep 23 14:41:27.346 _global [1] org.yamcs.StreamInitializer [FINE] Created stream proc_param
+Sep 23 14:41:27.346 _global [1] org.yamcs.StreamInitializer [FINE] Created stream alarms_realtime
+Sep 23 14:41:27.347 _global [1] org.yamcs.StreamInitializer [FINE] Created stream tc_realtime
+Sep 23 14:41:27.347 myproject [1] org.yamcs.YamcsServerInstance [INFO] Loading service XtceTmRecorder
+Sep 23 14:41:27.348 _global [1] org.yamcs.YamcsServer [FINE] Raw args for XtceTmRecorder: {}
+Sep 23 14:41:27.348 _global [1] org.yamcs.YamcsServer [FINE] Initializing XtceTmRecorder with resolved args: {}
+Sep 23 14:41:27.348 myproject [1] org.yamcs.YamcsServerInstance [INFO] Loading service ParameterRecorder
+Sep 23 14:41:27.349 _global [1] org.yamcs.YamcsServer [FINE] Raw args for ParameterRecorder: {}
+Sep 23 14:41:27.349 _global [1] org.yamcs.YamcsServer [FINE] Initializing ParameterRecorder with resolved args: {}
+Sep 23 14:41:27.352 myproject [1] org.yamcs.YamcsServerInstance [INFO] Loading service AlarmRecorder
+Sep 23 14:41:27.352 myproject [1] org.yamcs.YamcsServerInstance [INFO] Loading service EventRecorder
+Sep 23 14:41:27.352 myproject [1] org.yamcs.YamcsServerInstance [INFO] Loading service ReplayServer
+Sep 23 14:41:27.353 myproject [1] org.yamcs.YamcsServerInstance [INFO] Loading service SystemParametersService
+Sep 23 14:41:27.356 _global [1] org.yamcs.YamcsServer [FINE] Raw args for SystemParametersService: {producers=[fs, jvm]}
+Sep 23 14:41:27.356 _global [1] org.yamcs.YamcsServer [FINE] Initializing SystemParametersService with resolved args: {producers=[fs, jvm], provideJvmVariables=false, provideFsVariables=false}
+Sep 23 14:41:27.356 myproject [1] org.yamcs.YamcsServerInstance [INFO] Loading service ProcessorCreatorService
+Sep 23 14:41:27.357 _global [1] org.yamcs.YamcsServer [FINE] Raw args for ProcessorCreatorService: {name=realtime, type=realtime}
+Sep 23 14:41:27.357 _global [1] org.yamcs.YamcsServer [FINE] Initializing ProcessorCreatorService with resolved args: {name=realtime, type=realtime}
+Sep 23 14:41:27.357 myproject [1] org.yamcs.YamcsServerInstance [INFO] Loading service CommandHistoryRecorder
+Sep 23 14:41:27.358 _global [1] org.yamcs.YamcsServer [FINE] Raw args for CommandHistoryRecorder: {}
+Sep 23 14:41:27.358 _global [1] org.yamcs.YamcsServer [FINE] Initializing CommandHistoryRecorder with resolved args: {}
+Sep 23 14:41:27.358 myproject [1] org.yamcs.YamcsServerInstance [INFO] Loading service ParameterArchive
+Sep 23 14:41:27.362 _global [1] org.yamcs.YamcsServer [FINE] Raw args for ParameterArchive: {realtimeFiller={enabled=true}, backFiller={enabled=false, warmupTime=60}}
+Sep 23 14:41:27.372 _global [1] org.yamcs.YamcsServer [FINE] Initializing ParameterArchive with resolved args: {realtimeFiller={enabled=true, processorName=realtime, sortingThreshold=1000, pastJumpThreshold=86400}, backFiller={enabled=false, warmupTime=60, streamUpdateFillFrequency=600, compactFrequency=5}, partitioningSchema=none, maxSegmentSize=5000, sparseGroups=true, minimumGroupOverlap=0.5}
+Sep 23 14:41:27.373 myproject [1] org.yamcs.YamcsServerInstance [INFO] Loading service ParameterListService
+Sep 23 14:41:27.378 myproject [1] org.yamcs.YamcsServerInstance [INFO] Loading service TimelineService
+Sep 23 14:41:27.387 _global [1] org.yamcs.YamcsServer [FINE] Raw args for TimelineService: {}
+Sep 23 14:41:27.387 _global [1] org.yamcs.YamcsServer [FINE] Initializing TimelineService with resolved args: {activities={commandExecution={}, stackExecution={}, scriptExecution={searchPath=[/home/stasy/arrc_work/quickstart/target/yamcs/etc/scripts], impersonateCaller=true}}, scheduling={}}
+Sep 23 14:41:27.565 myproject [22] org.yamcs.yarch.TableReaderStream[memento_4] [FINE] starting a table stream from table memento 
+Sep 23 14:41:27.566 myproject [22] org.yamcs.yarch.rocksdb.RdbTableWalker [FINE] Starting to walk ascending: true, rangeIndexFilter: DbRange [rangeStart=79616D63732E6C696E6B7300, rangeEnd=79616D63732E6C696E6B7300]
+Sep 23 14:41:27.566 myproject [22] org.yamcs.yarch.TableReaderStream[memento_4] [FINE] Closed stream memento_4 num emitted tuples: 0
+Sep 23 14:41:27.566 myproject [22] org.yamcs.yarch.SelectStream[memento_4_select] [FINE] Closed stream memento_4_select num emitted tuples: 0
+Sep 23 14:41:27.580 myproject [1] org.yamcs.management.LinkManager [FINE] Raw args for udp-in: {name=udp-in, class=org.yamcs.tctm.UdpTmDataLink, stream=tm_realtime, port=10000, packetPreprocessorClassName=com.example.myproject.MyPacketPreprocessor, enabledAtStartup=true}
+Sep 23 14:41:27.580 myproject [1] org.yamcs.management.LinkManager [FINE] Initializing udp-in with resolved args: {name=udp-in, class=org.yamcs.tctm.UdpTmDataLink, stream=tm_realtime, port=10000, packetPreprocessorClassName=com.example.myproject.MyPacketPreprocessor, enabledAtStartup=true, invalidPackets=DROP, invalidPacketsStream=invalid_tm, updateSimulationTime=false, maxLength=1500, initialBytesToStrip=0}
+Sep 23 14:41:27.615 myproject [1] org.yamcs.management.LinkManager [FINE] Raw args for udp-out: {name=udp-out, class=org.yamcs.tctm.UdpTcDataLink, stream=tc_realtime, host=localhost, port=10025, commandPostprocessorClassName=com.example.myproject.MyCommandPostprocessor}
+Sep 23 14:41:27.615 myproject [1] org.yamcs.management.LinkManager [FINE] Initializing udp-out with resolved args: {name=udp-out, class=org.yamcs.tctm.UdpTcDataLink, stream=tc_realtime, host=localhost, port=10025, commandPostprocessorClassName=com.example.myproject.MyCommandPostprocessor, invalidPackets=DROP, invalidPacketsStream=invalid_tm}
+Sep 23 14:41:27.627 _global [1] org.yamcs.mdb.ProcessorData[XTCEPROC] [FINE] Initialized lastValueCache with 1 entries
+Sep 23 14:41:27.630 _global [1] org.yamcs.mdb.ProcessorData[XTCEPROC] [FINE] Initialized lastValueCache with 1 entries
+Sep 23 14:41:27.632 myproject [1] org.yamcs.parameter.SystemParametersService [FINE] Using stasy as serverId, and /yamcs/stasy as namespace for system parameters
+Sep 23 14:41:27.643 _global [1] org.yamcs.xtce.XtceDb [FINE] Adding parameter types [IntegerDataType name:uint64_KB sizeInBits:64 signed:false encoding:null] , createSpaceSystem: true
+Sep 23 14:41:27.644 _global [1] org.yamcs.xtce.XtceDb [FINE] Adding parameters [SysParam(qname=/yamcs/stasy/jvm/totalMemory)] , createSpaceSystem: true
+Sep 23 14:41:27.644 _global [1] org.yamcs.parameter.JvmParameterProducer [FINE] Publishing jvmTotalMemory with parameter id SysParam(qname=/yamcs/stasy/jvm/totalMemory)
+Sep 23 14:41:27.645 _global [1] org.yamcs.xtce.XtceDb [FINE] Adding parameters [SysParam(qname=/yamcs/stasy/jvm/memoryUsed)] , createSpaceSystem: true
+Sep 23 14:41:27.645 _global [1] org.yamcs.parameter.JvmParameterProducer [FINE] Publishing jvmMemoryUsed with parameter id SysParam(qname=/yamcs/stasy/jvm/memoryUsed)
+Sep 23 14:41:27.645 _global [1] org.yamcs.xtce.XtceDb [FINE] Adding parameter types [IntegerDataType name:uint32 sizeInBits:32 signed:false encoding:null] , createSpaceSystem: true
+Sep 23 14:41:27.645 _global [1] org.yamcs.xtce.XtceDb [FINE] Adding parameters [SysParam(qname=/yamcs/stasy/jvm/threadCount)] , createSpaceSystem: true
+Sep 23 14:41:27.645 _global [1] org.yamcs.parameter.JvmParameterProducer [FINE] Publishing jvmThreadCount with parameter id SysParam(qname=/yamcs/stasy/jvm/threadCount)
+Sep 23 14:41:27.646 _global [1] org.yamcs.xtce.XtceDb [FINE] Adding parameter types [IntegerDataType name:sint64_KB sizeInBits:64 signed:true encoding:null] , createSpaceSystem: true
+Sep 23 14:41:27.650 _global [1] org.yamcs.xtce.XtceDb [FINE] Adding parameter types [FloatParameterType name:float32_% sizeInBits:32 encoding:null] , createSpaceSystem: true
+Sep 23 14:41:27.652 _global [1] org.yamcs.parameter.FileStoreParameterProducer [FINE] Adding store '/ (/dev/sda2)' to the file stores to be monitored
+Sep 23 14:41:27.652 _global [1] org.yamcs.xtce.XtceDb [FINE] Adding parameter types [org.yamcs.xtce.AggregateParameterType@571a9686] , createSpaceSystem: true
+Sep 23 14:41:27.652 _global [1] org.yamcs.xtce.XtceDb [FINE] Adding parameters [SysParam(qname=/yamcs/stasy/df/dev/sda2)] , createSpaceSystem: true
+Sep 23 14:41:27.653 _global [1] org.yamcs.parameter.FileStoreParameterProducer [FINE] Not adding duplicate store '/var/snap/firefox/common/host-hunspell (/dev/sda2)' to the file stores to be monitored
+Sep 23 14:41:27.654 myproject [1] org.yamcs.ProcessorCreatorService [FINE] Creating a new processor [instance=myproject, procName=realtime, procType=realtime]
+Sep 23 14:41:27.657 myproject [1] org.yamcs.ProcessorFactory[realtime] [INFO] Loading processor service StreamTmPacketProvider
+Sep 23 14:41:27.658 myproject [1] org.yamcs.ProcessorFactory[realtime] [INFO] Loading processor service StreamTcCommandReleaser
+Sep 23 14:41:27.659 myproject [1] org.yamcs.ProcessorFactory[realtime] [INFO] Loading processor service StreamParameterProvider
+Sep 23 14:41:27.660 myproject [1] org.yamcs.ProcessorFactory[realtime] [INFO] Loading processor service AlgorithmManager
+Sep 23 14:41:27.665 myproject [1] org.yamcs.ProcessorFactory[realtime] [FINE] Raw args for AlgorithmManager: {}
+Sep 23 14:41:27.666 myproject [1] org.yamcs.ProcessorFactory[realtime] [FINE] Initializing AlgorithmManager with resolved args: {maxErrorsBeforeAutomaticDeactivation=10}
+Sep 23 14:41:27.666 myproject [1] org.yamcs.ProcessorFactory[realtime] [INFO] Loading processor service LocalParameterManager
+Sep 23 14:41:27.667 myproject [1] org.yamcs.Processor [INFO] Creating new processor 'realtime' of type 'realtime'
+Sep 23 14:41:27.690 myproject [1] org.yamcs.Processor[realtime] [FINE] Initialzing the processor with the configuration ProcessorConfig [checkParameterAlarms=true, parameterAlarmServerEnabled=true, eventAlarmServerEnabled=false, maxTcSize=4096, recordInitialValues=true, recordLocalValues=true, eventAlarmMinViolations=1, subscribeAll=true, generateEvents=false, containerProcOptions=org.yamcs.mdb.ContainerProcessingOptions@6428591a, parameterCacheConfig=ParameterCacheConfig [enabled=false, cacheAll=false, maxDuration=300000, maxNumEntries=512]]
+Sep 23 14:41:27.700 myproject [23] org.yamcs.yarch.TableReaderStream[param_persistence_5] [FINE] starting a table stream from table param_persistence 
+Sep 23 14:41:27.700 myproject [23] org.yamcs.yarch.rocksdb.RdbTableWalker [FINE] Starting to walk ascending: false, rangeIndexFilter: DbRange [rangeStart=null, rangeEnd=null]
+Sep 23 14:41:27.706 myproject [23] org.yamcs.yarch.SelectStream[param_persistence_5_select] [FINE] Closed stream param_persistence_5_select num emitted tuples: 2
+Sep 23 14:41:27.706 myproject [23] org.yamcs.yarch.TableReaderStream[param_persistence_5] [FINE] Closed stream param_persistence_5 num emitted tuples: 2
+Sep 23 14:41:27.706 myproject [23] org.yamcs.yarch.streamsql.LimitedStream[param_persistence_5_select_limit] [FINE] Closed stream param_persistence_5_select_limit num emitted tuples: 1
+Sep 23 14:41:27.707 myproject [1] org.yamcs.mdb.ProcessorData[realtime] [FINE] Initialized lastValueCache with 1 entries
+Sep 23 14:41:27.708 _global [1] org.yamcs.xtce.XtceDb [FINE] Adding parameter types [StringParameterType name:string encoding:null] , createSpaceSystem: true
+Sep 23 14:41:27.708 _global [1] org.yamcs.xtce.XtceDb [FINE] Adding parameters [SysParam(qname=/yamcs/stasy/processor/name)] , createSpaceSystem: true
+Sep 23 14:41:27.708 _global [1] org.yamcs.xtce.XtceDb [FINE] Adding parameters [SysParam(qname=/yamcs/stasy/processor/mode)] , createSpaceSystem: true
+Sep 23 14:41:27.719 myproject [1] org.yamcs.parameter.ParameterProcessorManager[realtime] [FINE] Adding parameter provider: class org.yamcs.mdb.XtceTmProcessor
+Sep 23 14:41:27.734 myproject [24] org.yamcs.yarch.TableReaderStream[memento_6] [FINE] starting a table stream from table memento 
+Sep 23 14:41:27.735 myproject [24] org.yamcs.yarch.rocksdb.RdbTableWalker [FINE] Starting to walk ascending: true, rangeIndexFilter: DbRange [rangeStart=79616D63732E71756575657300, rangeEnd=79616D63732E71756575657300]
+Sep 23 14:41:27.735 myproject [24] org.yamcs.yarch.TableReaderStream[memento_6] [FINE] Closed stream memento_6 num emitted tuples: 0
+Sep 23 14:41:27.736 myproject [24] org.yamcs.yarch.SelectStream[memento_6_select] [FINE] Closed stream memento_6_select num emitted tuples: 0
+Sep 23 14:41:27.750 myproject [1] org.yamcs.StreamTmPacketProvider[realtime] [FINE] Processing packets from stream tm_realtime starting with root container /myproject/CCSDSPacket
+Sep 23 14:41:27.751 myproject [1] org.yamcs.StreamTcCommandReleaser[realtime] [FINE] Sending all TCs to stream tc_realtime
+Sep 23 14:41:27.752 myproject [1] org.yamcs.tctm.StreamParameterProvider[realtime] [FINE] Subscribing to streams [pp_realtime, sys_param] 
+Sep 23 14:41:27.752 myproject [1] org.yamcs.parameter.ParameterProcessorManager[realtime] [FINE] Adding parameter provider: class org.yamcs.tctm.StreamParameterProvider
+Sep 23 14:41:27.753 myproject [1] org.yamcs.parameter.ParameterProcessorManager[realtime] [FINE] Adding parameter provider: class org.yamcs.algorithms.AlgorithmManager
+Sep 23 14:41:27.753 myproject [1] org.yamcs.parameter.ParameterProcessorManager[realtime] [FINE] new subscribeAll with subscriptionId 0
+Sep 23 14:41:27.754 myproject [1] org.yamcs.parameter.ParameterProcessorManager[realtime] [FINE] Adding parameter provider: class org.yamcs.parameter.LocalParameterManager
+Sep 23 14:41:27.755 myproject [1] org.yamcs.parameter.LocalParameterManager[realtime] [FINE] requested to provide all
+Sep 23 14:41:27.761 myproject [1] org.yamcs.parameterarchive.ParameterArchive [FINE] backFillerConfig: {enabled=false, warmupTime=60, streamUpdateFillFrequency=600, compactFrequency=5}
+Sep 23 14:41:27.761 myproject [1] org.yamcs.parameterarchive.ParameterArchive [FINE] realtimeFillerConfig: {enabled=true, processorName=realtime, sortingThreshold=1000, pastJumpThreshold=86400}
+Sep 23 14:41:27.781 _global [1] org.yamcs.YamcsServer [INFO] Yamcs 5.9.8, build 84ab5c5a56acc33ab3f39677157224082225b234
+Sep 23 14:41:27.782 _global [1] org.yamcs.PluginManager [FINE] Loading plugin yamcs-web 5.9.8
+Sep 23 14:41:27.784 _global [1] org.yamcs.web.WebFileDeployer [FINE] Unpacking 91 webapp files
+Sep 23 14:41:27.876 _global [1] org.yamcs.YamcsServer [FINE] Starting service HttpServer
+Sep 23 14:41:27.935 _global [28] org.yamcs.http.HttpServer [FINE] [id: 0x186fbd67] REGISTERED
+Sep 23 14:41:27.937 _global [28] org.yamcs.http.HttpServer [FINE] [id: 0x186fbd67] BIND: /0.0.0.0:8090
+Sep 23 14:41:27.938 _global [1] org.yamcs.http.HttpServer [FINE] Serving from http://localhost:8090
+Sep 23 14:41:27.938 _global [28] org.yamcs.http.HttpServer [FINE] [id: 0x186fbd67, L:/[0:0:0:0:0:0:0:0]:8090] ACTIVE
+Sep 23 14:41:27.942 _global [1] org.yamcs.xtce.XtceDb [FINE] Adding parameter types [EnumeratedParameterType: [(0=OK), (1=UNAVAIL), (2=DISABLED), (3=FAILED)] encoding:null] , createSpaceSystem: true
+Sep 23 14:41:27.942 _global [1] org.yamcs.xtce.XtceDb [FINE] Adding parameters [SysParam(qname=/yamcs/stasy/links/udp-in/linkStatus)] , createSpaceSystem: true
+Sep 23 14:41:27.942 _global [1] org.yamcs.xtce.XtceDb [FINE] Adding parameter types [IntegerDataType name:uint64 sizeInBits:64 signed:false encoding:null] , createSpaceSystem: true
+Sep 23 14:41:27.943 _global [1] org.yamcs.xtce.XtceDb [FINE] Adding parameters [SysParam(qname=/yamcs/stasy/links/udp-in/dataOutCount)] , createSpaceSystem: true
+Sep 23 14:41:27.943 _global [1] org.yamcs.xtce.XtceDb [FINE] Adding parameters [SysParam(qname=/yamcs/stasy/links/udp-in/dataInCount)] , createSpaceSystem: true
+Sep 23 14:41:27.943 _global [1] org.yamcs.xtce.XtceDb [FINE] Adding parameter types [FloatParameterType name:float64_Bps sizeInBits:64 encoding:null] , createSpaceSystem: true
+Sep 23 14:41:27.943 _global [1] org.yamcs.xtce.XtceDb [FINE] Adding parameters [SysParam(qname=/yamcs/stasy/links/udp-in/dataInRate)] , createSpaceSystem: true
+Sep 23 14:41:27.944 _global [1] org.yamcs.xtce.XtceDb [FINE] Adding parameters [SysParam(qname=/yamcs/stasy/links/udp-in/dataOutRate)] , createSpaceSystem: true
+Sep 23 14:41:27.944 _global [1] org.yamcs.xtce.XtceDb [FINE] Adding parameter types [FloatParameterType name:float64_p_s sizeInBits:64 encoding:null] , createSpaceSystem: true
+Sep 23 14:41:27.944 _global [1] org.yamcs.xtce.XtceDb [FINE] Adding parameters [SysParam(qname=/yamcs/stasy/links/udp-in/packetRate)] , createSpaceSystem: true
+Sep 23 14:41:27.944 myproject [1] org.yamcs.parameter.SystemParametersService [FINE] Registering system variables producer UdpTmDataLink [NEW]
+Sep 23 14:41:27.945 _global [1] org.yamcs.xtce.XtceDb [FINE] Adding parameters [SysParam(qname=/yamcs/stasy/links/udp-out/linkStatus)] , createSpaceSystem: true
+Sep 23 14:41:27.945 _global [1] org.yamcs.xtce.XtceDb [FINE] Adding parameters [SysParam(qname=/yamcs/stasy/links/udp-out/dataOutCount)] , createSpaceSystem: true
+Sep 23 14:41:27.945 _global [1] org.yamcs.xtce.XtceDb [FINE] Adding parameters [SysParam(qname=/yamcs/stasy/links/udp-out/dataInCount)] , createSpaceSystem: true
+Sep 23 14:41:27.946 _global [1] org.yamcs.xtce.XtceDb [FINE] Adding parameters [SysParam(qname=/yamcs/stasy/links/udp-out/dataInRate)] , createSpaceSystem: true
+Sep 23 14:41:27.946 _global [1] org.yamcs.xtce.XtceDb [FINE] Adding parameters [SysParam(qname=/yamcs/stasy/links/udp-out/dataOutRate)] , createSpaceSystem: true
+Sep 23 14:41:27.946 myproject [1] org.yamcs.parameter.SystemParametersService [FINE] Registering system variables producer UdpTcDataLink [NEW]
+Sep 23 14:41:27.947 myproject [1] org.yamcs.management.LinkManager [FINE] Starting service link udp-in
+Sep 23 14:41:27.950 myproject [1] org.yamcs.management.LinkManager [FINE] Starting service link udp-out
+Sep 23 14:41:27.951 myproject [1] org.yamcs.YamcsServerInstance [FINE] Starting service XtceTmRecorder
+Sep 23 14:41:27.951 myproject [1] org.yamcs.YamcsServerInstance [FINE] Starting service ParameterRecorder
+Sep 23 14:41:27.951 myproject [1] org.yamcs.YamcsServerInstance [FINE] Starting service AlarmRecorder
+Sep 23 14:41:27.951 myproject [1] org.yamcs.YamcsServerInstance [FINE] Starting service EventRecorder
+Sep 23 14:41:27.951 myproject [1] org.yamcs.YamcsServerInstance [FINE] Starting service ReplayServer
+Sep 23 14:41:27.951 myproject [1] org.yamcs.YamcsServerInstance [FINE] Starting service SystemParametersService
+Sep 23 14:41:27.951 myproject [1] org.yamcs.YamcsServerInstance [FINE] Starting service ProcessorCreatorService
+Sep 23 14:41:27.951 myproject [1] org.yamcs.ProcessorCreatorService [FINE] Starting processor realtime
+Sep 23 14:41:27.953 _global [1] org.yamcs.commanding.CommandingManager [FINE] No parameter required for post transmission constraint check
+Sep 23 14:41:27.953 _global [1] org.yamcs.xtce.XtceDb [FINE] Adding parameter types [EnumeratedParameterType: [(0=BLOCKED), (1=DISABLED), (2=ENABLED)] encoding:null] , createSpaceSystem: true
+Sep 23 14:41:27.953 _global [1] org.yamcs.xtce.XtceDb [FINE] Adding parameters [SysParam(qname=/yamcs/stasy/cmdQueue/default/state)] , createSpaceSystem: true
+Sep 23 14:41:27.954 _global [1] org.yamcs.xtce.XtceDb [FINE] Adding parameter types [IntegerDataType name:sint32 sizeInBits:32 signed:true encoding:null] , createSpaceSystem: true
+Sep 23 14:41:27.954 _global [1] org.yamcs.xtce.XtceDb [FINE] Adding parameters [SysParam(qname=/yamcs/stasy/cmdQueue/default/numCommands)] , createSpaceSystem: true
+Sep 23 14:41:27.954 _global [1] org.yamcs.xtce.XtceDb [FINE] Adding parameters [SysParam(qname=/yamcs/stasy/cmdQueue/default/numSentCommands)] , createSpaceSystem: true
+Sep 23 14:41:27.954 _global [1] org.yamcs.xtce.XtceDb [FINE] Adding parameters [SysParam(qname=/yamcs/stasy/cmdQueue/default/numRejectedCommands)] , createSpaceSystem: true
+Sep 23 14:41:27.954 myproject [1] org.yamcs.parameter.SystemParametersService [FINE] Registering system variables producer CommandQueueManager [STARTING]
+Sep 23 14:41:27.955 myproject [1] org.yamcs.YamcsServerInstance [FINE] Starting service CommandHistoryRecorder
+Sep 23 14:41:27.955 myproject [1] org.yamcs.YamcsServerInstance [FINE] Starting service ParameterArchive
+Sep 23 14:41:27.955 myproject [1] org.yamcs.parameterarchive.RealtimeArchiveFiller [FINE] Archive filler task maxSegmentSize: 5000 
+Sep 23 14:41:27.956 myproject [1] org.yamcs.parameter.ParameterRequestManager[realtime] [FINE] new subscribeAll with subscriptionId 1
+Sep 23 14:41:27.956 myproject [1] org.yamcs.parameter.LocalParameterManager[realtime] [FINE] requested to provide all
+Sep 23 14:41:27.956 myproject [1] org.yamcs.parameterarchive.RealtimeArchiveFiller [FINE] Starting executor for archive writing with 3 threads
+Sep 23 14:41:27.956 myproject [1] org.yamcs.YamcsServerInstance [FINE] Starting service ParameterListService
+Sep 23 14:41:27.956 myproject [1] org.yamcs.YamcsServerInstance [FINE] Starting service TimelineService
+Sep 23 14:41:27.965 myproject [31] org.yamcs.yarch.TableReaderStream[activity_7] [FINE] starting a table stream from table activity 
+Sep 23 14:41:27.965 myproject [31] org.yamcs.yarch.rocksdb.RdbTableWalker [FINE] Starting to walk ascending: true, rangeIndexFilter: DbRange [rangeStart=null, rangeEnd=null]
+Sep 23 14:41:27.965 myproject [31] org.yamcs.yarch.TableReaderStream[activity_7] [FINE] Closed stream activity_7 num emitted tuples: 0
+Sep 23 14:41:27.965 myproject [31] org.yamcs.yarch.SelectStream[activity_7_select] [FINE] Closed stream activity_7_select num emitted tuples: 0
+Sep 23 14:41:27.967 myproject [1] org.yamcs.YamcsServerInstance [INFO] Awaiting start of service XtceTmRecorder
+Sep 23 14:41:27.967 myproject [1] org.yamcs.YamcsServerInstance [INFO] Awaiting start of service ParameterRecorder
+Sep 23 14:41:27.968 _global [32] org.yamcs.http.api.StreamFactory [FINE] Executing: create stream http_stream1 as select * from timeline where start >= 1727073724967 and type = 'ACTIVITY' nofollow
+Sep 23 14:41:27.968 myproject [1] org.yamcs.YamcsServerInstance [INFO] Awaiting start of service AlarmRecorder
+Sep 23 14:41:27.969 myproject [1] org.yamcs.YamcsServerInstance [INFO] Awaiting start of service EventRecorder
+Sep 23 14:41:27.970 myproject [1] org.yamcs.YamcsServerInstance [INFO] Awaiting start of service ReplayServer
+Sep 23 14:41:27.970 myproject [1] org.yamcs.YamcsServerInstance [INFO] Awaiting start of service SystemParametersService
+Sep 23 14:41:27.970 myproject [1] org.yamcs.YamcsServerInstance [INFO] Awaiting start of service ProcessorCreatorService
+Sep 23 14:41:27.970 myproject [1] org.yamcs.YamcsServerInstance [INFO] Awaiting start of service CommandHistoryRecorder
+Sep 23 14:41:27.970 myproject [1] org.yamcs.YamcsServerInstance [INFO] Awaiting start of service ParameterArchive
+Sep 23 14:41:27.970 myproject [1] org.yamcs.YamcsServerInstance [INFO] Awaiting start of service ParameterListService
+Sep 23 14:41:27.970 myproject [1] org.yamcs.YamcsServerInstance [INFO] Awaiting start of service TimelineService
+Sep 23 14:41:27.971 _global [1] org.yamcs.YamcsServer [INFO] Yamcs started in 1709ms. Started 1 of 1 instances and 12 services
+Sep 23 14:41:27.972 _global [1] org.yamcs.web.WebPlugin [INFO] Website deployed at http://localhost:8090
+Sep 23 14:41:27.980 myproject [34] org.yamcs.yarch.TableReaderStream[timeline_8] [FINE] starting a table stream from table timeline 
+Sep 23 14:41:27.980 myproject [34] org.yamcs.yarch.rocksdb.RdbTableWalker [FINE] Starting to walk ascending: true, rangeIndexFilter: DbRange [rangeStart=800001921D9DAA27, rangeEnd=null]
+Sep 23 14:41:27.980 myproject [34] org.yamcs.yarch.TableReaderStream[timeline_8] [FINE] Closed stream timeline_8 num emitted tuples: 0
+Sep 23 14:41:27.980 myproject [34] org.yamcs.yarch.SelectStream[timeline_8_select] [FINE] Closed stream timeline_8_select num emitted tuples: 0
+Sep 23 14:41:27.981 myproject [34] org.yamcs.yarch.InternalStream[http_stream1] [FINE] Closed stream http_stream1 num emitted tuples: 0
+Sep 23 14:41:47.730 _global [29] org.yamcs.events.EventProducer [FINE] event: WARNING; SEQ_COUNT_JUMP; Sequence count jump for APID: 100 old seq: 0 newseq: 0
+Sep 23 14:41:47.738 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 55
+type: TABLE_PARTITION
+tableName: "events"
+
+Sep 23 14:41:47.742 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Updating metadata record tbsIndex: 7 type: TABLE_DEFINITION tableName: "events" tableDefinition { keyColumn { name: "gentime" type: "TIMESTAMP" } keyColumn { name: "source" type: "ENUM" enumValue { value: 0 label: "MyPacketPreprocessor" } } keyColumn { name: "seqNum" type: "INT" } valueColumn { name: "body" type: "PROTOBUF(org.yamcs.yarch.protobuf.Db$Event)" } histogramColumn: "source" storageEngine: "rocksdb2" formatVersion: 3 compressed: true cfName: "rt_data" }
+Sep 23 14:41:47.743 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 56
+type: HISTOGRAM
+tableName: "events"
+histogramColumnName: "source"
+
+Sep 23 14:41:47.749 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Updating metadata record tbsIndex: 3 type: TABLE_DEFINITION tableName: "tm" tableDefinition { keyColumn { name: "gentime" type: "TIMESTAMP" } keyColumn { name: "seqNum" type: "INT" } valueColumn { name: "rectime" type: "TIMESTAMP" } valueColumn { name: "status" type: "INT" } valueColumn { name: "packet" type: "BINARY" } valueColumn { name: "ertime" type: "HRES_TIMESTAMP" } valueColumn { name: "obt" type: "LONG" } valueColumn { name: "link" type: "ENUM" } valueColumn { name: "pname" type: "ENUM" enumValue { value: 0 label: "/myproject/Spacecraft" } } histogramColumn: "pname" storageEngine: "rocksdb2" formatVersion: 3 compressed: true partitioningInfo { type: VALUE valueColumn: "pname" valueColumnType: "ENUM" } cfName: "rt_data" }
+Sep 23 14:41:47.749 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 57
+type: TABLE_PARTITION
+tableName: "tm"
+partitionValue: "\000\000"
+
+Sep 23 14:41:47.751 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Updating metadata record tbsIndex: 3 type: TABLE_DEFINITION tableName: "tm" tableDefinition { keyColumn { name: "gentime" type: "TIMESTAMP" } keyColumn { name: "seqNum" type: "INT" } valueColumn { name: "rectime" type: "TIMESTAMP" } valueColumn { name: "status" type: "INT" } valueColumn { name: "packet" type: "BINARY" } valueColumn { name: "ertime" type: "HRES_TIMESTAMP" } valueColumn { name: "obt" type: "LONG" } valueColumn { name: "link" type: "ENUM" enumValue { value: 0 label: "udp-in" } } valueColumn { name: "pname" type: "ENUM" enumValue { value: 0 label: "/myproject/Spacecraft" } } histogramColumn: "pname" storageEngine: "rocksdb2" formatVersion: 3 compressed: true partitioningInfo { type: VALUE valueColumn: "pname" valueColumnType: "ENUM" } cfName: "rt_data" }
+Sep 23 14:41:47.751 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 58
+type: HISTOGRAM
+tableName: "tm"
+histogramColumnName: "pname"
+
+Sep 23 14:41:47.752 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 59
+type: PARCHIVE_DATA
+parameterFqn: "/myproject/CCSDS_Packet_ID.Version"
+parameterType: 131074
+
+Sep 23 14:41:47.752 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 60
+type: PARCHIVE_DATA
+parameterFqn: "/myproject/CCSDS_Packet_ID.Type"
+parameterType: 589826
+
+Sep 23 14:41:47.752 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 61
+type: PARCHIVE_DATA
+parameterFqn: "/myproject/CCSDS_Packet_ID.SecHdrFlag"
+parameterType: 589826
+
+Sep 23 14:41:47.752 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 62
+type: PARCHIVE_DATA
+parameterFqn: "/myproject/CCSDS_Packet_ID.APID"
+parameterType: 131074
+
+Sep 23 14:41:47.756 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 63
+type: PARCHIVE_AGGARR_INFO
+parameterFqn: "/myproject/CCSDS_Packet_ID"
+memberId: 59
+memberId: 60
+memberId: 61
+memberId: 62
+
+Sep 23 14:41:47.756 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 64
+type: PARCHIVE_DATA
+parameterFqn: "/myproject/CCSDS_Packet_Sequence.GroupFlags"
+parameterType: 786434
+
+Sep 23 14:41:47.756 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 65
+type: PARCHIVE_DATA
+parameterFqn: "/myproject/CCSDS_Packet_Sequence.Count"
+parameterType: 131074
+
+Sep 23 14:41:47.756 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 66
+type: PARCHIVE_AGGARR_INFO
+parameterFqn: "/myproject/CCSDS_Packet_Sequence"
+memberId: 64
+memberId: 65
+
+Sep 23 14:41:47.758 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 67
+type: PARCHIVE_DATA
+parameterFqn: "/myproject/CCSDS_Packet_Length"
+parameterType: 131074
+
+Sep 23 14:41:47.758 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 68
+type: PARCHIVE_DATA
+parameterFqn: "/myproject/EpochUSNO"
+parameterType: 0
+
+Sep 23 14:41:47.758 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 69
+type: PARCHIVE_DATA
+parameterFqn: "/myproject/OrbitNumberCumulative"
+parameterType: 131074
+
+Sep 23 14:41:47.758 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 70
+type: PARCHIVE_DATA
+parameterFqn: "/myproject/ElapsedSeconds"
+parameterType: 131074
+
+Sep 23 14:41:47.758 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 71
+type: PARCHIVE_DATA
+parameterFqn: "/myproject/A"
+parameterType: 0
+
+Sep 23 14:41:47.758 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 72
+type: PARCHIVE_DATA
+parameterFqn: "/myproject/Height"
+parameterType: 0
+
+Sep 23 14:41:47.758 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 73
+type: PARCHIVE_DATA
+parameterFqn: "/myproject/Position.x"
+parameterType: 0
+
+Sep 23 14:41:47.759 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 74
+type: PARCHIVE_DATA
+parameterFqn: "/myproject/Position.y"
+parameterType: 0
+
+Sep 23 14:41:47.759 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 75
+type: PARCHIVE_DATA
+parameterFqn: "/myproject/Position.z"
+parameterType: 0
+
+Sep 23 14:41:47.759 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 76
+type: PARCHIVE_AGGARR_INFO
+parameterFqn: "/myproject/Position"
+memberId: 73
+memberId: 74
+memberId: 75
+
+Sep 23 14:41:47.759 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 77
+type: PARCHIVE_DATA
+parameterFqn: "/myproject/Velocity.x"
+parameterType: 0
+
+Sep 23 14:41:47.760 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 78
+type: PARCHIVE_DATA
+parameterFqn: "/myproject/Velocity.y"
+parameterType: 0
+
+Sep 23 14:41:47.760 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 79
+type: PARCHIVE_DATA
+parameterFqn: "/myproject/Velocity.z"
+parameterType: 0
+
+Sep 23 14:41:47.760 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 80
+type: PARCHIVE_AGGARR_INFO
+parameterFqn: "/myproject/Velocity"
+memberId: 77
+memberId: 78
+memberId: 79
+
+Sep 23 14:41:47.760 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 81
+type: PARCHIVE_DATA
+parameterFqn: "/myproject/Latitude"
+parameterType: 0
+
+Sep 23 14:41:47.760 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 82
+type: PARCHIVE_DATA
+parameterFqn: "/myproject/Longitude"
+parameterType: 0
+
+Sep 23 14:41:47.760 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 83
+type: PARCHIVE_DATA
+parameterFqn: "/myproject/Battery1_Voltage"
+parameterType: 0
+
+Sep 23 14:41:47.760 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 84
+type: PARCHIVE_DATA
+parameterFqn: "/myproject/Battery2_Voltage"
+parameterType: 0
+
+Sep 23 14:41:47.760 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 85
+type: PARCHIVE_DATA
+parameterFqn: "/myproject/Battery1_Temp"
+parameterType: 0
+
+Sep 23 14:41:47.760 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 86
+type: PARCHIVE_DATA
+parameterFqn: "/myproject/Battery2_Temp"
+parameterType: 0
+
+Sep 23 14:41:47.760 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 87
+type: PARCHIVE_DATA
+parameterFqn: "/myproject/Magnetometer.x"
+parameterType: 0
+
+Sep 23 14:41:47.760 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 88
+type: PARCHIVE_DATA
+parameterFqn: "/myproject/Magnetometer.y"
+parameterType: 0
+
+Sep 23 14:41:47.761 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 89
+type: PARCHIVE_DATA
+parameterFqn: "/myproject/Magnetometer.z"
+parameterType: 0
+
+Sep 23 14:41:47.761 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 90
+type: PARCHIVE_AGGARR_INFO
+parameterFqn: "/myproject/Magnetometer"
+memberId: 87
+memberId: 88
+memberId: 89
+
+Sep 23 14:41:47.761 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 91
+type: PARCHIVE_DATA
+parameterFqn: "/myproject/Sunsensor"
+parameterType: 0
+
+Sep 23 14:41:47.761 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 92
+type: PARCHIVE_DATA
+parameterFqn: "/myproject/Gyro.x"
+parameterType: 0
+
+Sep 23 14:41:47.761 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 93
+type: PARCHIVE_DATA
+parameterFqn: "/myproject/Gyro.y"
+parameterType: 0
+
+Sep 23 14:41:47.761 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 94
+type: PARCHIVE_DATA
+parameterFqn: "/myproject/Gyro.z"
+parameterType: 0
+
+Sep 23 14:41:47.761 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 95
+type: PARCHIVE_AGGARR_INFO
+parameterFqn: "/myproject/Gyro"
+memberId: 92
+memberId: 93
+memberId: 94
+
+Sep 23 14:41:47.761 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 96
+type: PARCHIVE_DATA
+parameterFqn: "/myproject/Detector_Temp"
+parameterType: 0
+
+Sep 23 14:41:47.761 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 97
+type: PARCHIVE_DATA
+parameterFqn: "/myproject/Shadow"
+parameterType: 589826
+
+Sep 23 14:41:47.761 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 98
+type: PARCHIVE_DATA
+parameterFqn: "/myproject/Contact_Golbasi_GS"
+parameterType: 589826
+
+Sep 23 14:41:47.761 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 99
+type: PARCHIVE_DATA
+parameterFqn: "/myproject/Contact_Svalbard"
+parameterType: 589826
+
+Sep 23 14:41:47.761 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 100
+type: PARCHIVE_DATA
+parameterFqn: "/myproject/Payload_Status"
+parameterType: 589826
+
+Sep 23 14:41:47.761 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 101
+type: PARCHIVE_DATA
+parameterFqn: "/myproject/Payload_Error_Flag"
+parameterType: 589826
+
+Sep 23 14:41:47.761 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 102
+type: PARCHIVE_DATA
+parameterFqn: "/myproject/ADCS_Error_Flag"
+parameterType: 589826
+
+Sep 23 14:41:47.762 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 103
+type: PARCHIVE_DATA
+parameterFqn: "/myproject/CDHS_Error_Flag"
+parameterType: 589826
+
+Sep 23 14:41:47.762 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 104
+type: PARCHIVE_DATA
+parameterFqn: "/myproject/COMMS_Error_Flag"
+parameterType: 589826
+
+Sep 23 14:41:47.762 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 105
+type: PARCHIVE_DATA
+parameterFqn: "/myproject/EPS_Error_Flag"
+parameterType: 589826
+
+Sep 23 14:41:47.762 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 106
+type: PARCHIVE_DATA
+parameterFqn: "/myproject/COMMS_Status"
+parameterType: 589826
+
+Sep 23 14:41:47.762 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 107
+type: PARCHIVE_DATA
+parameterFqn: "/myproject/CDHS_Status"
+parameterType: 589826
+
+Sep 23 14:41:47.762 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 108
+type: PARCHIVE_DATA
+parameterFqn: "/myproject/Mode_Night"
+parameterType: 589826
+
+Sep 23 14:41:47.762 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 109
+type: PARCHIVE_DATA
+parameterFqn: "/myproject/Mode_Day"
+parameterType: 589826
+
+Sep 23 14:41:47.762 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 110
+type: PARCHIVE_DATA
+parameterFqn: "/myproject/Mode_Payload"
+parameterType: 589826
+
+Sep 23 14:41:47.762 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 111
+type: PARCHIVE_DATA
+parameterFqn: "/myproject/Mode_XBand"
+parameterType: 589826
+
+Sep 23 14:41:47.763 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 112
+type: PARCHIVE_DATA
+parameterFqn: "/myproject/Mode_SBand"
+parameterType: 589826
+
+Sep 23 14:41:47.763 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 113
+type: PARCHIVE_DATA
+parameterFqn: "/myproject/Mode_Safe"
+parameterType: 589826
+
+Sep 23 14:41:47.763 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 114
+type: PARCHIVE_DATA
+parameterFqn: "/myproject/Enum_Para_1"
+parameterType: 786434
+
+Sep 23 14:41:47.763 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 115
+type: PARCHIVE_DATA
+parameterFqn: "/myproject/Enum_Para_2"
+parameterType: 786434
+
+Sep 23 14:41:47.763 _global [29] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 116
+type: PARCHIVE_DATA
+parameterFqn: "/myproject/Enum_Para_3"
+parameterType: 786434
+
+Sep 23 14:53:36.518 _global [28] org.yamcs.http.HttpServer [FINE] [id: 0x186fbd67, L:/[0:0:0:0:0:0:0:0]:8090] READ: [id: 0xfaf2f37a, L:/127.0.0.1:8090 - R:/127.0.0.1:46276]
+Sep 23 14:53:36.520 _global [28] org.yamcs.http.HttpServer [FINE] [id: 0x186fbd67, L:/[0:0:0:0:0:0:0:0]:8090] READ COMPLETE
+Sep 23 14:53:36.557 _global [35] org.yamcs.http.HttpRequestHandler [FINE] faf2f37a GET /
+Sep 23 14:53:36.573 _global [35] org.yamcs.http.HttpRequestHandler [INFO] faf2f37a GET / 200
+Sep 23 14:53:36.775 _global [28] org.yamcs.http.HttpServer [FINE] [id: 0x186fbd67, L:/[0:0:0:0:0:0:0:0]:8090] READ: [id: 0xbe377c20, L:/127.0.0.1:8090 - R:/127.0.0.1:46280]
+Sep 23 14:53:36.776 _global [35] org.yamcs.http.HttpRequestHandler [FINE] faf2f37a GET /chunk-6N63TQXK.js
+Sep 23 14:53:36.776 _global [35] org.yamcs.web.AngularHandler [FINE] Handling static file request for chunk-6N63TQXK.js
+Sep 23 14:53:36.780 _global [28] org.yamcs.http.HttpServer [FINE] [id: 0x186fbd67, L:/[0:0:0:0:0:0:0:0]:8090] READ: [id: 0xd95b1be9, L:/127.0.0.1:8090 - R:/127.0.0.1:46284]
+Sep 23 14:53:36.781 _global [28] org.yamcs.http.HttpServer [FINE] [id: 0x186fbd67, L:/[0:0:0:0:0:0:0:0]:8090] READ: [id: 0x54d675f2, L:/127.0.0.1:8090 - R:/127.0.0.1:46298]
+Sep 23 14:53:36.790 _global [37] org.yamcs.http.HttpRequestHandler [FINE] d95b1be9 GET /chunk-7QLPMAWZ.js
+Sep 23 14:53:36.791 _global [37] org.yamcs.web.AngularHandler [FINE] Handling static file request for chunk-7QLPMAWZ.js
+Sep 23 14:53:36.793 _global [28] org.yamcs.http.HttpServer [FINE] [id: 0x186fbd67, L:/[0:0:0:0:0:0:0:0]:8090] READ: [id: 0xb5da22ac, L:/127.0.0.1:8090 - R:/127.0.0.1:46314]
+Sep 23 14:53:36.794 _global [36] org.yamcs.http.HttpRequestHandler [FINE] be377c20 GET /chunk-2OT6OSOP.js
+Sep 23 14:53:36.794 _global [36] org.yamcs.web.AngularHandler [FINE] Handling static file request for chunk-2OT6OSOP.js
+Sep 23 14:53:36.794 _global [28] org.yamcs.http.HttpServer [FINE] [id: 0x186fbd67, L:/[0:0:0:0:0:0:0:0]:8090] READ COMPLETE
+Sep 23 14:53:36.797 _global [39] org.yamcs.http.HttpRequestHandler [FINE] b5da22ac GET /styles-WB7ETWPF.css
+Sep 23 14:53:36.797 _global [39] org.yamcs.web.AngularHandler [FINE] Handling static file request for styles-WB7ETWPF.css
+Sep 23 14:53:36.797 _global [38] org.yamcs.http.HttpRequestHandler [FINE] 54d675f2 GET /main-DGDQVYUA.js
+Sep 23 14:53:36.797 _global [38] org.yamcs.web.AngularHandler [FINE] Handling static file request for main-DGDQVYUA.js
+Sep 23 14:53:36.825 _global [35] org.yamcs.web.AngularHandler [FINE] [id: 0xfaf2f37a, L:/127.0.0.1:8090 - R:/127.0.0.1:46276] Transfer complete: /home/stasy/arrc_work/quickstart/target/yamcs/cache/yamcs-web/chunk-6N63TQXK.js
+Sep 23 14:53:36.825 _global [35] org.yamcs.web.AngularHandler [FINE] GET /chunk-6N63TQXK.js 200
+Sep 23 14:53:36.825 _global [37] org.yamcs.web.AngularHandler [FINE] [id: 0xd95b1be9, L:/127.0.0.1:8090 - R:/127.0.0.1:46284] Transfer complete: /home/stasy/arrc_work/quickstart/target/yamcs/cache/yamcs-web/chunk-7QLPMAWZ.js
+Sep 23 14:53:36.825 _global [37] org.yamcs.web.AngularHandler [FINE] GET /chunk-7QLPMAWZ.js 200
+Sep 23 14:53:36.827 _global [39] org.yamcs.web.AngularHandler [FINE] [id: 0xb5da22ac, L:/127.0.0.1:8090 - R:/127.0.0.1:46314] Transfer complete: /home/stasy/arrc_work/quickstart/target/yamcs/cache/yamcs-web/styles-WB7ETWPF.css
+Sep 23 14:53:36.827 _global [39] org.yamcs.web.AngularHandler [FINE] GET /styles-WB7ETWPF.css 200
+Sep 23 14:53:36.827 _global [36] org.yamcs.web.AngularHandler [FINE] [id: 0xbe377c20, L:/127.0.0.1:8090 - R:/127.0.0.1:46280] Transfer complete: /home/stasy/arrc_work/quickstart/target/yamcs/cache/yamcs-web/chunk-2OT6OSOP.js
+Sep 23 14:53:36.827 _global [36] org.yamcs.web.AngularHandler [FINE] GET /chunk-2OT6OSOP.js 200
+Sep 23 14:53:36.827 _global [38] org.yamcs.web.AngularHandler [FINE] [id: 0x54d675f2, L:/127.0.0.1:8090 - R:/127.0.0.1:46298] Transfer complete: /home/stasy/arrc_work/quickstart/target/yamcs/cache/yamcs-web/main-DGDQVYUA.js
+Sep 23 14:53:36.836 _global [38] org.yamcs.web.AngularHandler [FINE] GET /main-DGDQVYUA.js 200
+Sep 23 14:53:36.862 _global [38] org.yamcs.http.HttpRequestHandler [FINE] 54d675f2 GET /chunk-YLFXKKOP.js
+Sep 23 14:53:36.862 _global [38] org.yamcs.web.AngularHandler [FINE] Handling static file request for chunk-YLFXKKOP.js
+Sep 23 14:53:36.863 _global [38] org.yamcs.web.AngularHandler [FINE] [id: 0x54d675f2, L:/127.0.0.1:8090 - R:/127.0.0.1:46298] Transfer complete: /home/stasy/arrc_work/quickstart/target/yamcs/cache/yamcs-web/chunk-YLFXKKOP.js
+Sep 23 14:53:36.863 _global [38] org.yamcs.web.AngularHandler [FINE] GET /chunk-YLFXKKOP.js 200
+Sep 23 14:53:36.873 _global [39] org.yamcs.http.HttpRequestHandler [FINE] b5da22ac GET /chunk-FTOGDGWN.js
+Sep 23 14:53:36.874 _global [39] org.yamcs.web.AngularHandler [FINE] Handling static file request for chunk-FTOGDGWN.js
+Sep 23 14:53:36.874 _global [39] org.yamcs.web.AngularHandler [FINE] [id: 0xb5da22ac, L:/127.0.0.1:8090 - R:/127.0.0.1:46314] Transfer complete: /home/stasy/arrc_work/quickstart/target/yamcs/cache/yamcs-web/chunk-FTOGDGWN.js
+Sep 23 14:53:36.874 _global [39] org.yamcs.web.AngularHandler [FINE] GET /chunk-FTOGDGWN.js 200
+Sep 23 14:53:36.875 _global [36] org.yamcs.http.HttpRequestHandler [FINE] be377c20 GET /chunk-LYLI3P7F.js
+Sep 23 14:53:36.875 _global [36] org.yamcs.web.AngularHandler [FINE] Handling static file request for chunk-LYLI3P7F.js
+Sep 23 14:53:36.876 _global [36] org.yamcs.web.AngularHandler [FINE] [id: 0xbe377c20, L:/127.0.0.1:8090 - R:/127.0.0.1:46280] Transfer complete: /home/stasy/arrc_work/quickstart/target/yamcs/cache/yamcs-web/chunk-LYLI3P7F.js
+Sep 23 14:53:36.876 _global [36] org.yamcs.web.AngularHandler [FINE] GET /chunk-LYLI3P7F.js 200
+Sep 23 14:53:37.135 _global [38] org.yamcs.http.HttpRequestHandler [FINE] 54d675f2 GET /yamcs.png
+Sep 23 14:53:37.135 _global [38] org.yamcs.web.AngularHandler [FINE] Handling static file request for yamcs.png
+Sep 23 14:53:37.138 _global [38] org.yamcs.web.AngularHandler [FINE] [id: 0x54d675f2, L:/127.0.0.1:8090 - R:/127.0.0.1:46298] Transfer complete: /home/stasy/arrc_work/quickstart/target/yamcs/cache/yamcs-web/yamcs.png
+Sep 23 14:53:37.138 _global [38] org.yamcs.web.AngularHandler [FINE] GET /yamcs.png 200
+Sep 23 14:53:37.155 _global [38] org.yamcs.http.HttpRequestHandler [FINE] 54d675f2 GET /api/user
+Sep 23 14:53:37.184 _global [38] org.yamcs.http.ApiHandler [FINE] 1: Routing GET /api/user
+Sep 23 14:53:37.239 _global [41] org.yamcs.yarch.TableReaderStream[account_9] [FINE] starting a table stream from table account 
+Sep 23 14:53:37.239 _global [41] org.yamcs.yarch.rocksdb.RdbTableWalker [FINE] Starting to walk ascending: true, rangeIndexFilter: DbRange [rangeStart=8000000000000001, rangeEnd=8000000000000001]
+Sep 23 14:53:37.239 _global [41] org.yamcs.yarch.TableReaderStream[account_9] [FINE] Closed stream account_9 num emitted tuples: 0
+Sep 23 14:53:37.239 _global [41] org.yamcs.yarch.SelectStream[account_9_select] [FINE] Closed stream account_9_select num emitted tuples: 0
+Sep 23 14:53:37.241 _global [42] org.yamcs.yarch.TableReaderStream[group_10] [FINE] starting a table stream from table group 
+Sep 23 14:53:37.241 _global [42] org.yamcs.yarch.rocksdb.RdbTableWalker [FINE] Starting to walk ascending: true, rangeIndexFilter: DbRange [rangeStart=null, rangeEnd=null]
+Sep 23 14:53:37.241 _global [42] org.yamcs.yarch.TableReaderStream[group_10] [FINE] Closed stream group_10 num emitted tuples: 0
+Sep 23 14:53:37.246 _global [38] org.yamcs.http.HttpRequestHandler [INFO] 54d675f2 GET /api/user 200
+Sep 23 14:53:37.256 _global [39] org.yamcs.http.HttpRequestHandler [FINE] b5da22ac GET /apple-touch-icon.png
+Sep 23 14:53:37.257 _global [39] org.yamcs.http.HttpRequestHandler [INFO] b5da22ac GET /apple-touch-icon.png 200
+Sep 23 14:53:37.271 _global [38] org.yamcs.http.Context[c1] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 14:53:37.337 _global [28] org.yamcs.http.HttpServer [FINE] [id: 0x186fbd67, L:/[0:0:0:0:0:0:0:0]:8090] READ: [id: 0x042bde7b, L:/127.0.0.1:8090 - R:/127.0.0.1:46318]
+Sep 23 14:53:37.338 _global [28] org.yamcs.http.HttpServer [FINE] [id: 0x186fbd67, L:/[0:0:0:0:0:0:0:0]:8090] READ COMPLETE
+Sep 23 14:53:37.345 _global [43] org.yamcs.http.HttpRequestHandler [FINE] 042bde7b GET /api/websocket
+Sep 23 14:53:37.396 _global [43] org.yamcs.http.WebSocketFrameHandler [INFO] 042bde7b GET /api/websocket 101 [subprotocol: json]
+Sep 23 14:53:37.430 _global [36] org.yamcs.http.HttpRequestHandler [FINE] be377c20 GET /chunk-XC7SMGVI.js
+Sep 23 14:53:37.430 _global [36] org.yamcs.web.AngularHandler [FINE] Handling static file request for chunk-XC7SMGVI.js
+Sep 23 14:53:37.431 _global [38] org.yamcs.http.HttpRequestHandler [FINE] 54d675f2 GET /chunk-4JK72IG2.js
+Sep 23 14:53:37.431 _global [38] org.yamcs.web.AngularHandler [FINE] Handling static file request for chunk-4JK72IG2.js
+Sep 23 14:53:37.431 _global [37] org.yamcs.http.HttpRequestHandler [FINE] d95b1be9 GET /chunk-V2NSKUWU.js
+Sep 23 14:53:37.432 _global [37] org.yamcs.web.AngularHandler [FINE] Handling static file request for chunk-V2NSKUWU.js
+Sep 23 14:53:37.432 _global [38] org.yamcs.web.AngularHandler [FINE] [id: 0x54d675f2, L:/127.0.0.1:8090 - R:/127.0.0.1:46298] Transfer complete: /home/stasy/arrc_work/quickstart/target/yamcs/cache/yamcs-web/chunk-4JK72IG2.js
+Sep 23 14:53:37.433 _global [38] org.yamcs.web.AngularHandler [FINE] GET /chunk-4JK72IG2.js 200
+Sep 23 14:53:37.432 _global [37] org.yamcs.web.AngularHandler [FINE] [id: 0xd95b1be9, L:/127.0.0.1:8090 - R:/127.0.0.1:46284] Transfer complete: /home/stasy/arrc_work/quickstart/target/yamcs/cache/yamcs-web/chunk-V2NSKUWU.js
+Sep 23 14:53:37.439 _global [37] org.yamcs.web.AngularHandler [FINE] GET /chunk-V2NSKUWU.js 200
+Sep 23 14:53:37.434 _global [36] org.yamcs.web.AngularHandler [FINE] [id: 0xbe377c20, L:/127.0.0.1:8090 - R:/127.0.0.1:46280] Transfer complete: /home/stasy/arrc_work/quickstart/target/yamcs/cache/yamcs-web/chunk-XC7SMGVI.js
+Sep 23 14:53:37.440 _global [36] org.yamcs.web.AngularHandler [FINE] GET /chunk-XC7SMGVI.js 200
+Sep 23 14:53:37.495 _global [37] org.yamcs.http.HttpRequestHandler [FINE] d95b1be9 GET /media/MaterialIcons-Outlined.woff2
+Sep 23 14:53:37.496 _global [37] org.yamcs.web.AngularHandler [FINE] Handling static file request for media/MaterialIcons-Outlined.woff2
+Sep 23 14:53:37.496 _global [36] org.yamcs.http.HttpRequestHandler [FINE] be377c20 GET /media/Roboto-Regular.woff2
+Sep 23 14:53:37.496 _global [36] org.yamcs.web.AngularHandler [FINE] Handling static file request for media/Roboto-Regular.woff2
+Sep 23 14:53:37.497 _global [37] org.yamcs.web.AngularHandler [FINE] [id: 0xd95b1be9, L:/127.0.0.1:8090 - R:/127.0.0.1:46284] Transfer complete: /home/stasy/arrc_work/quickstart/target/yamcs/cache/yamcs-web/media/MaterialIcons-Outlined.woff2
+Sep 23 14:53:37.495 _global [38] org.yamcs.http.HttpRequestHandler [FINE] 54d675f2 GET /media/Roboto-Medium.woff2
+Sep 23 14:53:37.497 _global [38] org.yamcs.web.AngularHandler [FINE] Handling static file request for media/Roboto-Medium.woff2
+Sep 23 14:53:37.497 _global [37] org.yamcs.web.AngularHandler [FINE] GET /media/MaterialIcons-Outlined.woff2 200
+Sep 23 14:53:37.497 _global [36] org.yamcs.web.AngularHandler [FINE] [id: 0xbe377c20, L:/127.0.0.1:8090 - R:/127.0.0.1:46280] Transfer complete: /home/stasy/arrc_work/quickstart/target/yamcs/cache/yamcs-web/media/Roboto-Regular.woff2
+Sep 23 14:53:37.498 _global [36] org.yamcs.web.AngularHandler [FINE] GET /media/Roboto-Regular.woff2 200
+Sep 23 14:53:37.497 _global [38] org.yamcs.web.AngularHandler [FINE] [id: 0x54d675f2, L:/127.0.0.1:8090 - R:/127.0.0.1:46298] Transfer complete: /home/stasy/arrc_work/quickstart/target/yamcs/cache/yamcs-web/media/Roboto-Medium.woff2
+Sep 23 14:53:37.499 _global [38] org.yamcs.web.AngularHandler [FINE] GET /media/Roboto-Medium.woff2 200
+Sep 23 14:53:37.847 _global [43] org.yamcs.http.WebSocketObserver[2] [FINE] Subscribe session
+Sep 23 14:53:37.900 _global [38] org.yamcs.http.HttpRequestHandler [FINE] 54d675f2 GET /api/instances
+Sep 23 14:53:37.901 _global [37] org.yamcs.http.HttpRequestHandler [FINE] d95b1be9 GET /chunk-EW7XVIEW.js
+Sep 23 14:53:37.903 _global [35] org.yamcs.http.HttpRequestHandler [FINE] faf2f37a GET /chunk-QM2PL5Q2.js
+Sep 23 14:53:37.903 _global [37] org.yamcs.web.AngularHandler [FINE] Handling static file request for chunk-EW7XVIEW.js
+Sep 23 14:53:37.903 _global [35] org.yamcs.web.AngularHandler [FINE] Handling static file request for chunk-QM2PL5Q2.js
+Sep 23 14:53:37.904 _global [35] org.yamcs.web.AngularHandler [FINE] [id: 0xfaf2f37a, L:/127.0.0.1:8090 - R:/127.0.0.1:46276] Transfer complete: /home/stasy/arrc_work/quickstart/target/yamcs/cache/yamcs-web/chunk-QM2PL5Q2.js
+Sep 23 14:53:37.904 _global [35] org.yamcs.web.AngularHandler [FINE] GET /chunk-QM2PL5Q2.js 200
+Sep 23 14:53:37.904 _global [37] org.yamcs.web.AngularHandler [FINE] [id: 0xd95b1be9, L:/127.0.0.1:8090 - R:/127.0.0.1:46284] Transfer complete: /home/stasy/arrc_work/quickstart/target/yamcs/cache/yamcs-web/chunk-EW7XVIEW.js
+Sep 23 14:53:37.904 _global [37] org.yamcs.web.AngularHandler [FINE] GET /chunk-EW7XVIEW.js 200
+Sep 23 14:53:37.903 _global [36] org.yamcs.http.HttpRequestHandler [FINE] be377c20 GET /chunk-P3QPVXNS.js
+Sep 23 14:53:37.912 _global [36] org.yamcs.web.AngularHandler [FINE] Handling static file request for chunk-P3QPVXNS.js
+Sep 23 14:53:37.930 _global [36] org.yamcs.web.AngularHandler [FINE] [id: 0xbe377c20, L:/127.0.0.1:8090 - R:/127.0.0.1:46280] Transfer complete: /home/stasy/arrc_work/quickstart/target/yamcs/cache/yamcs-web/chunk-P3QPVXNS.js
+Sep 23 14:53:37.937 _global [36] org.yamcs.web.AngularHandler [FINE] GET /chunk-P3QPVXNS.js 200
+Sep 23 14:53:37.937 _global [35] org.yamcs.http.HttpRequestHandler [FINE] faf2f37a GET /chunk-6BUZTTN5.js
+Sep 23 14:53:37.938 _global [35] org.yamcs.web.AngularHandler [FINE] Handling static file request for chunk-6BUZTTN5.js
+Sep 23 14:53:37.937 _global [38] org.yamcs.http.ApiHandler [FINE] 3: Routing GET /api/instances
+Sep 23 14:53:37.936 _global [37] org.yamcs.http.HttpRequestHandler [FINE] d95b1be9 GET /chunk-2PCCNYKX.js
+Sep 23 14:53:37.942 _global [37] org.yamcs.web.AngularHandler [FINE] Handling static file request for chunk-2PCCNYKX.js
+Sep 23 14:53:37.943 _global [35] org.yamcs.web.AngularHandler [FINE] [id: 0xfaf2f37a, L:/127.0.0.1:8090 - R:/127.0.0.1:46276] Transfer complete: /home/stasy/arrc_work/quickstart/target/yamcs/cache/yamcs-web/chunk-6BUZTTN5.js
+Sep 23 14:53:37.943 _global [35] org.yamcs.web.AngularHandler [FINE] GET /chunk-6BUZTTN5.js 200
+Sep 23 14:53:37.944 _global [28] org.yamcs.http.HttpServer [FINE] [id: 0x186fbd67, L:/[0:0:0:0:0:0:0:0]:8090] READ: [id: 0x4eed9391, L:/127.0.0.1:8090 - R:/127.0.0.1:46330]
+Sep 23 14:53:37.941 _global [36] org.yamcs.http.HttpRequestHandler [FINE] be377c20 GET /chunk-EFG5VZTT.js
+Sep 23 14:53:37.945 _global [36] org.yamcs.web.AngularHandler [FINE] Handling static file request for chunk-EFG5VZTT.js
+Sep 23 14:53:37.945 _global [28] org.yamcs.http.HttpServer [FINE] [id: 0x186fbd67, L:/[0:0:0:0:0:0:0:0]:8090] READ COMPLETE
+Sep 23 14:53:37.951 _global [37] org.yamcs.web.AngularHandler [FINE] [id: 0xd95b1be9, L:/127.0.0.1:8090 - R:/127.0.0.1:46284] Transfer complete: /home/stasy/arrc_work/quickstart/target/yamcs/cache/yamcs-web/chunk-2PCCNYKX.js
+Sep 23 14:53:37.951 _global [37] org.yamcs.web.AngularHandler [FINE] GET /chunk-2PCCNYKX.js 200
+Sep 23 14:53:37.952 _global [44] org.yamcs.http.HttpRequestHandler [FINE] 4eed9391 GET /chunk-ISJZ4IJQ.js
+Sep 23 14:53:37.953 _global [44] org.yamcs.web.AngularHandler [FINE] Handling static file request for chunk-ISJZ4IJQ.js
+Sep 23 14:53:37.954 _global [44] org.yamcs.web.AngularHandler [FINE] [id: 0x4eed9391, L:/127.0.0.1:8090 - R:/127.0.0.1:46330] Transfer complete: /home/stasy/arrc_work/quickstart/target/yamcs/cache/yamcs-web/chunk-ISJZ4IJQ.js
+Sep 23 14:53:37.955 _global [44] org.yamcs.web.AngularHandler [FINE] GET /chunk-ISJZ4IJQ.js 200
+Sep 23 14:53:37.961 _global [36] org.yamcs.web.AngularHandler [FINE] [id: 0xbe377c20, L:/127.0.0.1:8090 - R:/127.0.0.1:46280] Transfer complete: /home/stasy/arrc_work/quickstart/target/yamcs/cache/yamcs-web/chunk-EFG5VZTT.js
+Sep 23 14:53:37.962 _global [36] org.yamcs.web.AngularHandler [FINE] GET /chunk-EFG5VZTT.js 200
+Sep 23 14:53:37.982 _global [37] org.yamcs.http.HttpRequestHandler [FINE] d95b1be9 GET /chunk-XGAHVREP.js
+Sep 23 14:53:37.982 _global [37] org.yamcs.web.AngularHandler [FINE] Handling static file request for chunk-XGAHVREP.js
+Sep 23 14:53:37.984 _global [37] org.yamcs.web.AngularHandler [FINE] [id: 0xd95b1be9, L:/127.0.0.1:8090 - R:/127.0.0.1:46284] Transfer complete: /home/stasy/arrc_work/quickstart/target/yamcs/cache/yamcs-web/chunk-XGAHVREP.js
+Sep 23 14:53:37.984 _global [37] org.yamcs.web.AngularHandler [FINE] GET /chunk-XGAHVREP.js 200
+Sep 23 14:53:38.037 _global [38] org.yamcs.http.HttpRequestHandler [INFO] 54d675f2 GET /api/instances 200
+Sep 23 14:53:38.047 _global [38] org.yamcs.http.Context[c3] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 14:53:38.107 _global [43] org.yamcs.http.WebSocketObserver[4] [FINE] Subscribe instances
+Sep 23 14:53:39.909 _global [44] org.yamcs.http.HttpRequestHandler [FINE] 4eed9391 GET /api/web/instance-config/myproject
+Sep 23 14:53:39.909 _global [38] org.yamcs.http.HttpRequestHandler [FINE] 54d675f2 GET /api/instances/myproject
+Sep 23 14:53:39.911 _global [38] org.yamcs.http.ApiHandler [FINE] 6: Routing GET /api/instances/myproject
+Sep 23 14:53:39.911 _global [37] org.yamcs.http.HttpRequestHandler [FINE] d95b1be9 GET /api/processors/myproject/realtime
+Sep 23 14:53:39.911 _global [37] org.yamcs.http.ApiHandler [FINE] 7: Routing GET /api/processors/myproject/realtime
+Sep 23 14:53:39.936 _global [44] org.yamcs.http.ApiHandler [FINE] 5: Routing GET /api/web/instance-config/myproject
+Sep 23 14:53:39.941 _global [44] org.yamcs.http.HttpRequestHandler [INFO] 4eed9391 GET /api/web/instance-config/myproject 200
+Sep 23 14:53:39.942 _global [37] org.yamcs.http.HttpRequestHandler [INFO] d95b1be9 GET /api/processors/myproject/realtime 200
+Sep 23 14:53:39.950 _global [37] org.yamcs.http.Context[c7] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 14:53:39.946 _global [38] org.yamcs.http.HttpRequestHandler [INFO] 54d675f2 GET /api/instances/myproject 200
+Sep 23 14:53:39.945 _global [44] org.yamcs.http.Context[c5] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 14:53:39.952 _global [38] org.yamcs.http.Context[c6] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 14:53:39.990 _global [43] org.yamcs.http.WebSocketObserver[8] [FINE] Subscribe time
+Sep 23 14:53:40.033 _global [43] org.yamcs.http.WebSocketObserver[9] [FINE] Subscribe clearance
+Sep 23 14:53:40.064 _global [43] org.yamcs.http.WebSocketObserver[4] [FINE] Cancelling instances call
+Sep 23 14:53:40.091 _global [43] org.yamcs.http.WebSocketObserver[10] [FINE] Subscribe global-activity-status
+Sep 23 14:53:40.103 _global [43] org.yamcs.http.WebSocketObserver[11] [FINE] Subscribe tmstats
+Sep 23 14:53:40.119 _global [43] org.yamcs.http.WebSocketObserver[12] [FINE] Subscribe processors
+Sep 23 14:53:40.160 _global [43] org.yamcs.http.WebSocketObserver[13] [FINE] Subscribe global-alarm-status
+Sep 23 14:53:40.308 _global [38] org.yamcs.http.HttpRequestHandler [FINE] 54d675f2 GET /api/archive/myproject/packet-names
+Sep 23 14:53:40.311 _global [38] org.yamcs.http.ApiHandler [FINE] 14: Routing GET /api/archive/myproject/packet-names
+Sep 23 14:53:40.322 _global [38] org.yamcs.http.HttpRequestHandler [INFO] 54d675f2 GET /api/archive/myproject/packet-names 200
+Sep 23 14:53:40.333 _global [38] org.yamcs.http.Context[c14] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 14:53:45.064 _global [38] org.yamcs.http.HttpRequestHandler [FINE] 54d675f2 GET /chunk-DXQWZW6Y.js
+Sep 23 14:53:45.065 _global [38] org.yamcs.web.AngularHandler [FINE] Handling static file request for chunk-DXQWZW6Y.js
+Sep 23 14:53:45.067 _global [38] org.yamcs.web.AngularHandler [FINE] [id: 0x54d675f2, L:/127.0.0.1:8090 - R:/127.0.0.1:46298] Transfer complete: /home/stasy/arrc_work/quickstart/target/yamcs/cache/yamcs-web/chunk-DXQWZW6Y.js
+Sep 23 14:53:45.067 _global [38] org.yamcs.web.AngularHandler [FINE] GET /chunk-DXQWZW6Y.js 200
+Sep 23 14:53:45.141 _global [43] org.yamcs.http.WebSocketObserver[12] [FINE] Cancelling processors call
+Sep 23 14:53:45.142 _global [43] org.yamcs.http.WebSocketObserver[11] [FINE] Cancelling tmstats call
+Sep 23 14:53:45.143 _global [43] org.yamcs.http.WebSocketObserver[13] [FINE] Cancelling global-alarm-status call
+Sep 23 14:53:45.145 _global [43] org.yamcs.http.WebSocketObserver[10] [FINE] Cancelling global-activity-status call
+Sep 23 14:53:45.171 _global [43] org.yamcs.http.WebSocketObserver[15] [FINE] Subscribe global-activity-status
+Sep 23 14:53:45.182 _global [43] org.yamcs.http.WebSocketObserver[16] [FINE] Subscribe processors
+Sep 23 14:53:45.216 _global [43] org.yamcs.http.WebSocketObserver[17] [FINE] Subscribe global-alarm-status
+Sep 23 14:53:45.283 _global [38] org.yamcs.http.HttpRequestHandler [FINE] 54d675f2 GET /api/links/myproject
+Sep 23 14:53:45.285 _global [38] org.yamcs.http.ApiHandler [FINE] 18: Routing GET /api/links/myproject
+Sep 23 14:53:45.295 _global [38] org.yamcs.http.HttpRequestHandler [INFO] 54d675f2 GET /api/links/myproject 200
+Sep 23 14:53:45.297 _global [38] org.yamcs.http.Context[c18] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 14:53:45.352 _global [43] org.yamcs.http.WebSocketObserver[19] [FINE] Subscribe links
+Sep 23 14:54:12.752 _global [43] org.yamcs.http.WebSocketObserver[16] [FINE] Cancelling processors call
+Sep 23 14:54:12.752 _global [43] org.yamcs.http.WebSocketObserver[19] [FINE] Cancelling links call
+Sep 23 14:54:12.753 _global [43] org.yamcs.http.WebSocketObserver[20] [FINE] Subscribe processors
+Sep 23 14:54:12.790 _global [38] org.yamcs.http.HttpRequestHandler [FINE] 54d675f2 GET /api/audit/records/myproject?service=LinksApi
+Sep 23 14:54:12.795 _global [38] org.yamcs.http.ApiHandler [FINE] 21: Routing GET /api/audit/records/myproject?service=LinksApi
+Sep 23 14:54:12.815 _global [38] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Adding new metadata record tbsIndex: 117
+type: TABLE_DEFINITION
+tableName: "audit_log"
+tableDefinition {
+  keyColumn {
+    name: "rectime"
+    type: "TIMESTAMP"
+  }
+  keyColumn {
+    name: "seqNum"
+    type: "INT"
+  }
+  valueColumn {
+    name: "user"
+    type: "STRING"
+  }
+  valueColumn {
+    name: "service"
+    type: "STRING"
+  }
+  valueColumn {
+    name: "method"
+    type: "STRING"
+  }
+  valueColumn {
+    name: "summary"
+    type: "STRING"
+  }
+  valueColumn {
+    name: "request"
+    type: "PROTOBUF(com.google.protobuf.Struct)"
+  }
+  storageEngine: "rocksdb2"
+  formatVersion: 3
+  compressed: false
+}
+
+Sep 23 14:54:12.815 _global [38] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Updating metadata record tbsIndex: 117 type: TABLE_DEFINITION tableName: "audit_log" tableDefinition { keyColumn { name: "rectime" type: "TIMESTAMP" } keyColumn { name: "seqNum" type: "INT" } valueColumn { name: "user" type: "STRING" } valueColumn { name: "service" type: "STRING" } valueColumn { name: "method" type: "STRING" } valueColumn { name: "summary" type: "STRING" } valueColumn { name: "request" type: "PROTOBUF(com.google.protobuf.Struct)" } storageEngine: "rocksdb2" formatVersion: 3 compressed: false }
+Sep 23 14:54:12.832 myproject [46] org.yamcs.yarch.TableReaderStream[audit_log_11] [FINE] starting a table stream from table audit_log 
+Sep 23 14:54:12.833 myproject [46] org.yamcs.yarch.rocksdb.RdbTableWalker [FINE] Starting to walk ascending: false, rangeIndexFilter: DbRange [rangeStart=null, rangeEnd=null]
+Sep 23 14:54:12.843 myproject [46] org.yamcs.yarch.TableReaderStream[audit_log_11] [FINE] Closed stream audit_log_11 num emitted tuples: 0
+Sep 23 14:54:12.843 myproject [46] org.yamcs.yarch.SelectStream[audit_log_11_select] [FINE] Closed stream audit_log_11_select num emitted tuples: 0
+Sep 23 14:54:12.844 myproject [46] org.yamcs.yarch.streamsql.LimitedStream[audit_log_11_select_limit] [FINE] Closed stream audit_log_11_select_limit num emitted tuples: 0
+Sep 23 14:54:12.847 _global [46] org.yamcs.http.HttpRequestHandler [INFO] 54d675f2 GET /api/audit/records/myproject?service=LinksApi 200
+Sep 23 14:54:12.853 _global [38] org.yamcs.http.Context[c21] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 14:54:15.211 _global [38] org.yamcs.http.HttpRequestHandler [FINE] 54d675f2 GET /api/audit/records/myproject?service=LinksApi
+Sep 23 14:54:15.211 _global [38] org.yamcs.http.ApiHandler [FINE] 22: Routing GET /api/audit/records/myproject?service=LinksApi
+Sep 23 14:54:15.222 myproject [47] org.yamcs.yarch.TableReaderStream[audit_log_12] [FINE] starting a table stream from table audit_log 
+Sep 23 14:54:15.222 myproject [47] org.yamcs.yarch.rocksdb.RdbTableWalker [FINE] Starting to walk ascending: false, rangeIndexFilter: DbRange [rangeStart=null, rangeEnd=null]
+Sep 23 14:54:15.222 myproject [47] org.yamcs.yarch.TableReaderStream[audit_log_12] [FINE] Closed stream audit_log_12 num emitted tuples: 0
+Sep 23 14:54:15.223 myproject [47] org.yamcs.yarch.SelectStream[audit_log_12_select] [FINE] Closed stream audit_log_12_select num emitted tuples: 0
+Sep 23 14:54:15.223 myproject [47] org.yamcs.yarch.streamsql.LimitedStream[audit_log_12_select_limit] [FINE] Closed stream audit_log_12_select_limit num emitted tuples: 0
+Sep 23 14:54:15.223 _global [47] org.yamcs.http.HttpRequestHandler [INFO] 54d675f2 GET /api/audit/records/myproject?service=LinksApi 200
+Sep 23 14:54:15.224 _global [38] org.yamcs.http.Context[c22] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 14:54:15.226 _global [38] org.yamcs.http.HttpRequestHandler [FINE] 54d675f2 GET /api/audit/records/myproject?service=LinksApi
+Sep 23 14:54:15.226 _global [38] org.yamcs.http.ApiHandler [FINE] 23: Routing GET /api/audit/records/myproject?service=LinksApi
+Sep 23 14:54:15.232 myproject [48] org.yamcs.yarch.TableReaderStream[audit_log_13] [FINE] starting a table stream from table audit_log 
+Sep 23 14:54:15.232 myproject [48] org.yamcs.yarch.rocksdb.RdbTableWalker [FINE] Starting to walk ascending: false, rangeIndexFilter: DbRange [rangeStart=null, rangeEnd=null]
+Sep 23 14:54:15.232 myproject [48] org.yamcs.yarch.TableReaderStream[audit_log_13] [FINE] Closed stream audit_log_13 num emitted tuples: 0
+Sep 23 14:54:15.232 myproject [48] org.yamcs.yarch.SelectStream[audit_log_13_select] [FINE] Closed stream audit_log_13_select num emitted tuples: 0
+Sep 23 14:54:15.232 myproject [48] org.yamcs.yarch.streamsql.LimitedStream[audit_log_13_select_limit] [FINE] Closed stream audit_log_13_select_limit num emitted tuples: 0
+Sep 23 14:54:15.233 _global [48] org.yamcs.http.HttpRequestHandler [INFO] 54d675f2 GET /api/audit/records/myproject?service=LinksApi 200
+Sep 23 14:54:15.234 _global [38] org.yamcs.http.Context[c23] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 14:54:16.113 _global [43] org.yamcs.http.WebSocketObserver[20] [FINE] Cancelling processors call
+Sep 23 14:54:16.113 _global [43] org.yamcs.http.WebSocketObserver[24] [FINE] Subscribe processors
+Sep 23 14:54:16.209 _global [38] org.yamcs.http.HttpRequestHandler [FINE] 54d675f2 GET /api/links/myproject
+Sep 23 14:54:16.209 _global [38] org.yamcs.http.ApiHandler [FINE] 25: Routing GET /api/links/myproject
+Sep 23 14:54:16.213 _global [38] org.yamcs.http.HttpRequestHandler [INFO] 54d675f2 GET /api/links/myproject 200
+Sep 23 14:54:16.220 _global [38] org.yamcs.http.Context[c25] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 14:54:16.225 _global [43] org.yamcs.http.WebSocketObserver[26] [FINE] Subscribe links
+Sep 23 14:55:21.926 _global [43] org.yamcs.http.WebSocketObserver[24] [FINE] Cancelling processors call
+Sep 23 14:55:21.927 _global [43] org.yamcs.http.WebSocketObserver[26] [FINE] Cancelling links call
+Sep 23 14:55:21.935 _global [43] org.yamcs.http.WebSocketObserver[27] [FINE] Subscribe links
+Sep 23 14:55:21.942 _global [38] org.yamcs.http.HttpRequestHandler [FINE] 54d675f2 GET /api/links/myproject/udp-in
+Sep 23 14:55:21.943 _global [38] org.yamcs.http.ApiHandler [FINE] 28: Routing GET /api/links/myproject/udp-in
+Sep 23 14:55:21.948 _global [38] org.yamcs.http.HttpRequestHandler [INFO] 54d675f2 GET /api/links/myproject/udp-in 200
+Sep 23 14:55:21.949 _global [38] org.yamcs.http.Context[c28] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 14:55:21.986 _global [43] org.yamcs.http.WebSocketObserver[29] [FINE] Subscribe processors
+Sep 23 14:55:22.042 _global [38] org.yamcs.http.HttpRequestHandler [FINE] 54d675f2 GET /media/Roboto-Bold.woff2
+Sep 23 14:55:22.042 _global [38] org.yamcs.web.AngularHandler [FINE] Handling static file request for media/Roboto-Bold.woff2
+Sep 23 14:55:22.043 _global [38] org.yamcs.web.AngularHandler [FINE] [id: 0x54d675f2, L:/127.0.0.1:8090 - R:/127.0.0.1:46298] Transfer complete: /home/stasy/arrc_work/quickstart/target/yamcs/cache/yamcs-web/media/Roboto-Bold.woff2
+Sep 23 14:55:22.043 _global [38] org.yamcs.web.AngularHandler [FINE] GET /media/Roboto-Bold.woff2 200
+Sep 23 14:55:34.139 _global [43] org.yamcs.http.WebSocketObserver[29] [FINE] Cancelling processors call
+Sep 23 14:55:34.140 _global [43] org.yamcs.http.WebSocketObserver[27] [FINE] Cancelling links call
+Sep 23 14:55:34.141 _global [43] org.yamcs.http.WebSocketObserver[17] [FINE] Cancelling global-alarm-status call
+Sep 23 14:55:34.143 _global [43] org.yamcs.http.WebSocketObserver[15] [FINE] Cancelling global-activity-status call
+Sep 23 14:55:34.144 _global [43] org.yamcs.http.WebSocketObserver[30] [FINE] Subscribe global-activity-status
+Sep 23 14:55:34.145 _global [43] org.yamcs.http.WebSocketObserver[31] [FINE] Subscribe global-alarm-status
+Sep 23 14:55:34.178 _global [43] org.yamcs.http.WebSocketObserver[32] [FINE] Subscribe parameters
+Sep 23 14:55:34.192 _global [38] org.yamcs.http.HttpRequestHandler [FINE] 54d675f2 GET /api/mdb/myproject/parameters/yamcs/stasy/links/udp-in/packetRate
+Sep 23 14:55:34.195 myproject [43] org.yamcs.parameter.ParameterRequestManager[realtime] [FINE] new request with subscriptionId 2 with 1 items
+Sep 23 14:55:34.210 _global [38] org.yamcs.http.ApiHandler [FINE] 33: Routing GET /api/mdb/myproject/parameters/yamcs/stasy/links/udp-in/packetRate
+Sep 23 14:55:34.248 _global [38] org.yamcs.http.HttpRequestHandler [INFO] 54d675f2 GET /api/mdb/myproject/parameters/yamcs/stasy/links/udp-in/packetRate 200
+Sep 23 14:55:34.250 _global [38] org.yamcs.http.Context[c33] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 14:55:34.281 _global [43] org.yamcs.http.WebSocketObserver[34] [FINE] Subscribe processors
+Sep 23 14:55:34.327 _global [38] org.yamcs.http.HttpRequestHandler [FINE] 54d675f2 GET /api/mdb/myproject/parameters/yamcs/stasy/links/udp-in/packetRate
+Sep 23 14:55:34.327 _global [38] org.yamcs.http.ApiHandler [FINE] 35: Routing GET /api/mdb/myproject/parameters/yamcs/stasy/links/udp-in/packetRate
+Sep 23 14:55:34.328 _global [38] org.yamcs.http.HttpRequestHandler [INFO] 54d675f2 GET /api/mdb/myproject/parameters/yamcs/stasy/links/udp-in/packetRate 200
+Sep 23 14:55:34.336 _global [38] org.yamcs.http.Context[c35] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 14:55:34.355 _global [43] org.yamcs.http.WebSocketObserver[36] [FINE] Subscribe parameters
+Sep 23 14:55:34.355 myproject [43] org.yamcs.parameter.ParameterRequestManager[realtime] [FINE] new request with subscriptionId 3 with 1 items
+Sep 23 14:55:34.401 _global [38] org.yamcs.http.HttpRequestHandler [FINE] 54d675f2 GET /media/RobotoMono-Regular.woff2
+Sep 23 14:55:34.401 _global [38] org.yamcs.web.AngularHandler [FINE] Handling static file request for media/RobotoMono-Regular.woff2
+Sep 23 14:55:34.414 _global [38] org.yamcs.web.AngularHandler [FINE] [id: 0x54d675f2, L:/127.0.0.1:8090 - R:/127.0.0.1:46298] Transfer complete: /home/stasy/arrc_work/quickstart/target/yamcs/cache/yamcs-web/media/RobotoMono-Regular.woff2
+Sep 23 14:55:34.414 _global [38] org.yamcs.web.AngularHandler [FINE] GET /media/RobotoMono-Regular.woff2 200
+Sep 23 14:55:38.643 _global [43] org.yamcs.http.WebSocketObserver[36] [FINE] Cancelling parameters call
+Sep 23 14:55:38.643 myproject [43] org.yamcs.parameter.ParameterRequestManager[realtime] [FINE] removing request for subscriptionId 3
+Sep 23 14:55:38.645 _global [43] org.yamcs.http.WebSocketObserver[34] [FINE] Cancelling processors call
+Sep 23 14:55:38.645 _global [43] org.yamcs.http.WebSocketObserver[32] [FINE] Cancelling parameters call
+Sep 23 14:55:38.645 myproject [43] org.yamcs.parameter.ParameterRequestManager[realtime] [FINE] removing request for subscriptionId 2
+Sep 23 14:55:38.646 _global [43] org.yamcs.http.WebSocketObserver[31] [FINE] Cancelling global-alarm-status call
+Sep 23 14:55:38.646 _global [43] org.yamcs.http.WebSocketObserver[30] [FINE] Cancelling global-activity-status call
+Sep 23 14:55:38.657 _global [43] org.yamcs.http.WebSocketObserver[37] [FINE] Subscribe global-activity-status
+Sep 23 14:55:38.660 _global [43] org.yamcs.http.WebSocketObserver[38] [FINE] Subscribe links
+Sep 23 14:55:38.674 _global [43] org.yamcs.http.WebSocketObserver[39] [FINE] Subscribe global-alarm-status
+Sep 23 14:55:38.691 _global [38] org.yamcs.http.HttpRequestHandler [FINE] 54d675f2 GET /api/links/myproject/udp-in
+Sep 23 14:55:38.692 _global [38] org.yamcs.http.ApiHandler [FINE] 40: Routing GET /api/links/myproject/udp-in
+Sep 23 14:55:38.693 _global [38] org.yamcs.http.HttpRequestHandler [INFO] 54d675f2 GET /api/links/myproject/udp-in 200
+Sep 23 14:55:38.712 _global [38] org.yamcs.http.Context[c40] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 14:55:38.718 _global [43] org.yamcs.http.WebSocketObserver[41] [FINE] Subscribe processors
+Sep 23 14:55:40.006 _global [43] org.yamcs.http.WebSocketObserver[41] [FINE] Cancelling processors call
+Sep 23 14:55:40.006 _global [43] org.yamcs.http.WebSocketObserver[38] [FINE] Cancelling links call
+Sep 23 14:55:40.007 _global [43] org.yamcs.http.WebSocketObserver[39] [FINE] Cancelling global-alarm-status call
+Sep 23 14:55:40.007 _global [43] org.yamcs.http.WebSocketObserver[37] [FINE] Cancelling global-activity-status call
+Sep 23 14:55:40.014 _global [43] org.yamcs.http.WebSocketObserver[42] [FINE] Subscribe global-activity-status
+Sep 23 14:55:40.040 _global [38] org.yamcs.http.HttpRequestHandler [FINE] 54d675f2 GET /api/mdb/myproject/parameters/yamcs/stasy/links/udp-in/dataInCount
+Sep 23 14:55:40.040 _global [38] org.yamcs.http.ApiHandler [FINE] 43: Routing GET /api/mdb/myproject/parameters/yamcs/stasy/links/udp-in/dataInCount
+Sep 23 14:55:40.040 _global [43] org.yamcs.http.WebSocketObserver[44] [FINE] Subscribe global-alarm-status
+Sep 23 14:55:40.041 _global [38] org.yamcs.http.HttpRequestHandler [INFO] 54d675f2 GET /api/mdb/myproject/parameters/yamcs/stasy/links/udp-in/dataInCount 200
+Sep 23 14:55:40.046 _global [43] org.yamcs.http.WebSocketObserver[45] [FINE] Subscribe parameters
+Sep 23 14:55:40.046 myproject [43] org.yamcs.parameter.ParameterRequestManager[realtime] [FINE] new request with subscriptionId 4 with 1 items
+Sep 23 14:55:40.050 _global [38] org.yamcs.http.Context[c43] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 14:55:40.092 _global [43] org.yamcs.http.WebSocketObserver[46] [FINE] Subscribe processors
+Sep 23 14:55:40.119 _global [38] org.yamcs.http.HttpRequestHandler [FINE] 54d675f2 GET /api/mdb/myproject/parameters/yamcs/stasy/links/udp-in/dataInCount
+Sep 23 14:55:40.120 _global [38] org.yamcs.http.ApiHandler [FINE] 47: Routing GET /api/mdb/myproject/parameters/yamcs/stasy/links/udp-in/dataInCount
+Sep 23 14:55:40.128 _global [38] org.yamcs.http.HttpRequestHandler [INFO] 54d675f2 GET /api/mdb/myproject/parameters/yamcs/stasy/links/udp-in/dataInCount 200
+Sep 23 14:55:40.129 _global [38] org.yamcs.http.Context[c47] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 14:55:40.165 _global [43] org.yamcs.http.WebSocketObserver[48] [FINE] Subscribe parameters
+Sep 23 14:55:40.172 myproject [43] org.yamcs.parameter.ParameterRequestManager[realtime] [FINE] new request with subscriptionId 5 with 1 items
+Sep 23 14:55:43.572 _global [43] org.yamcs.http.WebSocketObserver[48] [FINE] Cancelling parameters call
+Sep 23 14:55:43.572 myproject [43] org.yamcs.parameter.ParameterRequestManager[realtime] [FINE] removing request for subscriptionId 5
+Sep 23 14:55:43.573 _global [43] org.yamcs.http.WebSocketObserver[46] [FINE] Cancelling processors call
+Sep 23 14:55:43.573 _global [43] org.yamcs.http.WebSocketObserver[45] [FINE] Cancelling parameters call
+Sep 23 14:55:43.573 myproject [43] org.yamcs.parameter.ParameterRequestManager[realtime] [FINE] removing request for subscriptionId 4
+Sep 23 14:55:43.573 _global [43] org.yamcs.http.WebSocketObserver[44] [FINE] Cancelling global-alarm-status call
+Sep 23 14:55:43.573 _global [43] org.yamcs.http.WebSocketObserver[42] [FINE] Cancelling global-activity-status call
+Sep 23 14:55:43.580 _global [43] org.yamcs.http.WebSocketObserver[49] [FINE] Subscribe global-activity-status
+Sep 23 14:55:43.589 _global [43] org.yamcs.http.WebSocketObserver[50] [FINE] Subscribe links
+Sep 23 14:55:43.591 _global [43] org.yamcs.http.WebSocketObserver[51] [FINE] Subscribe global-alarm-status
+Sep 23 14:55:43.600 _global [38] org.yamcs.http.HttpRequestHandler [FINE] 54d675f2 GET /api/links/myproject/udp-in
+Sep 23 14:55:43.601 _global [38] org.yamcs.http.ApiHandler [FINE] 52: Routing GET /api/links/myproject/udp-in
+Sep 23 14:55:43.602 _global [38] org.yamcs.http.HttpRequestHandler [INFO] 54d675f2 GET /api/links/myproject/udp-in 200
+Sep 23 14:55:43.603 _global [38] org.yamcs.http.Context[c52] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 14:55:43.614 _global [43] org.yamcs.http.WebSocketObserver[53] [FINE] Subscribe processors
+Sep 23 14:55:45.143 _global [43] org.yamcs.http.WebSocketObserver[53] [FINE] Cancelling processors call
+Sep 23 14:55:45.143 _global [43] org.yamcs.http.WebSocketObserver[50] [FINE] Cancelling links call
+Sep 23 14:55:45.145 _global [43] org.yamcs.http.WebSocketObserver[51] [FINE] Cancelling global-alarm-status call
+Sep 23 14:55:45.145 _global [43] org.yamcs.http.WebSocketObserver[49] [FINE] Cancelling global-activity-status call
+Sep 23 14:55:45.147 _global [43] org.yamcs.http.WebSocketObserver[54] [FINE] Subscribe global-activity-status
+Sep 23 14:55:45.150 _global [43] org.yamcs.http.WebSocketObserver[55] [FINE] Subscribe global-alarm-status
+Sep 23 14:55:45.164 _global [43] org.yamcs.http.WebSocketObserver[56] [FINE] Subscribe parameters
+Sep 23 14:55:45.164 myproject [43] org.yamcs.parameter.ParameterRequestManager[realtime] [FINE] new request with subscriptionId 6 with 1 items
+Sep 23 14:55:45.176 _global [38] org.yamcs.http.HttpRequestHandler [FINE] 54d675f2 GET /api/mdb/myproject/parameters/yamcs/stasy/links/udp-in/dataOutCount
+Sep 23 14:55:45.177 _global [38] org.yamcs.http.ApiHandler [FINE] 57: Routing GET /api/mdb/myproject/parameters/yamcs/stasy/links/udp-in/dataOutCount
+Sep 23 14:55:45.179 _global [38] org.yamcs.http.HttpRequestHandler [INFO] 54d675f2 GET /api/mdb/myproject/parameters/yamcs/stasy/links/udp-in/dataOutCount 200
+Sep 23 14:55:45.185 _global [38] org.yamcs.http.Context[c57] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 14:55:45.221 _global [43] org.yamcs.http.WebSocketObserver[58] [FINE] Subscribe processors
+Sep 23 14:55:45.292 _global [38] org.yamcs.http.HttpRequestHandler [FINE] 54d675f2 GET /api/mdb/myproject/parameters/yamcs/stasy/links/udp-in/dataOutCount
+Sep 23 14:55:45.294 _global [38] org.yamcs.http.ApiHandler [FINE] 59: Routing GET /api/mdb/myproject/parameters/yamcs/stasy/links/udp-in/dataOutCount
+Sep 23 14:55:45.299 _global [38] org.yamcs.http.HttpRequestHandler [INFO] 54d675f2 GET /api/mdb/myproject/parameters/yamcs/stasy/links/udp-in/dataOutCount 200
+Sep 23 14:55:45.300 _global [38] org.yamcs.http.Context[c59] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 14:55:45.314 _global [43] org.yamcs.http.WebSocketObserver[60] [FINE] Subscribe parameters
+Sep 23 14:55:45.314 myproject [43] org.yamcs.parameter.ParameterRequestManager[realtime] [FINE] new request with subscriptionId 7 with 1 items
+Sep 23 14:55:54.708 _global [43] org.yamcs.http.WebSocketObserver[60] [FINE] Cancelling parameters call
+Sep 23 14:55:54.708 myproject [43] org.yamcs.parameter.ParameterRequestManager[realtime] [FINE] removing request for subscriptionId 7
+Sep 23 14:55:54.718 _global [43] org.yamcs.http.WebSocketObserver[58] [FINE] Cancelling processors call
+Sep 23 14:55:54.718 _global [43] org.yamcs.http.WebSocketObserver[56] [FINE] Cancelling parameters call
+Sep 23 14:55:54.718 myproject [43] org.yamcs.parameter.ParameterRequestManager[realtime] [FINE] removing request for subscriptionId 6
+Sep 23 14:55:54.719 _global [43] org.yamcs.http.WebSocketObserver[55] [FINE] Cancelling global-alarm-status call
+Sep 23 14:55:54.720 _global [43] org.yamcs.http.WebSocketObserver[54] [FINE] Cancelling global-activity-status call
+Sep 23 14:55:54.737 _global [43] org.yamcs.http.WebSocketObserver[61] [FINE] Subscribe global-activity-status
+Sep 23 14:55:54.739 _global [43] org.yamcs.http.WebSocketObserver[62] [FINE] Subscribe links
+Sep 23 14:55:54.767 _global [43] org.yamcs.http.WebSocketObserver[63] [FINE] Subscribe global-alarm-status
+Sep 23 14:55:54.787 _global [38] org.yamcs.http.HttpRequestHandler [FINE] 54d675f2 GET /api/links/myproject/udp-in
+Sep 23 14:55:54.788 _global [38] org.yamcs.http.ApiHandler [FINE] 64: Routing GET /api/links/myproject/udp-in
+Sep 23 14:55:54.789 _global [38] org.yamcs.http.HttpRequestHandler [INFO] 54d675f2 GET /api/links/myproject/udp-in 200
+Sep 23 14:55:54.789 _global [38] org.yamcs.http.Context[c64] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 14:55:54.805 _global [43] org.yamcs.http.WebSocketObserver[65] [FINE] Subscribe processors
+Sep 23 14:55:58.613 _global [43] org.yamcs.http.WebSocketObserver[65] [FINE] Cancelling processors call
+Sep 23 14:55:58.614 _global [43] org.yamcs.http.WebSocketObserver[62] [FINE] Cancelling links call
+Sep 23 14:55:58.615 _global [43] org.yamcs.http.WebSocketObserver[63] [FINE] Cancelling global-alarm-status call
+Sep 23 14:55:58.615 _global [43] org.yamcs.http.WebSocketObserver[61] [FINE] Cancelling global-activity-status call
+Sep 23 14:55:58.622 _global [43] org.yamcs.http.WebSocketObserver[66] [FINE] Subscribe global-activity-status
+Sep 23 14:55:58.630 _global [43] org.yamcs.http.WebSocketObserver[67] [FINE] Subscribe global-alarm-status
+Sep 23 14:55:58.655 _global [43] org.yamcs.http.WebSocketObserver[68] [FINE] Subscribe parameters
+Sep 23 14:55:58.655 myproject [43] org.yamcs.parameter.ParameterRequestManager[realtime] [FINE] new request with subscriptionId 8 with 1 items
+Sep 23 14:55:58.664 _global [38] org.yamcs.http.HttpRequestHandler [FINE] 54d675f2 GET /api/mdb/myproject/parameters/yamcs/stasy/links/udp-in/linkStatus
+Sep 23 14:55:58.665 _global [38] org.yamcs.http.ApiHandler [FINE] 69: Routing GET /api/mdb/myproject/parameters/yamcs/stasy/links/udp-in/linkStatus
+Sep 23 14:55:58.667 _global [38] org.yamcs.http.HttpRequestHandler [INFO] 54d675f2 GET /api/mdb/myproject/parameters/yamcs/stasy/links/udp-in/linkStatus 200
+Sep 23 14:55:58.668 _global [38] org.yamcs.http.Context[c69] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 14:55:58.686 _global [43] org.yamcs.http.WebSocketObserver[70] [FINE] Subscribe processors
+Sep 23 14:55:58.704 _global [38] org.yamcs.http.HttpRequestHandler [FINE] 54d675f2 GET /api/mdb/myproject/parameters/yamcs/stasy/links/udp-in/linkStatus
+Sep 23 14:55:58.709 _global [38] org.yamcs.http.ApiHandler [FINE] 71: Routing GET /api/mdb/myproject/parameters/yamcs/stasy/links/udp-in/linkStatus
+Sep 23 14:55:58.709 _global [38] org.yamcs.http.HttpRequestHandler [INFO] 54d675f2 GET /api/mdb/myproject/parameters/yamcs/stasy/links/udp-in/linkStatus 200
+Sep 23 14:55:58.711 _global [38] org.yamcs.http.Context[c71] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 14:55:58.754 _global [43] org.yamcs.http.WebSocketObserver[72] [FINE] Subscribe parameters
+Sep 23 14:55:58.754 myproject [43] org.yamcs.parameter.ParameterRequestManager[realtime] [FINE] new request with subscriptionId 9 with 1 items
+Sep 23 14:59:54.726 _global [28] org.yamcs.http.HttpServer [FINE] [id: 0x186fbd67, L:/[0:0:0:0:0:0:0:0]:8090] READ: [id: 0x28426a48, L:/127.0.0.1:8090 - R:/127.0.0.1:34912]
+Sep 23 14:59:54.727 _global [28] org.yamcs.http.HttpServer [FINE] [id: 0x186fbd67, L:/[0:0:0:0:0:0:0:0]:8090] READ COMPLETE
+Sep 23 14:59:54.730 _global [27] org.yamcs.http.HttpRequestHandler [FINE] 28426a48 GET /apple-touch-icon.png
+Sep 23 14:59:54.731 _global [27] org.yamcs.http.HttpRequestHandler [INFO] 28426a48 GET /apple-touch-icon.png 200
+Sep 23 14:59:58.984 _global [28] org.yamcs.http.HttpServer [FINE] [id: 0x186fbd67, L:/[0:0:0:0:0:0:0:0]:8090] READ: [id: 0x279d8149, L:/127.0.0.1:8090 - R:/127.0.0.1:37764]
+Sep 23 14:59:58.984 _global [28] org.yamcs.http.HttpServer [FINE] [id: 0x186fbd67, L:/[0:0:0:0:0:0:0:0]:8090] READ COMPLETE
+Sep 23 15:00:06.571 _global [28] org.yamcs.http.HttpServer [FINE] [id: 0x186fbd67, L:/[0:0:0:0:0:0:0:0]:8090] READ: [id: 0x568a94c8, L:/127.0.0.1:8090 - R:/127.0.0.1:56806]
+Sep 23 15:00:06.571 _global [28] org.yamcs.http.HttpServer [FINE] [id: 0x186fbd67, L:/[0:0:0:0:0:0:0:0]:8090] READ COMPLETE
+Sep 23 15:00:55.431 _global [28] org.yamcs.http.HttpServer [FINE] [id: 0x186fbd67, L:/[0:0:0:0:0:0:0:0]:8090] READ: [id: 0x6f0b2ffe, L:/127.0.0.1:8090 - R:/127.0.0.1:36552]
+Sep 23 15:00:55.432 _global [28] org.yamcs.http.HttpServer [FINE] [id: 0x186fbd67, L:/[0:0:0:0:0:0:0:0]:8090] READ COMPLETE
+Sep 23 15:01:32.553 _global [28] org.yamcs.http.HttpServer [FINE] [id: 0x186fbd67, L:/[0:0:0:0:0:0:0:0]:8090] READ: [id: 0x63867b66, L:/127.0.0.1:8090 - R:/127.0.0.1:46996]
+Sep 23 15:01:32.554 _global [28] org.yamcs.http.HttpServer [FINE] [id: 0x186fbd67, L:/[0:0:0:0:0:0:0:0]:8090] READ COMPLETE
+Sep 23 15:01:33.348 _global [38] org.yamcs.http.HttpRequestHandler [FINE] 63867b66 GET /api/instances?filter=state=running
+Sep 23 15:01:33.349 _global [38] org.yamcs.http.ApiHandler [FINE] 73: Routing GET /api/instances?filter=state=running
+Sep 23 15:01:33.352 _global [38] org.yamcs.http.HttpRequestHandler [INFO] 63867b66 GET /api/instances?filter=state=running 200
+Sep 23 15:01:33.355 _global [38] org.yamcs.http.Context[c73] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 15:01:59.177 _global [43] org.yamcs.http.WebSocketObserver[72] [FINE] Cancelling parameters call
+Sep 23 15:01:59.178 myproject [43] org.yamcs.parameter.ParameterRequestManager[realtime] [FINE] removing request for subscriptionId 9
+Sep 23 15:01:59.178 _global [43] org.yamcs.http.WebSocketObserver[70] [FINE] Cancelling processors call
+Sep 23 15:01:59.178 _global [43] org.yamcs.http.WebSocketObserver[68] [FINE] Cancelling parameters call
+Sep 23 15:01:59.178 myproject [43] org.yamcs.parameter.ParameterRequestManager[realtime] [FINE] removing request for subscriptionId 8
+Sep 23 15:01:59.178 _global [43] org.yamcs.http.WebSocketObserver[67] [FINE] Cancelling global-alarm-status call
+Sep 23 15:01:59.179 _global [43] org.yamcs.http.WebSocketObserver[66] [FINE] Cancelling global-activity-status call
+Sep 23 15:01:59.193 _global [43] org.yamcs.http.WebSocketObserver[74] [FINE] Subscribe global-activity-status
+Sep 23 15:01:59.194 _global [43] org.yamcs.http.WebSocketObserver[75] [FINE] Subscribe tmstats
+Sep 23 15:01:59.198 _global [43] org.yamcs.http.WebSocketObserver[76] [FINE] Subscribe processors
+Sep 23 15:01:59.202 _global [43] org.yamcs.http.WebSocketObserver[77] [FINE] Subscribe global-alarm-status
+Sep 23 15:01:59.274 _global [38] org.yamcs.http.HttpRequestHandler [FINE] 63867b66 GET /api/archive/myproject/packet-names
+Sep 23 15:01:59.275 _global [38] org.yamcs.http.ApiHandler [FINE] 78: Routing GET /api/archive/myproject/packet-names
+Sep 23 15:01:59.275 _global [38] org.yamcs.http.HttpRequestHandler [INFO] 63867b66 GET /api/archive/myproject/packet-names 200
+Sep 23 15:01:59.279 _global [38] org.yamcs.http.Context[c78] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 15:02:01.922 _global [43] org.yamcs.http.WebSocketObserver[76] [FINE] Cancelling processors call
+Sep 23 15:02:01.925 _global [43] org.yamcs.http.WebSocketObserver[75] [FINE] Cancelling tmstats call
+Sep 23 15:02:01.925 _global [43] org.yamcs.http.WebSocketObserver[77] [FINE] Cancelling global-alarm-status call
+Sep 23 15:02:01.925 _global [43] org.yamcs.http.WebSocketObserver[74] [FINE] Cancelling global-activity-status call
+Sep 23 15:02:01.926 _global [43] org.yamcs.http.WebSocketObserver[79] [FINE] Subscribe global-activity-status
+Sep 23 15:02:01.929 _global [43] org.yamcs.http.WebSocketObserver[80] [FINE] Subscribe processors
+Sep 23 15:02:01.939 _global [43] org.yamcs.http.WebSocketObserver[81] [FINE] Subscribe global-alarm-status
+Sep 23 15:02:02.017 _global [38] org.yamcs.http.HttpRequestHandler [FINE] 63867b66 GET /api/archive/myproject/packet-names
+Sep 23 15:02:02.017 _global [38] org.yamcs.http.ApiHandler [FINE] 82: Routing GET /api/archive/myproject/packet-names
+Sep 23 15:02:02.018 _global [38] org.yamcs.http.HttpRequestHandler [INFO] 63867b66 GET /api/archive/myproject/packet-names 200
+Sep 23 15:02:02.020 _global [38] org.yamcs.http.Context[c82] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 15:02:02.031 _global [38] org.yamcs.http.HttpRequestHandler [FINE] 63867b66 GET /api/archive/myproject/packets?start=2024-09-23T06:02:01.013Z&stop=2024-09-23T07:02:01.013Z&name=/myproject/Spacecraft&limit=100&fields=id,generationTime,earthReceptionTime,receptionTime,sequenceNumber,link,size
+Sep 23 15:02:02.058 _global [38] org.yamcs.http.ApiHandler [FINE] 83: Routing GET /api/archive/myproject/packets?start=2024-09-23T06:02:01.013Z&stop=2024-09-23T07:02:01.013Z&name=/myproject/Spacecraft&limit=100&fields=id,generationTime,earthReceptionTime,receptionTime,sequenceNumber,link,size
+Sep 23 15:02:02.064 _global [38] org.yamcs.http.api.StreamFactory [FINE] Executing: create stream http_stream2 as select * from tm where gentime >= 1727071358013 and gentime < 1727074958013 and pname IN (?) order desc limit 0,101 nofollow
+Sep 23 15:02:02.101 myproject [50] org.yamcs.yarch.TableReaderStream[tm_14] [FINE] starting a table stream from table tm 
+Sep 23 15:02:02.101 myproject [50] org.yamcs.yarch.rocksdb.RdbTableWalker [FINE] Starting to walk ascending: false, rangeIndexFilter: DbRange [rangeStart=800001921D798C3D, rangeEnd=800001921DB07ABD]
+Sep 23 15:02:02.113 myproject [50] org.yamcs.yarch.SelectStream[tm_14_select] [FINE] Closed stream tm_14_select num emitted tuples: 102
+Sep 23 15:02:02.113 myproject [50] org.yamcs.yarch.TableReaderStream[tm_14] [FINE] Closed stream tm_14 num emitted tuples: 102
+Sep 23 15:02:02.113 myproject [50] org.yamcs.yarch.streamsql.LimitedStream[tm_14_select_limit] [FINE] Closed stream tm_14_select_limit num emitted tuples: 101
+Sep 23 15:02:02.117 myproject [50] org.yamcs.yarch.InternalStream[http_stream2] [FINE] Closed stream http_stream2 num emitted tuples: 101
+Sep 23 15:02:02.193 _global [50] org.yamcs.http.HttpRequestHandler [INFO] 63867b66 GET /api/archive/myproject/packets?start=2024-09-23T06:02:01.013Z&stop=2024-09-23T07:02:01.013Z&name=/myproject/Spacecraft&limit=100&fields=id,generationTime,earthReceptionTime,receptionTime,sequenceNumber,link,size 200
+Sep 23 15:02:02.197 _global [38] org.yamcs.http.Context[c83] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 15:02:05.301 _global [43] org.yamcs.http.WebSocketObserver[80] [FINE] Cancelling processors call
+Sep 23 15:02:05.306 _global [43] org.yamcs.http.WebSocketObserver[81] [FINE] Cancelling global-alarm-status call
+Sep 23 15:02:05.311 _global [43] org.yamcs.http.WebSocketObserver[79] [FINE] Cancelling global-activity-status call
+Sep 23 15:02:05.317 _global [43] org.yamcs.http.WebSocketObserver[84] [FINE] Subscribe global-activity-status
+Sep 23 15:02:05.318 _global [43] org.yamcs.http.WebSocketObserver[85] [FINE] Subscribe processors
+Sep 23 15:02:05.322 _global [43] org.yamcs.http.WebSocketObserver[86] [FINE] Subscribe global-alarm-status
+Sep 23 15:02:05.419 _global [38] org.yamcs.http.HttpRequestHandler [FINE] 63867b66 GET /api/links/myproject
+Sep 23 15:02:05.419 _global [38] org.yamcs.http.ApiHandler [FINE] 87: Routing GET /api/links/myproject
+Sep 23 15:02:05.420 _global [38] org.yamcs.http.HttpRequestHandler [INFO] 63867b66 GET /api/links/myproject 200
+Sep 23 15:02:05.421 _global [38] org.yamcs.http.Context[c87] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 15:02:05.441 _global [43] org.yamcs.http.WebSocketObserver[88] [FINE] Subscribe links
+Sep 23 15:02:10.564 _global [43] org.yamcs.http.WebSocketObserver[85] [FINE] Cancelling processors call
+Sep 23 15:02:10.565 _global [43] org.yamcs.http.WebSocketObserver[88] [FINE] Cancelling links call
+Sep 23 15:02:10.565 _global [43] org.yamcs.http.WebSocketObserver[89] [FINE] Subscribe links
+Sep 23 15:02:10.567 _global [38] org.yamcs.http.HttpRequestHandler [FINE] 63867b66 GET /api/links/myproject/udp-in
+Sep 23 15:02:10.567 _global [38] org.yamcs.http.ApiHandler [FINE] 90: Routing GET /api/links/myproject/udp-in
+Sep 23 15:02:10.569 _global [38] org.yamcs.http.HttpRequestHandler [INFO] 63867b66 GET /api/links/myproject/udp-in 200
+Sep 23 15:02:10.570 _global [38] org.yamcs.http.Context[c90] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 15:02:10.584 _global [43] org.yamcs.http.WebSocketObserver[91] [FINE] Subscribe processors
+Sep 23 15:02:18.393 _global [43] org.yamcs.http.WebSocketObserver[91] [FINE] Cancelling processors call
+Sep 23 15:02:18.393 _global [43] org.yamcs.http.WebSocketObserver[89] [FINE] Cancelling links call
+Sep 23 15:02:18.393 _global [43] org.yamcs.http.WebSocketObserver[86] [FINE] Cancelling global-alarm-status call
+Sep 23 15:02:18.396 _global [43] org.yamcs.http.WebSocketObserver[84] [FINE] Cancelling global-activity-status call
+Sep 23 15:02:18.397 _global [43] org.yamcs.http.WebSocketObserver[92] [FINE] Subscribe global-activity-status
+Sep 23 15:02:18.398 _global [43] org.yamcs.http.WebSocketObserver[93] [FINE] Subscribe processors
+Sep 23 15:02:18.404 _global [43] org.yamcs.http.WebSocketObserver[94] [FINE] Subscribe global-alarm-status
+Sep 23 15:02:18.448 _global [38] org.yamcs.http.HttpRequestHandler [FINE] 63867b66 GET /api/archive/myproject/packet-names
+Sep 23 15:02:18.449 _global [38] org.yamcs.http.ApiHandler [FINE] 95: Routing GET /api/archive/myproject/packet-names
+Sep 23 15:02:18.449 _global [38] org.yamcs.http.HttpRequestHandler [INFO] 63867b66 GET /api/archive/myproject/packet-names 200
+Sep 23 15:02:18.449 _global [28] org.yamcs.http.HttpServer [FINE] [id: 0x186fbd67, L:/[0:0:0:0:0:0:0:0]:8090] READ: [id: 0x8d123e0c, L:/127.0.0.1:8090 - R:/127.0.0.1:40772]
+Sep 23 15:02:18.452 _global [28] org.yamcs.http.HttpServer [FINE] [id: 0x186fbd67, L:/[0:0:0:0:0:0:0:0]:8090] READ COMPLETE
+Sep 23 15:02:18.452 _global [38] org.yamcs.http.Context[c95] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 15:02:18.453 _global [39] org.yamcs.http.HttpRequestHandler [FINE] 8d123e0c GET /api/archive/myproject/packets?start=2024-09-23T06:02:18.013Z&stop=2024-09-23T07:02:18.013Z&limit=100&fields=id,generationTime,earthReceptionTime,receptionTime,sequenceNumber,link,size
+Sep 23 15:02:18.453 _global [39] org.yamcs.http.ApiHandler [FINE] 96: Routing GET /api/archive/myproject/packets?start=2024-09-23T06:02:18.013Z&stop=2024-09-23T07:02:18.013Z&limit=100&fields=id,generationTime,earthReceptionTime,receptionTime,sequenceNumber,link,size
+Sep 23 15:02:18.454 _global [39] org.yamcs.http.api.StreamFactory [FINE] Executing: create stream http_stream3 as select * from tm where gentime >= 1727071375013 and gentime < 1727074975013 and pname IN (?, ?, ?) order desc limit 0,101 nofollow
+Sep 23 15:02:18.466 _global [39] org.yamcs.yarch.streamsql.TableWalkerBuilder [FINE] no enum value for column: pname value: /myproject/TelemetryPacket
+Sep 23 15:02:18.466 _global [39] org.yamcs.yarch.streamsql.TableWalkerBuilder [FINE] no enum value for column: pname value: /myproject/CCSDSPacket
+Sep 23 15:02:18.487 myproject [51] org.yamcs.yarch.TableReaderStream[tm_15] [FINE] starting a table stream from table tm 
+Sep 23 15:02:18.487 myproject [51] org.yamcs.yarch.rocksdb.RdbTableWalker [FINE] Starting to walk ascending: false, rangeIndexFilter: DbRange [rangeStart=800001921D79CEA5, rangeEnd=800001921DB0BD25]
+Sep 23 15:02:18.493 myproject [51] org.yamcs.yarch.SelectStream[tm_15_select] [FINE] Closed stream tm_15_select num emitted tuples: 102
+Sep 23 15:02:18.493 myproject [51] org.yamcs.yarch.TableReaderStream[tm_15] [FINE] Closed stream tm_15 num emitted tuples: 102
+Sep 23 15:02:18.493 myproject [51] org.yamcs.yarch.streamsql.LimitedStream[tm_15_select_limit] [FINE] Closed stream tm_15_select_limit num emitted tuples: 101
+Sep 23 15:02:18.493 myproject [51] org.yamcs.yarch.InternalStream[http_stream3] [FINE] Closed stream http_stream3 num emitted tuples: 101
+Sep 23 15:02:18.533 _global [51] org.yamcs.http.HttpRequestHandler [INFO] 8d123e0c GET /api/archive/myproject/packets?start=2024-09-23T06:02:18.013Z&stop=2024-09-23T07:02:18.013Z&limit=100&fields=id,generationTime,earthReceptionTime,receptionTime,sequenceNumber,link,size 200
+Sep 23 15:02:18.568 _global [39] org.yamcs.http.Context[c96] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 15:02:30.317 _global [43] org.yamcs.http.WebSocketObserver[93] [FINE] Cancelling processors call
+Sep 23 15:02:30.330 _global [43] org.yamcs.http.WebSocketObserver[97] [FINE] Subscribe processors
+Sep 23 15:02:30.361 _global [39] org.yamcs.http.HttpRequestHandler [FINE] 8d123e0c GET /api/storage/buckets/displays/objects?delimiter=/
+Sep 23 15:02:30.361 _global [39] org.yamcs.http.ApiHandler [FINE] 98: Routing GET /api/storage/buckets/displays/objects?delimiter=/
+Sep 23 15:02:30.379 _global [39] org.yamcs.http.HttpRequestHandler [INFO] 8d123e0c GET /api/storage/buckets/displays/objects?delimiter=/ 200
+Sep 23 15:02:30.386 _global [39] org.yamcs.http.Context[c98] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 15:02:31.498 _global [43] org.yamcs.http.WebSocketObserver[97] [FINE] Cancelling processors call
+Sep 23 15:02:31.498 _global [43] org.yamcs.http.WebSocketObserver[99] [FINE] Subscribe processors
+Sep 23 15:02:31.517 _global [39] org.yamcs.http.HttpRequestHandler [FINE] 8d123e0c GET /api/parameter-lists/myproject/lists
+Sep 23 15:02:31.520 _global [39] org.yamcs.http.ApiHandler [FINE] 100: Routing GET /api/parameter-lists/myproject/lists
+Sep 23 15:02:31.523 _global [39] org.yamcs.http.api.StreamFactory [FINE] Executing: create stream http_stream4 as select * from parameter_list nofollow
+Sep 23 15:02:31.524 myproject [52] org.yamcs.yarch.TableReaderStream[parameter_list_16] [FINE] starting a table stream from table parameter_list 
+Sep 23 15:02:31.524 myproject [52] org.yamcs.yarch.rocksdb.RdbTableWalker [FINE] Starting to walk ascending: true, rangeIndexFilter: DbRange [rangeStart=null, rangeEnd=null]
+Sep 23 15:02:31.524 myproject [52] org.yamcs.yarch.TableReaderStream[parameter_list_16] [FINE] Closed stream parameter_list_16 num emitted tuples: 0
+Sep 23 15:02:31.524 myproject [52] org.yamcs.yarch.InternalStream[http_stream4] [FINE] Closed stream http_stream4 num emitted tuples: 0
+Sep 23 15:02:31.525 _global [52] org.yamcs.http.HttpRequestHandler [INFO] 8d123e0c GET /api/parameter-lists/myproject/lists 200
+Sep 23 15:02:31.526 _global [39] org.yamcs.http.Context[c100] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 15:02:32.666 _global [43] org.yamcs.http.WebSocketObserver[99] [FINE] Cancelling processors call
+Sep 23 15:02:32.666 _global [43] org.yamcs.http.WebSocketObserver[101] [FINE] Subscribe processors
+Sep 23 15:02:32.698 _global [39] org.yamcs.http.HttpRequestHandler [FINE] 8d123e0c GET /api/mdb/myproject/parameters?system=/&details=true&pos=0&limit=100
+Sep 23 15:02:32.698 _global [39] org.yamcs.http.ApiHandler [FINE] 102: Routing GET /api/mdb/myproject/parameters?system=/&details=true&pos=0&limit=100
+Sep 23 15:02:32.715 _global [39] org.yamcs.http.HttpRequestHandler [INFO] 8d123e0c GET /api/mdb/myproject/parameters?system=/&details=true&pos=0&limit=100 200
+Sep 23 15:02:32.716 _global [39] org.yamcs.http.Context[c102] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 15:02:34.690 _global [39] org.yamcs.http.HttpRequestHandler [FINE] 8d123e0c GET /api/mdb/myproject/parameters?system=/myproject&details=true&pos=0&limit=100
+Sep 23 15:02:34.690 _global [39] org.yamcs.http.ApiHandler [FINE] 103: Routing GET /api/mdb/myproject/parameters?system=/myproject&details=true&pos=0&limit=100
+Sep 23 15:02:34.718 _global [39] org.yamcs.http.HttpRequestHandler [INFO] 8d123e0c GET /api/mdb/myproject/parameters?system=/myproject&details=true&pos=0&limit=100 200
+Sep 23 15:02:34.727 _global [39] org.yamcs.http.Context[c103] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 15:02:34.764 _global [43] org.yamcs.http.WebSocketObserver[104] [FINE] Subscribe parameters
+Sep 23 15:02:34.765 myproject [43] org.yamcs.parameter.ParameterRequestManager[realtime] [FINE] new request with subscriptionId 10 with 40 items
+Sep 23 15:02:43.645 _global [43] org.yamcs.http.WebSocketObserver[101] [FINE] Cancelling processors call
+Sep 23 15:02:43.645 _global [43] org.yamcs.http.WebSocketObserver[104] [FINE] Cancelling parameters call
+Sep 23 15:02:43.645 myproject [43] org.yamcs.parameter.ParameterRequestManager[realtime] [FINE] removing request for subscriptionId 10
+Sep 23 15:02:43.646 _global [43] org.yamcs.http.WebSocketObserver[105] [FINE] Subscribe processors
+Sep 23 15:02:43.661 _global [39] org.yamcs.http.HttpRequestHandler [FINE] 8d123e0c GET /api/parameter-lists/myproject/lists
+Sep 23 15:02:43.661 _global [39] org.yamcs.http.ApiHandler [FINE] 106: Routing GET /api/parameter-lists/myproject/lists
+Sep 23 15:02:43.662 _global [39] org.yamcs.http.api.StreamFactory [FINE] Executing: create stream http_stream5 as select * from parameter_list nofollow
+Sep 23 15:02:43.663 myproject [53] org.yamcs.yarch.TableReaderStream[parameter_list_17] [FINE] starting a table stream from table parameter_list 
+Sep 23 15:02:43.663 myproject [53] org.yamcs.yarch.rocksdb.RdbTableWalker [FINE] Starting to walk ascending: true, rangeIndexFilter: DbRange [rangeStart=null, rangeEnd=null]
+Sep 23 15:02:43.663 myproject [53] org.yamcs.yarch.TableReaderStream[parameter_list_17] [FINE] Closed stream parameter_list_17 num emitted tuples: 0
+Sep 23 15:02:43.663 myproject [53] org.yamcs.yarch.InternalStream[http_stream5] [FINE] Closed stream http_stream5 num emitted tuples: 0
+Sep 23 15:02:43.663 _global [53] org.yamcs.http.HttpRequestHandler [INFO] 8d123e0c GET /api/parameter-lists/myproject/lists 200
+Sep 23 15:02:43.666 _global [39] org.yamcs.http.Context[c106] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 15:02:45.144 _global [43] org.yamcs.http.WebSocketObserver[105] [FINE] Cancelling processors call
+Sep 23 15:02:45.151 _global [43] org.yamcs.http.WebSocketObserver[107] [FINE] Subscribe processors
+Sep 23 15:02:45.153 _global [39] org.yamcs.http.HttpRequestHandler [FINE] 8d123e0c GET /api/storage/buckets/displays/objects?delimiter=/
+Sep 23 15:02:45.153 _global [39] org.yamcs.http.ApiHandler [FINE] 108: Routing GET /api/storage/buckets/displays/objects?delimiter=/
+Sep 23 15:02:45.154 _global [39] org.yamcs.http.HttpRequestHandler [INFO] 8d123e0c GET /api/storage/buckets/displays/objects?delimiter=/ 200
+Sep 23 15:02:45.155 _global [39] org.yamcs.http.Context[c108] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 15:02:51.016 _global [43] org.yamcs.http.WebSocketObserver[107] [FINE] Cancelling processors call
+Sep 23 15:02:51.016 _global [43] org.yamcs.http.WebSocketObserver[94] [FINE] Cancelling global-alarm-status call
+Sep 23 15:02:51.016 _global [43] org.yamcs.http.WebSocketObserver[92] [FINE] Cancelling global-activity-status call
+Sep 23 15:02:51.023 _global [43] org.yamcs.http.WebSocketObserver[109] [FINE] Subscribe global-activity-status
+Sep 23 15:02:51.023 _global [43] org.yamcs.http.WebSocketObserver[110] [FINE] Subscribe processors
+Sep 23 15:02:51.024 _global [43] org.yamcs.http.WebSocketObserver[111] [FINE] Subscribe global-alarm-status
+Sep 23 15:02:51.092 _global [39] org.yamcs.http.HttpRequestHandler [FINE] 8d123e0c GET /api/links/myproject
+Sep 23 15:02:51.092 _global [39] org.yamcs.http.ApiHandler [FINE] 112: Routing GET /api/links/myproject
+Sep 23 15:02:51.095 _global [39] org.yamcs.http.HttpRequestHandler [INFO] 8d123e0c GET /api/links/myproject 200
+Sep 23 15:02:51.096 _global [39] org.yamcs.http.Context[c112] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 15:02:51.112 _global [43] org.yamcs.http.WebSocketObserver[113] [FINE] Subscribe links
+Sep 23 15:04:19.710 _global [43] org.yamcs.http.WebSocketObserver[110] [FINE] Cancelling processors call
+Sep 23 15:04:19.712 _global [43] org.yamcs.http.WebSocketObserver[113] [FINE] Cancelling links call
+Sep 23 15:04:19.712 _global [43] org.yamcs.http.WebSocketObserver[111] [FINE] Cancelling global-alarm-status call
+Sep 23 15:04:19.712 _global [43] org.yamcs.http.WebSocketObserver[109] [FINE] Cancelling global-activity-status call
+Sep 23 15:04:19.736 _global [43] org.yamcs.http.WebSocketObserver[114] [FINE] Subscribe global-activity-status
+Sep 23 15:04:19.748 _global [43] org.yamcs.http.WebSocketObserver[115] [FINE] Subscribe processors
+Sep 23 15:04:19.776 _global [43] org.yamcs.http.WebSocketObserver[116] [FINE] Subscribe global-alarm-status
+Sep 23 15:04:19.853 _global [39] org.yamcs.http.HttpRequestHandler [FINE] 8d123e0c GET /api/archive/myproject/packet-names
+Sep 23 15:04:19.854 _global [39] org.yamcs.http.ApiHandler [FINE] 117: Routing GET /api/archive/myproject/packet-names
+Sep 23 15:04:19.854 _global [39] org.yamcs.http.HttpRequestHandler [INFO] 8d123e0c GET /api/archive/myproject/packet-names 200
+Sep 23 15:04:19.855 _global [39] org.yamcs.http.Context[c117] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 15:04:19.893 _global [39] org.yamcs.http.HttpRequestHandler [FINE] 8d123e0c GET /api/archive/myproject/packets?start=2024-09-23T06:04:19.013Z&stop=2024-09-23T07:04:19.013Z&limit=100&fields=id,generationTime,earthReceptionTime,receptionTime,sequenceNumber,link,size
+Sep 23 15:04:19.893 _global [39] org.yamcs.http.ApiHandler [FINE] 118: Routing GET /api/archive/myproject/packets?start=2024-09-23T06:04:19.013Z&stop=2024-09-23T07:04:19.013Z&limit=100&fields=id,generationTime,earthReceptionTime,receptionTime,sequenceNumber,link,size
+Sep 23 15:04:19.894 _global [39] org.yamcs.http.api.StreamFactory [FINE] Executing: create stream http_stream6 as select * from tm where gentime >= 1727071496013 and gentime < 1727075096013 and pname IN (?, ?, ?) order desc limit 0,101 nofollow
+Sep 23 15:04:19.895 _global [28] org.yamcs.http.HttpServer [FINE] [id: 0x186fbd67, L:/[0:0:0:0:0:0:0:0]:8090] READ: [id: 0xda1de3bf, L:/127.0.0.1:8090 - R:/127.0.0.1:55924]
+Sep 23 15:04:19.896 _global [28] org.yamcs.http.HttpServer [FINE] [id: 0x186fbd67, L:/[0:0:0:0:0:0:0:0]:8090] READ COMPLETE
+Sep 23 15:04:19.913 _global [39] org.yamcs.yarch.streamsql.TableWalkerBuilder [FINE] no enum value for column: pname value: /myproject/TelemetryPacket
+Sep 23 15:04:19.913 _global [39] org.yamcs.yarch.streamsql.TableWalkerBuilder [FINE] no enum value for column: pname value: /myproject/CCSDSPacket
+Sep 23 15:04:19.920 myproject [54] org.yamcs.yarch.TableReaderStream[tm_18] [FINE] starting a table stream from table tm 
+Sep 23 15:04:19.920 myproject [54] org.yamcs.yarch.rocksdb.RdbTableWalker [FINE] Starting to walk ascending: false, rangeIndexFilter: DbRange [rangeStart=800001921D7BA74D, rangeEnd=800001921DB295CD]
+Sep 23 15:04:19.932 myproject [54] org.yamcs.yarch.SelectStream[tm_18_select] [FINE] Closed stream tm_18_select num emitted tuples: 102
+Sep 23 15:04:19.932 myproject [54] org.yamcs.yarch.TableReaderStream[tm_18] [FINE] Closed stream tm_18 num emitted tuples: 102
+Sep 23 15:04:19.932 myproject [54] org.yamcs.yarch.streamsql.LimitedStream[tm_18_select_limit] [FINE] Closed stream tm_18_select_limit num emitted tuples: 101
+Sep 23 15:04:19.933 myproject [54] org.yamcs.yarch.InternalStream[http_stream6] [FINE] Closed stream http_stream6 num emitted tuples: 101
+Sep 23 15:04:19.940 _global [54] org.yamcs.http.HttpRequestHandler [INFO] 8d123e0c GET /api/archive/myproject/packets?start=2024-09-23T06:04:19.013Z&stop=2024-09-23T07:04:19.013Z&limit=100&fields=id,generationTime,earthReceptionTime,receptionTime,sequenceNumber,link,size 200
+Sep 23 15:04:19.944 _global [39] org.yamcs.http.Context[c118] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 15:04:26.844 _global [39] org.yamcs.http.HttpRequestHandler [FINE] 8d123e0c GET /api/archive/myproject/packets/%2Fmyproject%2FSpacecraft/2024-09-23T07:04:18.833Z/6604097
+Sep 23 15:04:26.844 _global [39] org.yamcs.http.ApiHandler [FINE] 119: Routing GET /api/archive/myproject/packets/%2Fmyproject%2FSpacecraft/2024-09-23T07:04:18.833Z/6604097
+Sep 23 15:04:26.847 _global [39] org.yamcs.http.api.StreamFactory [FINE] Executing: create stream http_stream7 as select * from tm where pname = ? and gentime = ? and seqNum = ? nofollow
+Sep 23 15:04:26.858 myproject [55] org.yamcs.yarch.TableReaderStream[tm_19] [FINE] starting a table stream from table tm 
+Sep 23 15:04:26.858 myproject [55] org.yamcs.yarch.rocksdb.RdbTableWalker [FINE] Starting to walk ascending: true, rangeIndexFilter: DbRange [rangeStart=800001921DB29519, rangeEnd=800001921DB29519]
+Sep 23 15:04:26.858 myproject [55] org.yamcs.yarch.TableReaderStream[tm_19] [FINE] Closed stream tm_19 num emitted tuples: 1
+Sep 23 15:04:26.858 myproject [55] org.yamcs.yarch.SelectStream[tm_19_select] [FINE] Closed stream tm_19_select num emitted tuples: 1
+Sep 23 15:04:26.858 myproject [55] org.yamcs.yarch.InternalStream[http_stream7] [FINE] Closed stream http_stream7 num emitted tuples: 1
+Sep 23 15:04:26.862 _global [55] org.yamcs.http.HttpRequestHandler [INFO] 8d123e0c GET /api/archive/myproject/packets/%2Fmyproject%2FSpacecraft/2024-09-23T07:04:18.833Z/6604097 200
+Sep 23 15:04:26.863 _global [39] org.yamcs.http.Context[c119] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 15:04:26.922 _global [39] org.yamcs.http.HttpRequestHandler [FINE] 8d123e0c GET /media/RobotoMono-Regular.woff2
+Sep 23 15:04:26.922 _global [39] org.yamcs.web.AngularHandler [FINE] Handling static file request for media/RobotoMono-Regular.woff2
+Sep 23 15:04:26.923 _global [39] org.yamcs.web.AngularHandler [FINE] GET /media/RobotoMono-Regular.woff2 304
+Sep 23 15:04:30.163 _global [39] org.yamcs.http.HttpRequestHandler [FINE] 8d123e0c GET /api/archive/myproject/packets/%2Fmyproject%2FSpacecraft/2024-09-23T07:04:16.819Z/6604095
+Sep 23 15:04:30.163 _global [39] org.yamcs.http.ApiHandler [FINE] 120: Routing GET /api/archive/myproject/packets/%2Fmyproject%2FSpacecraft/2024-09-23T07:04:16.819Z/6604095
+Sep 23 15:04:30.165 _global [39] org.yamcs.http.api.StreamFactory [FINE] Executing: create stream http_stream8 as select * from tm where pname = ? and gentime = ? and seqNum = ? nofollow
+Sep 23 15:04:30.177 myproject [56] org.yamcs.yarch.TableReaderStream[tm_20] [FINE] starting a table stream from table tm 
+Sep 23 15:04:30.177 myproject [56] org.yamcs.yarch.rocksdb.RdbTableWalker [FINE] Starting to walk ascending: true, rangeIndexFilter: DbRange [rangeStart=800001921DB28D3B, rangeEnd=800001921DB28D3B]
+Sep 23 15:04:30.178 myproject [56] org.yamcs.yarch.TableReaderStream[tm_20] [FINE] Closed stream tm_20 num emitted tuples: 1
+Sep 23 15:04:30.178 myproject [56] org.yamcs.yarch.SelectStream[tm_20_select] [FINE] Closed stream tm_20_select num emitted tuples: 1
+Sep 23 15:04:30.178 myproject [56] org.yamcs.yarch.InternalStream[http_stream8] [FINE] Closed stream http_stream8 num emitted tuples: 1
+Sep 23 15:04:30.179 _global [56] org.yamcs.http.HttpRequestHandler [INFO] 8d123e0c GET /api/archive/myproject/packets/%2Fmyproject%2FSpacecraft/2024-09-23T07:04:16.819Z/6604095 200
+Sep 23 15:04:30.179 _global [39] org.yamcs.http.Context[c120] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 15:04:30.712 _global [39] org.yamcs.http.HttpRequestHandler [FINE] 8d123e0c GET /api/archive/myproject/packets/%2Fmyproject%2FSpacecraft/2024-09-23T07:04:13.801Z/6604092
+Sep 23 15:04:30.712 _global [39] org.yamcs.http.ApiHandler [FINE] 121: Routing GET /api/archive/myproject/packets/%2Fmyproject%2FSpacecraft/2024-09-23T07:04:13.801Z/6604092
+Sep 23 15:04:30.712 _global [39] org.yamcs.http.api.StreamFactory [FINE] Executing: create stream http_stream9 as select * from tm where pname = ? and gentime = ? and seqNum = ? nofollow
+Sep 23 15:04:30.726 myproject [57] org.yamcs.yarch.TableReaderStream[tm_21] [FINE] starting a table stream from table tm 
+Sep 23 15:04:30.726 myproject [57] org.yamcs.yarch.rocksdb.RdbTableWalker [FINE] Starting to walk ascending: true, rangeIndexFilter: DbRange [rangeStart=800001921DB28171, rangeEnd=800001921DB28171]
+Sep 23 15:04:30.726 myproject [57] org.yamcs.yarch.TableReaderStream[tm_21] [FINE] Closed stream tm_21 num emitted tuples: 1
+Sep 23 15:04:30.726 myproject [57] org.yamcs.yarch.SelectStream[tm_21_select] [FINE] Closed stream tm_21_select num emitted tuples: 1
+Sep 23 15:04:30.726 myproject [57] org.yamcs.yarch.InternalStream[http_stream9] [FINE] Closed stream http_stream9 num emitted tuples: 1
+Sep 23 15:04:30.727 _global [57] org.yamcs.http.HttpRequestHandler [INFO] 8d123e0c GET /api/archive/myproject/packets/%2Fmyproject%2FSpacecraft/2024-09-23T07:04:13.801Z/6604092 200
+Sep 23 15:04:30.728 _global [39] org.yamcs.http.Context[c121] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 15:04:31.081 _global [39] org.yamcs.http.HttpRequestHandler [FINE] 8d123e0c GET /api/archive/myproject/packets/%2Fmyproject%2FSpacecraft/2024-09-23T07:04:10.796Z/6604089
+Sep 23 15:04:31.081 _global [39] org.yamcs.http.ApiHandler [FINE] 122: Routing GET /api/archive/myproject/packets/%2Fmyproject%2FSpacecraft/2024-09-23T07:04:10.796Z/6604089
+Sep 23 15:04:31.082 _global [39] org.yamcs.http.api.StreamFactory [FINE] Executing: create stream http_stream10 as select * from tm where pname = ? and gentime = ? and seqNum = ? nofollow
+Sep 23 15:04:31.104 myproject [58] org.yamcs.yarch.TableReaderStream[tm_22] [FINE] starting a table stream from table tm 
+Sep 23 15:04:31.104 myproject [58] org.yamcs.yarch.rocksdb.RdbTableWalker [FINE] Starting to walk ascending: true, rangeIndexFilter: DbRange [rangeStart=800001921DB275B4, rangeEnd=800001921DB275B4]
+Sep 23 15:04:31.105 myproject [58] org.yamcs.yarch.TableReaderStream[tm_22] [FINE] Closed stream tm_22 num emitted tuples: 1
+Sep 23 15:04:31.105 myproject [58] org.yamcs.yarch.SelectStream[tm_22_select] [FINE] Closed stream tm_22_select num emitted tuples: 1
+Sep 23 15:04:31.105 myproject [58] org.yamcs.yarch.InternalStream[http_stream10] [FINE] Closed stream http_stream10 num emitted tuples: 1
+Sep 23 15:04:31.105 _global [58] org.yamcs.http.HttpRequestHandler [INFO] 8d123e0c GET /api/archive/myproject/packets/%2Fmyproject%2FSpacecraft/2024-09-23T07:04:10.796Z/6604089 200
+Sep 23 15:04:31.108 _global [39] org.yamcs.http.Context[c122] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 15:04:31.348 _global [39] org.yamcs.http.HttpRequestHandler [FINE] 8d123e0c GET /api/archive/myproject/packets/%2Fmyproject%2FSpacecraft/2024-09-23T07:04:07.793Z/6604086
+Sep 23 15:04:31.348 _global [39] org.yamcs.http.ApiHandler [FINE] 123: Routing GET /api/archive/myproject/packets/%2Fmyproject%2FSpacecraft/2024-09-23T07:04:07.793Z/6604086
+Sep 23 15:04:31.348 _global [39] org.yamcs.http.api.StreamFactory [FINE] Executing: create stream http_stream11 as select * from tm where pname = ? and gentime = ? and seqNum = ? nofollow
+Sep 23 15:04:31.361 myproject [59] org.yamcs.yarch.TableReaderStream[tm_23] [FINE] starting a table stream from table tm 
+Sep 23 15:04:31.361 myproject [59] org.yamcs.yarch.rocksdb.RdbTableWalker [FINE] Starting to walk ascending: true, rangeIndexFilter: DbRange [rangeStart=800001921DB269F9, rangeEnd=800001921DB269F9]
+Sep 23 15:04:31.361 myproject [59] org.yamcs.yarch.TableReaderStream[tm_23] [FINE] Closed stream tm_23 num emitted tuples: 1
+Sep 23 15:04:31.361 myproject [59] org.yamcs.yarch.SelectStream[tm_23_select] [FINE] Closed stream tm_23_select num emitted tuples: 1
+Sep 23 15:04:31.361 myproject [59] org.yamcs.yarch.InternalStream[http_stream11] [FINE] Closed stream http_stream11 num emitted tuples: 1
+Sep 23 15:04:31.362 _global [59] org.yamcs.http.HttpRequestHandler [INFO] 8d123e0c GET /api/archive/myproject/packets/%2Fmyproject%2FSpacecraft/2024-09-23T07:04:07.793Z/6604086 200
+Sep 23 15:04:31.363 _global [39] org.yamcs.http.Context[c123] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 15:05:03.139 _global [39] org.yamcs.http.HttpRequestHandler [FINE] 8d123e0c GET /api/archive/myproject/packets/%2Fmyproject%2FSpacecraft/2024-09-23T07:04:18.833Z/6604097
+Sep 23 15:05:03.139 _global [39] org.yamcs.http.ApiHandler [FINE] 124: Routing GET /api/archive/myproject/packets/%2Fmyproject%2FSpacecraft/2024-09-23T07:04:18.833Z/6604097
+Sep 23 15:05:03.140 _global [39] org.yamcs.http.api.StreamFactory [FINE] Executing: create stream http_stream12 as select * from tm where pname = ? and gentime = ? and seqNum = ? nofollow
+Sep 23 15:05:03.150 myproject [60] org.yamcs.yarch.TableReaderStream[tm_24] [FINE] starting a table stream from table tm 
+Sep 23 15:05:03.150 myproject [60] org.yamcs.yarch.rocksdb.RdbTableWalker [FINE] Starting to walk ascending: true, rangeIndexFilter: DbRange [rangeStart=800001921DB29519, rangeEnd=800001921DB29519]
+Sep 23 15:05:03.150 myproject [60] org.yamcs.yarch.TableReaderStream[tm_24] [FINE] Closed stream tm_24 num emitted tuples: 1
+Sep 23 15:05:03.150 myproject [60] org.yamcs.yarch.SelectStream[tm_24_select] [FINE] Closed stream tm_24_select num emitted tuples: 1
+Sep 23 15:05:03.150 myproject [60] org.yamcs.yarch.InternalStream[http_stream12] [FINE] Closed stream http_stream12 num emitted tuples: 1
+Sep 23 15:05:03.151 _global [60] org.yamcs.http.HttpRequestHandler [INFO] 8d123e0c GET /api/archive/myproject/packets/%2Fmyproject%2FSpacecraft/2024-09-23T07:04:18.833Z/6604097 200
+Sep 23 15:05:03.154 _global [39] org.yamcs.http.Context[c124] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 15:05:16.100 _global [39] org.yamcs.http.HttpRequestHandler [FINE] 8d123e0c GET /api/archive/myproject/packets/%2Fmyproject%2FSpacecraft/2024-09-23T07:04:18.833Z/6604097
+Sep 23 15:05:16.101 _global [39] org.yamcs.http.ApiHandler [FINE] 125: Routing GET /api/archive/myproject/packets/%2Fmyproject%2FSpacecraft/2024-09-23T07:04:18.833Z/6604097
+Sep 23 15:05:16.101 _global [39] org.yamcs.http.api.StreamFactory [FINE] Executing: create stream http_stream13 as select * from tm where pname = ? and gentime = ? and seqNum = ? nofollow
+Sep 23 15:05:16.112 myproject [61] org.yamcs.yarch.TableReaderStream[tm_25] [FINE] starting a table stream from table tm 
+Sep 23 15:05:16.112 myproject [61] org.yamcs.yarch.rocksdb.RdbTableWalker [FINE] Starting to walk ascending: true, rangeIndexFilter: DbRange [rangeStart=800001921DB29519, rangeEnd=800001921DB29519]
+Sep 23 15:05:16.115 myproject [61] org.yamcs.yarch.TableReaderStream[tm_25] [FINE] Closed stream tm_25 num emitted tuples: 1
+Sep 23 15:05:16.115 myproject [61] org.yamcs.yarch.SelectStream[tm_25_select] [FINE] Closed stream tm_25_select num emitted tuples: 1
+Sep 23 15:05:16.120 myproject [61] org.yamcs.yarch.InternalStream[http_stream13] [FINE] Closed stream http_stream13 num emitted tuples: 1
+Sep 23 15:05:16.121 _global [61] org.yamcs.http.HttpRequestHandler [INFO] 8d123e0c GET /api/archive/myproject/packets/%2Fmyproject%2FSpacecraft/2024-09-23T07:04:18.833Z/6604097 200
+Sep 23 15:05:16.122 _global [39] org.yamcs.http.Context[c125] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 15:05:16.640 _global [39] org.yamcs.http.HttpRequestHandler [FINE] 8d123e0c GET /api/archive/myproject/packets/%2Fmyproject%2FSpacecraft/2024-09-23T07:04:18.833Z/6604097
+Sep 23 15:05:16.640 _global [39] org.yamcs.http.ApiHandler [FINE] 126: Routing GET /api/archive/myproject/packets/%2Fmyproject%2FSpacecraft/2024-09-23T07:04:18.833Z/6604097
+Sep 23 15:05:16.641 _global [39] org.yamcs.http.api.StreamFactory [FINE] Executing: create stream http_stream14 as select * from tm where pname = ? and gentime = ? and seqNum = ? nofollow
+Sep 23 15:05:16.657 myproject [62] org.yamcs.yarch.TableReaderStream[tm_26] [FINE] starting a table stream from table tm 
+Sep 23 15:05:16.657 myproject [62] org.yamcs.yarch.rocksdb.RdbTableWalker [FINE] Starting to walk ascending: true, rangeIndexFilter: DbRange [rangeStart=800001921DB29519, rangeEnd=800001921DB29519]
+Sep 23 15:05:16.657 myproject [62] org.yamcs.yarch.TableReaderStream[tm_26] [FINE] Closed stream tm_26 num emitted tuples: 1
+Sep 23 15:05:16.657 myproject [62] org.yamcs.yarch.SelectStream[tm_26_select] [FINE] Closed stream tm_26_select num emitted tuples: 1
+Sep 23 15:05:16.657 myproject [62] org.yamcs.yarch.InternalStream[http_stream14] [FINE] Closed stream http_stream14 num emitted tuples: 1
+Sep 23 15:05:16.658 _global [62] org.yamcs.http.HttpRequestHandler [INFO] 8d123e0c GET /api/archive/myproject/packets/%2Fmyproject%2FSpacecraft/2024-09-23T07:04:18.833Z/6604097 200
+Sep 23 15:05:16.659 _global [39] org.yamcs.http.Context[c126] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 15:05:21.695 _global [43] org.yamcs.http.WebSocketObserver[115] [FINE] Cancelling processors call
+Sep 23 15:05:21.701 _global [43] org.yamcs.http.WebSocketObserver[127] [FINE] Subscribe processors
+Sep 23 15:05:21.789 _global [39] org.yamcs.http.HttpRequestHandler [FINE] 8d123e0c GET /api/mdb/myproject/parameters?system=/&details=true&pos=0&limit=100
+Sep 23 15:05:21.790 _global [39] org.yamcs.http.ApiHandler [FINE] 128: Routing GET /api/mdb/myproject/parameters?system=/&details=true&pos=0&limit=100
+Sep 23 15:05:21.793 _global [39] org.yamcs.http.HttpRequestHandler [INFO] 8d123e0c GET /api/mdb/myproject/parameters?system=/&details=true&pos=0&limit=100 200
+Sep 23 15:05:21.795 _global [39] org.yamcs.http.Context[c128] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 15:05:24.175 _global [43] org.yamcs.http.WebSocketObserver[127] [FINE] Cancelling processors call
+Sep 23 15:05:24.176 _global [43] org.yamcs.http.WebSocketObserver[129] [FINE] Subscribe processors
+Sep 23 15:05:24.197 _global [39] org.yamcs.http.HttpRequestHandler [FINE] 8d123e0c GET /api/archive/myproject/packet-names
+Sep 23 15:05:24.199 _global [28] org.yamcs.http.HttpServer [FINE] [id: 0x186fbd67, L:/[0:0:0:0:0:0:0:0]:8090] READ: [id: 0x911a79b0, L:/127.0.0.1:8090 - R:/127.0.0.1:48062]
+Sep 23 15:05:24.200 _global [28] org.yamcs.http.HttpServer [FINE] [id: 0x186fbd67, L:/[0:0:0:0:0:0:0:0]:8090] READ COMPLETE
+Sep 23 15:05:24.200 _global [39] org.yamcs.http.ApiHandler [FINE] 130: Routing GET /api/archive/myproject/packet-names
+Sep 23 15:05:24.202 _global [44] org.yamcs.http.HttpRequestHandler [FINE] 911a79b0 GET /api/archive/myproject/packets?start=2024-09-23T06:05:24.013Z&stop=2024-09-23T07:05:24.013Z&limit=100&fields=id,generationTime,earthReceptionTime,receptionTime,sequenceNumber,link,size
+Sep 23 15:05:24.202 _global [44] org.yamcs.http.ApiHandler [FINE] 131: Routing GET /api/archive/myproject/packets?start=2024-09-23T06:05:24.013Z&stop=2024-09-23T07:05:24.013Z&limit=100&fields=id,generationTime,earthReceptionTime,receptionTime,sequenceNumber,link,size
+Sep 23 15:05:24.203 _global [44] org.yamcs.http.api.StreamFactory [FINE] Executing: create stream http_stream15 as select * from tm where gentime >= 1727071561013 and gentime < 1727075161013 and pname IN (?, ?, ?) order desc limit 0,101 nofollow
+Sep 23 15:05:24.204 _global [39] org.yamcs.http.HttpRequestHandler [INFO] 8d123e0c GET /api/archive/myproject/packet-names 200
+Sep 23 15:05:24.209 _global [39] org.yamcs.http.Context[c130] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 15:05:24.281 _global [44] org.yamcs.yarch.streamsql.TableWalkerBuilder [FINE] no enum value for column: pname value: /myproject/TelemetryPacket
+Sep 23 15:05:24.281 _global [44] org.yamcs.yarch.streamsql.TableWalkerBuilder [FINE] no enum value for column: pname value: /myproject/CCSDSPacket
+Sep 23 15:05:24.318 myproject [63] org.yamcs.yarch.TableReaderStream[tm_27] [FINE] starting a table stream from table tm 
+Sep 23 15:05:24.318 myproject [63] org.yamcs.yarch.rocksdb.RdbTableWalker [FINE] Starting to walk ascending: false, rangeIndexFilter: DbRange [rangeStart=800001921D7CA535, rangeEnd=800001921DB393B5]
+Sep 23 15:05:24.329 myproject [63] org.yamcs.yarch.SelectStream[tm_27_select] [FINE] Closed stream tm_27_select num emitted tuples: 102
+Sep 23 15:05:24.329 myproject [63] org.yamcs.yarch.TableReaderStream[tm_27] [FINE] Closed stream tm_27 num emitted tuples: 102
+Sep 23 15:05:24.329 myproject [63] org.yamcs.yarch.streamsql.LimitedStream[tm_27_select_limit] [FINE] Closed stream tm_27_select_limit num emitted tuples: 101
+Sep 23 15:05:24.330 myproject [63] org.yamcs.yarch.InternalStream[http_stream15] [FINE] Closed stream http_stream15 num emitted tuples: 101
+Sep 23 15:05:24.373 _global [63] org.yamcs.http.HttpRequestHandler [INFO] 911a79b0 GET /api/archive/myproject/packets?start=2024-09-23T06:05:24.013Z&stop=2024-09-23T07:05:24.013Z&limit=100&fields=id,generationTime,earthReceptionTime,receptionTime,sequenceNumber,link,size 200
+Sep 23 15:05:24.375 _global [44] org.yamcs.http.Context[c131] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 15:05:26.052 _global [43] org.yamcs.http.WebSocketObserver[129] [FINE] Cancelling processors call
+Sep 23 15:05:26.066 _global [43] org.yamcs.http.WebSocketObserver[132] [FINE] Subscribe processors
+Sep 23 15:05:26.107 _global [39] org.yamcs.http.HttpRequestHandler [FINE] 8d123e0c GET /api/storage/buckets/displays/objects?delimiter=/
+Sep 23 15:05:26.107 _global [39] org.yamcs.http.ApiHandler [FINE] 133: Routing GET /api/storage/buckets/displays/objects?delimiter=/
+Sep 23 15:05:26.108 _global [39] org.yamcs.http.HttpRequestHandler [INFO] 8d123e0c GET /api/storage/buckets/displays/objects?delimiter=/ 200
+Sep 23 15:05:26.112 _global [39] org.yamcs.http.Context[c133] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 15:05:26.971 _global [43] org.yamcs.http.WebSocketObserver[132] [FINE] Cancelling processors call
+Sep 23 15:05:26.972 _global [43] org.yamcs.http.WebSocketObserver[134] [FINE] Subscribe processors
+Sep 23 15:05:27.022 _global [39] org.yamcs.http.HttpRequestHandler [FINE] 8d123e0c GET /api/parameter-lists/myproject/lists
+Sep 23 15:05:27.022 _global [39] org.yamcs.http.ApiHandler [FINE] 135: Routing GET /api/parameter-lists/myproject/lists
+Sep 23 15:05:27.023 _global [39] org.yamcs.http.api.StreamFactory [FINE] Executing: create stream http_stream16 as select * from parameter_list nofollow
+Sep 23 15:05:27.028 myproject [64] org.yamcs.yarch.TableReaderStream[parameter_list_28] [FINE] starting a table stream from table parameter_list 
+Sep 23 15:05:27.028 myproject [64] org.yamcs.yarch.rocksdb.RdbTableWalker [FINE] Starting to walk ascending: true, rangeIndexFilter: DbRange [rangeStart=null, rangeEnd=null]
+Sep 23 15:05:27.028 myproject [64] org.yamcs.yarch.TableReaderStream[parameter_list_28] [FINE] Closed stream parameter_list_28 num emitted tuples: 0
+Sep 23 15:05:27.028 myproject [64] org.yamcs.yarch.InternalStream[http_stream16] [FINE] Closed stream http_stream16 num emitted tuples: 0
+Sep 23 15:05:27.029 _global [64] org.yamcs.http.HttpRequestHandler [INFO] 8d123e0c GET /api/parameter-lists/myproject/lists 200
+Sep 23 15:05:27.033 _global [39] org.yamcs.http.Context[c135] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 15:05:28.200 _global [43] org.yamcs.http.WebSocketObserver[134] [FINE] Cancelling processors call
+Sep 23 15:05:28.200 _global [43] org.yamcs.http.WebSocketObserver[136] [FINE] Subscribe processors
+Sep 23 15:05:28.273 _global [39] org.yamcs.http.HttpRequestHandler [FINE] 8d123e0c GET /api/mdb/myproject/parameters?system=/&details=true&pos=0&limit=100
+Sep 23 15:05:28.274 _global [39] org.yamcs.http.ApiHandler [FINE] 137: Routing GET /api/mdb/myproject/parameters?system=/&details=true&pos=0&limit=100
+Sep 23 15:05:28.275 _global [39] org.yamcs.http.HttpRequestHandler [INFO] 8d123e0c GET /api/mdb/myproject/parameters?system=/&details=true&pos=0&limit=100 200
+Sep 23 15:05:28.275 _global [39] org.yamcs.http.Context[c137] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 15:05:29.667 _global [43] org.yamcs.http.WebSocketObserver[136] [FINE] Cancelling processors call
+Sep 23 15:05:29.674 _global [43] org.yamcs.http.WebSocketObserver[138] [FINE] Subscribe processors
+Sep 23 15:05:29.726 _global [39] org.yamcs.http.HttpRequestHandler [FINE] 8d123e0c GET /api/archive/myproject/packet-names
+Sep 23 15:05:29.726 _global [39] org.yamcs.http.ApiHandler [FINE] 139: Routing GET /api/archive/myproject/packet-names
+Sep 23 15:05:29.727 _global [39] org.yamcs.http.HttpRequestHandler [INFO] 8d123e0c GET /api/archive/myproject/packet-names 200
+Sep 23 15:05:29.729 _global [44] org.yamcs.http.HttpRequestHandler [FINE] 911a79b0 GET /api/archive/myproject/packets?start=2024-09-23T06:05:29.024Z&stop=2024-09-23T07:05:29.024Z&limit=100&fields=id,generationTime,earthReceptionTime,receptionTime,sequenceNumber,link,size
+Sep 23 15:05:29.729 _global [44] org.yamcs.http.ApiHandler [FINE] 140: Routing GET /api/archive/myproject/packets?start=2024-09-23T06:05:29.024Z&stop=2024-09-23T07:05:29.024Z&limit=100&fields=id,generationTime,earthReceptionTime,receptionTime,sequenceNumber,link,size
+Sep 23 15:05:29.753 _global [39] org.yamcs.http.Context[c139] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 15:05:29.754 _global [44] org.yamcs.http.api.StreamFactory [FINE] Executing: create stream http_stream17 as select * from tm where gentime >= 1727071566024 and gentime < 1727075166024 and pname IN (?, ?, ?) order desc limit 0,101 nofollow
+Sep 23 15:05:29.772 _global [44] org.yamcs.yarch.streamsql.TableWalkerBuilder [FINE] no enum value for column: pname value: /myproject/TelemetryPacket
+Sep 23 15:05:29.772 _global [44] org.yamcs.yarch.streamsql.TableWalkerBuilder [FINE] no enum value for column: pname value: /myproject/CCSDSPacket
+Sep 23 15:05:29.791 myproject [65] org.yamcs.yarch.TableReaderStream[tm_29] [FINE] starting a table stream from table tm 
+Sep 23 15:05:29.791 myproject [65] org.yamcs.yarch.rocksdb.RdbTableWalker [FINE] Starting to walk ascending: false, rangeIndexFilter: DbRange [rangeStart=800001921D7CB8C8, rangeEnd=800001921DB3A748]
+Sep 23 15:05:29.792 myproject [65] org.yamcs.yarch.SelectStream[tm_29_select] [FINE] Closed stream tm_29_select num emitted tuples: 102
+Sep 23 15:05:29.792 myproject [65] org.yamcs.yarch.TableReaderStream[tm_29] [FINE] Closed stream tm_29 num emitted tuples: 102
+Sep 23 15:05:29.792 myproject [65] org.yamcs.yarch.streamsql.LimitedStream[tm_29_select_limit] [FINE] Closed stream tm_29_select_limit num emitted tuples: 101
+Sep 23 15:05:29.793 myproject [65] org.yamcs.yarch.InternalStream[http_stream17] [FINE] Closed stream http_stream17 num emitted tuples: 101
+Sep 23 15:05:29.817 _global [65] org.yamcs.http.HttpRequestHandler [INFO] 911a79b0 GET /api/archive/myproject/packets?start=2024-09-23T06:05:29.024Z&stop=2024-09-23T07:05:29.024Z&limit=100&fields=id,generationTime,earthReceptionTime,receptionTime,sequenceNumber,link,size 200
+Sep 23 15:05:29.820 _global [44] org.yamcs.http.Context[c140] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 15:05:34.317 _global [39] org.yamcs.http.HttpRequestHandler [FINE] 8d123e0c GET /api/archive/myproject/packets/%2Fmyproject%2FSpacecraft/2024-09-23T07:05:27.148Z/6604165
+Sep 23 15:05:34.317 _global [39] org.yamcs.http.ApiHandler [FINE] 141: Routing GET /api/archive/myproject/packets/%2Fmyproject%2FSpacecraft/2024-09-23T07:05:27.148Z/6604165
+Sep 23 15:05:34.318 _global [39] org.yamcs.http.api.StreamFactory [FINE] Executing: create stream http_stream18 as select * from tm where pname = ? and gentime = ? and seqNum = ? nofollow
+Sep 23 15:05:34.326 myproject [66] org.yamcs.yarch.TableReaderStream[tm_30] [FINE] starting a table stream from table tm 
+Sep 23 15:05:34.326 myproject [66] org.yamcs.yarch.rocksdb.RdbTableWalker [FINE] Starting to walk ascending: true, rangeIndexFilter: DbRange [rangeStart=800001921DB39FF4, rangeEnd=800001921DB39FF4]
+Sep 23 15:05:34.327 myproject [66] org.yamcs.yarch.TableReaderStream[tm_30] [FINE] Closed stream tm_30 num emitted tuples: 1
+Sep 23 15:05:34.327 myproject [66] org.yamcs.yarch.SelectStream[tm_30_select] [FINE] Closed stream tm_30_select num emitted tuples: 1
+Sep 23 15:05:34.327 myproject [66] org.yamcs.yarch.InternalStream[http_stream18] [FINE] Closed stream http_stream18 num emitted tuples: 1
+Sep 23 15:05:34.327 _global [66] org.yamcs.http.HttpRequestHandler [INFO] 8d123e0c GET /api/archive/myproject/packets/%2Fmyproject%2FSpacecraft/2024-09-23T07:05:27.148Z/6604165 200
+Sep 23 15:05:34.328 _global [39] org.yamcs.http.Context[c141] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 15:05:34.387 _global [39] org.yamcs.http.HttpRequestHandler [FINE] 8d123e0c GET /media/RobotoMono-Regular.woff2
+Sep 23 15:05:34.387 _global [39] org.yamcs.web.AngularHandler [FINE] Handling static file request for media/RobotoMono-Regular.woff2
+Sep 23 15:05:34.387 _global [39] org.yamcs.web.AngularHandler [FINE] [id: 0x8d123e0c, L:/127.0.0.1:8090 - R:/127.0.0.1:40772] Transfer complete: /home/stasy/arrc_work/quickstart/target/yamcs/cache/yamcs-web/media/RobotoMono-Regular.woff2
+Sep 23 15:05:34.388 _global [39] org.yamcs.web.AngularHandler [FINE] GET /media/RobotoMono-Regular.woff2 200
+Sep 23 15:12:39.400 _global [28] org.yamcs.http.HttpServer [FINE] [id: 0x186fbd67, L:/[0:0:0:0:0:0:0:0]:8090] READ: [id: 0x786a6b7a, L:/[0:0:0:0:0:0:0:1]:8090 - R:/[0:0:0:0:0:0:0:1]:54072]
+Sep 23 15:12:39.401 _global [28] org.yamcs.http.HttpServer [FINE] [id: 0x186fbd67, L:/[0:0:0:0:0:0:0:0]:8090] READ COMPLETE
+Sep 23 15:12:39.401 _global [27] org.yamcs.http.HttpRequestHandler [FINE] 786a6b7a GET /api/archive/myproject/streams
+Sep 23 15:12:39.404 _global [27] org.yamcs.http.ApiHandler [FINE] 142: Routing GET /api/archive/myproject/streams
+Sep 23 15:12:39.415 _global [27] org.yamcs.http.HttpRequestHandler [INFO] 786a6b7a GET /api/archive/myproject/streams 200
+Sep 23 15:12:39.415 _global [27] org.yamcs.http.Context[c142] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 15:18:10.947 _global [28] org.yamcs.http.HttpServer [FINE] [id: 0x186fbd67, L:/[0:0:0:0:0:0:0:0]:8090] READ: [id: 0x7d34ff08, L:/[0:0:0:0:0:0:0:1]:8090 - R:/[0:0:0:0:0:0:0:1]:52068]
+Sep 23 15:18:10.947 _global [28] org.yamcs.http.HttpServer [FINE] [id: 0x186fbd67, L:/[0:0:0:0:0:0:0:0]:8090] READ COMPLETE
+Sep 23 15:18:10.948 _global [35] org.yamcs.http.HttpRequestHandler [FINE] 7d34ff08 GET /api/archive/myproject/streams
+Sep 23 15:18:10.948 _global [35] org.yamcs.http.ApiHandler [FINE] 143: Routing GET /api/archive/myproject/streams
+Sep 23 15:18:10.950 _global [35] org.yamcs.http.HttpRequestHandler [INFO] 7d34ff08 GET /api/archive/myproject/streams 200
+Sep 23 15:18:10.950 _global [35] org.yamcs.http.Context[c143] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 15:18:21.303 _global [28] org.yamcs.http.HttpServer [FINE] [id: 0x186fbd67, L:/[0:0:0:0:0:0:0:0]:8090] READ: [id: 0x5be6ac58, L:/[0:0:0:0:0:0:0:1]:8090 - R:/[0:0:0:0:0:0:0:1]:58370]
+Sep 23 15:18:21.303 _global [28] org.yamcs.http.HttpServer [FINE] [id: 0x186fbd67, L:/[0:0:0:0:0:0:0:0]:8090] READ COMPLETE
+Sep 23 15:18:21.304 _global [36] org.yamcs.http.HttpRequestHandler [FINE] 5be6ac58 GET /api/archive/myproject/streams
+Sep 23 15:18:21.305 _global [36] org.yamcs.http.ApiHandler [FINE] 144: Routing GET /api/archive/myproject/streams
+Sep 23 15:18:21.306 _global [36] org.yamcs.http.HttpRequestHandler [INFO] 5be6ac58 GET /api/archive/myproject/streams 200
+Sep 23 15:18:21.307 _global [36] org.yamcs.http.Context[c144] [FINE] API call finished successfully, transferred bytes: 0
+Sep 23 16:04:50.006 myproject [67] org.yamcs.parameterarchive.RealtimeArchiveFiller [FINE] Wrote segment groupId: 0, [2024-09-23T06:41:28.952Z, 2024-09-23T08:04:47.952Z], size: 5000 to archive in 37 millisec
+Sep 23 16:05:28.187 myproject [68] org.yamcs.parameterarchive.RealtimeArchiveFiller [FINE] Wrote segment groupId: 1, [2024-09-23T06:41:47.743Z, 2024-09-23T08:05:27.149Z], size: 5000 to archive in 33 millisec
+Sep 23 22:24:22.446 myproject [69] org.yamcs.parameterarchive.RealtimeArchiveFiller [FINE] Wrote segment groupId: 1, [2024-09-23T08:05:28.152Z, 2024-09-23T08:24:23.023Z], size: 1091 to archive in 116 millisec
+Sep 23 22:24:22.475 myproject [67] org.yamcs.parameterarchive.RealtimeArchiveFiller [FINE] Wrote segment groupId: 0, [2024-09-23T08:04:48.952Z, 2024-09-23T08:24:22.952Z], size: 1175 to archive in 8 millisec
+Sep 23 22:24:24.967 myproject [68] org.yamcs.parameterarchive.RealtimeArchiveFiller [FINE] Wrote segment groupId: 0, [2024-09-23T14:24:22.218Z, 2024-09-23T14:24:23.713Z], size: 5056 to archive in 9 millisec
+Sep 23 22:24:25.967 myproject [69] org.yamcs.parameterarchive.RealtimeArchiveFiller [FINE] Wrote segment groupId: 0, [2024-09-23T14:24:23.714Z, 2024-09-23T14:24:24.115Z], size: 5030 to archive in 7 millisec
+Sep 23 22:24:25.972 myproject [69] org.yamcs.parameterarchive.RealtimeArchiveFiller [FINE] Wrote segment groupId: 0, [2024-09-23T14:24:24.116Z, 2024-09-23T14:24:24.309Z], size: 5004 to archive in 4 millisec
+Sep 23 22:24:25.974 myproject [69] org.yamcs.parameterarchive.RealtimeArchiveFiller [FINE] Wrote segment groupId: 0, [2024-09-23T14:24:24.310Z, 2024-09-23T14:24:24.438Z], size: 5002 to archive in 2 millisec
+Sep 24 07:16:43.645 myproject [67] org.yamcs.parameterarchive.RealtimeArchiveFiller [FINE] Wrote segment groupId: 0, [2024-09-23T14:24:24.439Z, 2024-09-23T14:24:36.952Z], size: 1522 to archive in 1 millisec
+Sep 24 07:16:44.069 myproject [68] org.yamcs.parameterarchive.RealtimeArchiveFiller [FINE] Wrote segment groupId: 1, [2024-09-23T14:24:22.322Z, 2024-09-23T14:24:37.374Z], size: 16 to archive in 1 millisec
+Sep 24 09:00:31.155 myproject [69] org.yamcs.parameterarchive.RealtimeArchiveFiller [FINE] Wrote segment groupId: 0, [2024-09-23T23:16:43.643Z, 2024-09-23T23:42:17.643Z], size: 1535 to archive in 90 millisec
+Sep 24 09:00:31.213 myproject [67] org.yamcs.parameterarchive.RealtimeArchiveFiller [FINE] Wrote segment groupId: 1, [2024-09-23T23:16:44.067Z, 2024-09-23T23:42:17.803Z], size: 1527 to archive in 105 millisec
+Sep 24 09:05:39.645 myproject [68] org.yamcs.parameterarchive.RealtimeArchiveFiller [FINE] Wrote segment groupId: 0, [2024-09-24T01:00:31.052Z, 2024-09-24T01:05:37.642Z], size: 5000 to archive in 2 millisec
+Sep 24 10:28:59.650 myproject [69] org.yamcs.parameterarchive.RealtimeArchiveFiller [FINE] Wrote segment groupId: 0, [2024-09-24T01:05:38.642Z, 2024-09-24T02:28:57.643Z], size: 5000 to archive in 3 millisec
+Sep 24 10:30:14.196 _global [28] org.yamcs.http.HttpServer [FINE] [id: 0x186fbd67, L:/[0:0:0:0:0:0:0:0]:8090] READ: [id: 0xdb2e3724, L:/127.0.0.1:8090 - R:/127.0.0.1:35274]
+Sep 24 10:30:14.196 _global [28] org.yamcs.http.HttpServer [FINE] [id: 0x186fbd67, L:/[0:0:0:0:0:0:0:0]:8090] READ COMPLETE
+Sep 24 10:51:17.941 _global [26] org.yamcs.YamcsServer [INFO] Yamcs is shutting down
+Sep 24 10:51:17.948 myproject [26] org.yamcs.management.LinkManager [INFO] Awaiting termination of link udp-in
+Sep 24 10:51:17.948 myproject [26] org.yamcs.management.LinkManager [INFO] Awaiting termination of link udp-out
+Sep 24 10:51:17.955 myproject [71] org.yamcs.yarch.InternalStream[xtce_tm_recorder_stream] [FINE] Closed stream xtce_tm_recorder_stream num emitted tuples: 11740
+Sep 24 10:51:17.955 myproject [72] org.yamcs.YamcsServerInstance [INFO] Awaiting termination of service ParameterRecorder
+Sep 24 10:51:17.955 _global [71] org.yamcs.yarch.rocksdb.RdbTableWriter [FINE] Stream xtce_tm_recorder_stream closed
+Sep 24 10:51:17.955 myproject [71] org.yamcs.YamcsServerInstance [INFO] Awaiting termination of service XtceTmRecorder
+Sep 24 10:51:17.973 myproject [73] org.yamcs.YamcsServerInstance [INFO] Awaiting termination of service AlarmRecorder
+Sep 24 10:51:17.973 myproject [72] org.yamcs.YamcsServerInstance [INFO] Awaiting termination of service ReplayServer
+Sep 24 10:51:17.973 myproject [72] org.yamcs.Processor[realtime] [INFO] Processor realtime quitting
+Sep 24 10:51:17.973 myproject [74] org.yamcs.YamcsServerInstance [INFO] Awaiting termination of service SystemParametersService
+Sep 24 10:51:17.974 myproject [71] org.yamcs.YamcsServerInstance [INFO] Awaiting termination of service EventRecorder
+Sep 24 10:51:17.975 myproject [71] org.yamcs.parameterarchive.ParameterArchive [FINE] Stopping ParameterArchive service for instance myproject
+Sep 24 10:51:17.975 myproject [71] org.yamcs.parameterarchive.RealtimeArchiveFiller [INFO] Shutting down, writing all pending segments
+Sep 24 10:51:17.975 myproject [73] org.yamcs.YamcsServerInstance [INFO] Awaiting termination of service ParameterListService
+Sep 24 10:51:17.977 myproject [67] org.yamcs.parameterarchive.RealtimeArchiveFiller [FINE] Wrote segment groupId: 0, [2024-09-24T02:28:58.642Z, 2024-09-24T02:51:17.644Z], size: 1340 to archive in 0 millisec
+Sep 24 10:51:17.981 myproject [75] org.yamcs.YamcsServerInstance [INFO] Awaiting termination of service TimelineService
+Sep 24 10:51:17.985 _global [26] org.yamcs.YamcsServer [FINE] Awaiting termination of instance myproject
+Sep 24 10:51:17.986 myproject [72] org.yamcs.Processor[realtime] [INFO] Processor realtime is out of business
+Sep 24 10:51:17.989 _global [72] org.yamcs.yarch.rocksdb.Tablespace[myproject] [FINE] Updating metadata record tbsIndex: 8 type: TABLE_DEFINITION tableName: "param_persistence" tableDefinition { keyColumn { name: "savetime" type: "TIMESTAMP" } keyColumn { name: "processor" type: "ENUM" enumValue { value: 0 label: "realtime" } } valueColumn { name: "/myproject/CCSDS_Packet_Length" type: "PARAMETER_VALUE" } valueColumn { name: "/myproject/Battery1_Temp" type: "PARAMETER_VALUE" } valueColumn { name: "/myproject/CCSDS_Packet_ID" type: "PARAMETER_VALUE" } valueColumn { name: "/myproject/Enum_Para_3" type: "PARAMETER_VALUE" } valueColumn { name: "/myproject/CDHS_Error_Flag" type: "PARAMETER_VALUE" } valueColumn { name: "/myproject/ElapsedSeconds" type: "PARAMETER_VALUE" } valueColumn { name: "/myproject/Height" type: "PARAMETER_VALUE" } valueColumn { name: "/myproject/Mode_SBand" type: "PARAMETER_VALUE" } valueColumn { name: "/myproject/OrbitNumberCumulative" type: "PARAMETER_VALUE" } valueColumn { name: "/myproject/Contact_Golbasi_GS" type: "PARAMETER_VALUE" } valueColumn { name: "/myproject/Payload_Error_Flag" type: "PARAMETER_VALUE" } valueColumn { name: "/myproject/Mode_Day" type: "PARAMETER_VALUE" } valueColumn { name: "/myproject/Longitude" type: "PARAMETER_VALUE" } valueColumn { name: "/myproject/Magnetometer" type: "PARAMETER_VALUE" } valueColumn { name: "/myproject/COMMS_Status" type: "PARAMETER_VALUE" } valueColumn { name: "/myproject/Mode_Night" type: "PARAMETER_VALUE" } valueColumn { name: "/myproject/Sunsensor" type: "PARAMETER_VALUE" } valueColumn { name: "/myproject/CDHS_Status" type: "PARAMETER_VALUE" } valueColumn { name: "/myproject/Shadow" type: "PARAMETER_VALUE" } valueColumn { name: "/myproject/COMMS_Error_Flag" type: "PARAMETER_VALUE" } valueColumn { name: "/myproject/Battery2_Temp" type: "PARAMETER_VALUE" } valueColumn { name: "/myproject/ADCS_Error_Flag" type: "PARAMETER_VALUE" } valueColumn { name: "/myproject/Mode_Payload" type: "PARAMETER_VALUE" } valueColumn { name: "/myproject/CCSDS_Packet_Sequence" type: "PARAMETER_VALUE" } valueColumn { name: "/myproject/Detector_Temp" type: "PARAMETER_VALUE" } valueColumn { name: "/myproject/Contact_Svalbard" type: "PARAMETER_VALUE" } valueColumn { name: "/myproject/Battery1_Voltage" type: "PARAMETER_VALUE" } valueColumn { name: "/myproject/EPS_Error_Flag" type: "PARAMETER_VALUE" } valueColumn { name: "/myproject/Battery2_Voltage" type: "PARAMETER_VALUE" } valueColumn { name: "/myproject/Velocity" type: "PARAMETER_VALUE" } valueColumn { name: "/myproject/Mode_XBand" type: "PARAMETER_VALUE" } valueColumn { name: "/myproject/Position" type: "PARAMETER_VALUE" } valueColumn { name: "/myproject/A" type: "PARAMETER_VALUE" } valueColumn { name: "/myproject/Enum_Para_2" type: "PARAMETER_VALUE" } valueColumn { name: "/myproject/Gyro" type: "PARAMETER_VALUE" } valueColumn { name: "/myproject/Mode_Safe" type: "PARAMETER_VALUE" } valueColumn { name: "/myproject/Latitude" type: "PARAMETER_VALUE" } valueColumn { name: "/myproject/Enum_Para_1" type: "PARAMETER_VALUE" } valueColumn { name: "/myproject/EpochUSNO" type: "PARAMETER_VALUE" } valueColumn { name: "/myproject/Payload_Status" type: "PARAMETER_VALUE" } storageEngine: "rocksdb2" formatVersion: 3 compressed: false }
+Sep 24 10:51:17.991 myproject [72] org.yamcs.YamcsServerInstance [INFO] Awaiting termination of service ProcessorCreatorService
+Sep 24 10:51:17.992 myproject [74] org.yamcs.YamcsServerInstance [INFO] Awaiting termination of service CommandHistoryRecorder
+Sep 24 10:51:18.001 myproject [69] org.yamcs.parameterarchive.RealtimeArchiveFiller [FINE] Wrote segment groupId: 1, [2024-09-24T01:00:31.102Z, 2024-09-24T02:50:58.064Z], size: 4106 to archive in 19 millisec
+Sep 24 10:51:18.002 myproject [71] org.yamcs.YamcsServerInstance [INFO] Awaiting termination of service ParameterArchive
+Sep 24 10:51:18.004 myproject [71] org.yamcs.YamcsServerInstance [INFO] Stopping Yamcs DB
+Sep 24 10:51:18.006 myproject [71] org.yamcs.yarch.InternalStream[parameter_list_in] [FINE] Closed stream parameter_list_in num emitted tuples: 0
+Sep 24 10:51:18.006 _global [71] org.yamcs.yarch.rocksdb.RdbTableWriter [FINE] Stream parameter_list_in closed
+Sep 24 10:51:18.010 myproject [71] org.yamcs.yarch.InternalStream[cmdhist_dump] [FINE] Closed stream cmdhist_dump num emitted tuples: 0
+Sep 24 10:51:18.010 myproject [71] org.yamcs.yarch.InternalStream[audit_log_in] [FINE] Closed stream audit_log_in num emitted tuples: 0
+Sep 24 10:51:18.010 _global [71] org.yamcs.yarch.rocksdb.RdbTableWriter [FINE] Stream audit_log_in closed
+Sep 24 10:51:18.010 myproject [71] org.yamcs.yarch.InternalStream[tm_realtime] [FINE] Closed stream tm_realtime num emitted tuples: 11740
+Sep 24 10:51:18.010 myproject [71] org.yamcs.yarch.InternalStream[timeline_in] [FINE] Closed stream timeline_in num emitted tuples: 0
+Sep 24 10:51:18.010 _global [71] org.yamcs.yarch.rocksdb.RdbTableWriter [FINE] Stream timeline_in closed
+Sep 24 10:51:18.010 myproject [71] org.yamcs.yarch.InternalStream[timeline_view_in] [FINE] Closed stream timeline_view_in num emitted tuples: 0
+Sep 24 10:51:18.010 _global [71] org.yamcs.yarch.rocksdb.RdbTableWriter [FINE] Stream timeline_view_in closed
+Sep 24 10:51:18.010 myproject [71] org.yamcs.yarch.InternalStream[activity_in] [FINE] Closed stream activity_in num emitted tuples: 0
+Sep 24 10:51:18.010 _global [71] org.yamcs.yarch.rocksdb.RdbTableWriter [FINE] Stream activity_in closed
+Sep 24 10:51:18.010 myproject [71] org.yamcs.yarch.InternalStream[tm_dump] [FINE] Closed stream tm_dump num emitted tuples: 0
+Sep 24 10:51:18.010 myproject [71] org.yamcs.yarch.InternalStream[alarms_realtime] [FINE] Closed stream alarms_realtime num emitted tuples: 0
+Sep 24 10:51:18.010 myproject [71] org.yamcs.yarch.InternalStream[param_persistence_in] [FINE] Closed stream param_persistence_in num emitted tuples: 1
+Sep 24 10:51:18.010 _global [71] org.yamcs.yarch.rocksdb.RdbTableWriter [FINE] Stream param_persistence_in closed
+Sep 24 10:51:18.010 myproject [71] org.yamcs.yarch.InternalStream[timeline_band_in] [FINE] Closed stream timeline_band_in num emitted tuples: 0
+Sep 24 10:51:18.010 _global [71] org.yamcs.yarch.rocksdb.RdbTableWriter [FINE] Stream timeline_band_in closed
+Sep 24 10:51:18.010 myproject [71] org.yamcs.yarch.InternalStream[tc_realtime] [FINE] Closed stream tc_realtime num emitted tuples: 0
+Sep 24 10:51:18.010 myproject [71] org.yamcs.management.LinkManager [FINE] Stream tc_realtime closed
+Sep 24 10:51:18.010 myproject [71] org.yamcs.yarch.InternalStream[memento_in] [FINE] Closed stream memento_in num emitted tuples: 0
+Sep 24 10:51:18.010 _global [71] org.yamcs.yarch.rocksdb.RdbTableWriter [FINE] Stream memento_in closed
+Sep 24 10:51:18.010 myproject [71] org.yamcs.yarch.InternalStream[cmdhist_realtime] [FINE] Closed stream cmdhist_realtime num emitted tuples: 0
+Sep 24 10:51:18.012 myproject [71] org.yamcs.yarch.InternalStream[events_realtime] [FINE] Closed stream events_realtime num emitted tuples: 1
+Sep 24 10:51:18.012 myproject [71] org.yamcs.yarch.InternalStream[pp_dump] [FINE] Closed stream pp_dump num emitted tuples: 0
+Sep 24 10:51:18.013 myproject [71] org.yamcs.yarch.InternalStream[pp_realtime] [FINE] Closed stream pp_realtime num emitted tuples: 0
+Sep 24 10:51:18.013 myproject [71] org.yamcs.yarch.InternalStream[events_dump] [FINE] Closed stream events_dump num emitted tuples: 0
+Sep 24 10:51:18.013 myproject [71] org.yamcs.yarch.InternalStream[sys_param] [FINE] Closed stream sys_param num emitted tuples: 40664
+Sep 24 10:51:18.013 myproject [71] org.yamcs.yarch.InternalStream[activity_log_in] [FINE] Closed stream activity_log_in num emitted tuples: 0
+Sep 24 10:51:18.013 _global [71] org.yamcs.yarch.rocksdb.RdbTableWriter [FINE] Stream activity_log_in closed
+Sep 24 10:51:18.013 myproject [71] org.yamcs.yarch.InternalStream[timeline_log_in] [FINE] Closed stream timeline_log_in num emitted tuples: 0
+Sep 24 10:51:18.013 _global [71] org.yamcs.yarch.rocksdb.RdbTableWriter [FINE] Stream timeline_log_in closed
+Sep 24 10:51:18.014 myproject [71] org.yamcs.yarch.InternalStream[proc_param] [FINE] Closed stream proc_param num emitted tuples: 2
+Sep 24 10:51:18.016 _global [26] org.yamcs.YamcsServer [INFO] Stopped instance 'myproject'
+Sep 24 10:51:18.038 _global [43] org.yamcs.http.WebSocketFrameHandler [INFO] 042bde7b Channel closed
+Sep 24 10:51:18.040 _global [28] org.yamcs.http.HttpServer [FINE] [id: 0x186fbd67, L:/[0:0:0:0:0:0:0:0]:8090] INACTIVE
+Sep 24 10:51:18.041 _global [28] org.yamcs.http.HttpServer [FINE] [id: 0x186fbd67, L:/[0:0:0:0:0:0:0:0]:8090] UNREGISTERED
+Sep 24 10:51:18.041 _global [26] org.yamcs.YamcsServer [INFO] Awaiting termination of service HttpServer
+Sep 24 10:51:18.042 _global [43] org.yamcs.http.WebSocketObserver[2] [FINE] Cancelling session call
+Sep 24 10:51:18.042 _global [43] org.yamcs.http.WebSocketObserver[8] [FINE] Cancelling time call
+Sep 24 10:51:18.042 _global [43] org.yamcs.http.WebSocketObserver[9] [FINE] Cancelling clearance call
+Sep 24 10:51:18.042 _global [43] org.yamcs.http.WebSocketObserver[114] [FINE] Cancelling global-activity-status call
+Sep 24 10:51:18.042 _global [43] org.yamcs.http.WebSocketObserver[116] [FINE] Cancelling global-alarm-status call
+Sep 24 10:51:18.042 _global [43] org.yamcs.http.WebSocketObserver[138] [FINE] Cancelling processors call
+Sep 24 10:51:18.051 _global [26] org.yamcs.yarch.InternalStream[audit_log_in] [FINE] Closed stream audit_log_in num emitted tuples: 0
+Sep 24 10:51:18.051 _global [26] org.yamcs.yarch.rocksdb.RdbTableWriter [FINE] Stream audit_log_in closed
+Sep 24 10:51:18.052 _global [26] org.yamcs.yarch.rocksdb.RDBFactory [FINE] Shutting down. Closing 1 databases under /home/stasy/arrc_work/quickstart/yamcs_data/_global.rdb: []
+Sep 24 10:51:18.053 _global [26] org.yamcs.yarch.rocksdb.RDBFactory [FINE] Shutting down. Closing 1 databases under /home/stasy/arrc_work/quickstart/yamcs_data/myproject.rdb: []
+Sep 24 10:51:18.056 _global [26] org.yamcs.YamcsServer [INFO] Yamcs stopped in 114ms
