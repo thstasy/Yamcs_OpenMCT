@@ -1,27 +1,20 @@
-# Yamcs Configuration: yamcs.myproject.yaml
-# This configuration sets up telemetry reception via UDP, integrates an XTCE mission database, 
-# and includes services such as telemetry recording and algorithm management.
-
-# Mission Database Configuration (XTCE Loader)
 mdb:
   - type: xtce
     spec: mdb/xtce.xml
-    
+
 # Data Links Configuration
 # Flight Software (FSW) Telemetry via UDP
 dataLinks:
   - name: FSW_UDP_Link
     class: org.yamcs.tctm.UdpTmDataLink
-    stream: tm_realtime
+    stream: tm_realtime  # Changed to tm_realtime to match other UDP links
     port: 5001
     packetPreprocessorClassName: org.yamcs.tctm.GenericPacketPreprocessor
     packetPreprocessorArgs:
-      timestampOffset: 12
+      timestampOffset: -1
       seqCountOffset: 4
       byteOrder: BIG_ENDIAN
 
-  # DAQ AVI Telemetry via UDP
-dataLinks:
   # DAQ AVI Telemetry via UDP
   - name: DAQ_AVI_UDP_Link
     class: org.yamcs.tctm.UdpTmDataLink
@@ -29,7 +22,7 @@ dataLinks:
     port: 5002
     packetPreprocessorClassName: org.yamcs.tctm.GenericPacketPreprocessor
     packetPreprocessorArgs:
-      timestampOffset: 12
+      timestampOffset: -1
       seqCountOffset: 4
       byteOrder: BIG_ENDIAN
 
@@ -40,7 +33,7 @@ dataLinks:
     port: 5003
     packetPreprocessorClassName: org.yamcs.tctm.GenericPacketPreprocessor
     packetPreprocessorArgs:
-      timestampOffset: 12
+      timestampOffset: -1
       seqCountOffset: 4
       byteOrder: BIG_ENDIAN
 
@@ -51,7 +44,7 @@ dataLinks:
     port: 5004
     packetPreprocessorClassName: org.yamcs.tctm.GenericPacketPreprocessor
     packetPreprocessorArgs:
-      timestampOffset: 12
+      timestampOffset: -1
       seqCountOffset: 4
       byteOrder: BIG_ENDIAN
 
@@ -62,7 +55,7 @@ dataLinks:
     port: 5005
     packetPreprocessorClassName: org.yamcs.tctm.GenericPacketPreprocessor
     packetPreprocessorArgs:
-      timestampOffset: 12
+      timestampOffset: -1
       seqCountOffset: 4
       byteOrder: BIG_ENDIAN
 
@@ -73,7 +66,7 @@ dataLinks:
     port: 5006
     packetPreprocessorClassName: org.yamcs.tctm.GenericPacketPreprocessor
     packetPreprocessorArgs:
-      timestampOffset: 12
+      timestampOffset: -1
       seqCountOffset: 4
       byteOrder: BIG_ENDIAN
 
@@ -84,7 +77,7 @@ dataLinks:
     port: 5007
     packetPreprocessorClassName: org.yamcs.tctm.GenericPacketPreprocessor
     packetPreprocessorArgs:
-      timestampOffset: 12
+      timestampOffset: -1
       seqCountOffset: 4
       byteOrder: BIG_ENDIAN
 
@@ -94,7 +87,7 @@ dataLinks:
     port: 5008
     packetPreprocessorClassName: org.yamcs.tctm.GenericPacketPreprocessor
     packetPreprocessorArgs:
-      timestampOffset: 12
+      timestampOffset: -1
       seqCountOffset: 4
       byteOrder: BIG_ENDIAN
 
@@ -104,10 +97,9 @@ dataLinks:
     port: 5009
     packetPreprocessorClassName: org.yamcs.tctm.GenericPacketPreprocessor
     packetPreprocessorArgs:
-      timestampOffset: 12
+      timestampOffset: -1
       seqCountOffset: 4
       byteOrder: BIG_ENDIAN
-
 
   # Output for commands via UDP (udp-out)
   - name: udp-out
@@ -122,13 +114,22 @@ dataLinks:
 # Stream Configuration
 streamConfig:
   tm:
-    - name: "tm_realtime"
+    - name: "tm_realtime"  # Single stream for all telemetry data
       processor: "realtime"
     - name: "tm_dump"
-  cmdHist: ["cmdhist_realtime", "cmdhist_dump"]
-  event: ["events_realtime", "events_dump"]
-  param: ["pp_realtime", "pp_dump", "sys_param", "proc_param"]
-  parameterAlarm: ["alarms_realtime"]
+  cmdHist: 
+    - "cmdhist_realtime"
+    - "cmdhist_dump"
+  event:
+    - "events_realtime"
+    - "events_dump"
+  param: 
+    - "pp_realtime"
+    - "pp_dump"
+    - "sys_param"
+    - "proc_param"
+  parameterAlarm:
+    - "alarms_realtime"
   tc:
     - name: "tc_realtime"
       processor: "realtime"
@@ -141,7 +142,6 @@ services:
   - class: org.yamcs.archive.AlarmRecorder
   - class: org.yamcs.archive.EventRecorder
   - class: org.yamcs.archive.ReplayServer
-
   # System Parameters and Processor Creation
   - class: org.yamcs.parameter.SystemParametersService
   - class: org.yamcs.ProcessorCreatorService
@@ -166,4 +166,3 @@ services:
 
   # Timeline Service (Optional, can be removed if not needed)
   - class: org.yamcs.timeline.TimelineService
-

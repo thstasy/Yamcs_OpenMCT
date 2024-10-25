@@ -287,6 +287,27 @@
     </TelemetryMetaData>
 
     <CommandMetaData>
-        <!-- Command Definitions -->
+        <CommandSet>
+            <MetaCommand name="TestCommand">
+                <ArgumentList>
+                    <Argument name="arg1">
+                        <IntegerArgumentType>
+                            <IntegerDataEncoding sizeInBits="32" />
+                        </IntegerArgumentType>
+                    </Argument>
+                    <Argument name="arg2">
+                        <StringArgumentType>
+                            <StringDataEncoding sizeInBits="64" />
+                        </StringArgumentType>
+                    </Argument>
+                </ArgumentList>
+                <CommandContainer name="TestCommandContainer">
+                    <EntryList>
+                        <ArgumentRefEntry argumentRef="arg1" locationInContainerInBits="0" />
+                        <ArgumentRefEntry argumentRef="arg2" locationInContainerInBits="32" />
+                    </EntryList>
+                </CommandContainer>
+            </MetaCommand>
+        </CommandSet>
     </CommandMetaData>
 </SpaceSystem>
